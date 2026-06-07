@@ -116,6 +116,19 @@
         const { level, levelScore, levelTotal, mbtiCode, user } = result;
         const mbtiType = Labeller.resolve(mbtiCode);
 
+        if (!mbtiType) {
+          // 调试：显示出 mbtiCode + LABELS 里的 keys
+          const keys = (await Labeller.load()).types ? Object.keys((await Labeller.load()).types).join(',') : '无 types';
+          document.getElementById('loading').innerHTML =
+            `<div class="center" style="padding: 24px;">
+              <p style="color: var(--pink); font-weight: 900; margin-bottom: 8px;">MBTI 解析失败</p>
+              <p class="text-sm muted" style="margin-bottom: 8px;">你的 code: <code style="color: var(--yellow);">${mbtiCode || '(空)'}</code></p>
+              <p class="text-sm muted" style="margin-bottom: 16px;">数据库里的 code: <code style="font-size: 11px;">${keys}</code></p>
+              <a class="btn btn-ghost" href="test.html">返去重测</a>
+            </div>`;
+          return;
+        }
+
         const badge = document.getElementById('level-badge');
         badge.textContent = level.short;
         badge.classList.add(level.cls);

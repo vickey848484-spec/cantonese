@@ -294,7 +294,7 @@ h3.display { font-size: clamp(20px, 3vw, 24px); margin-bottom: 12px; }
 }
 .level-entry { background: var(--blue); color: #fff; }
 .level-mid { background: var(--yellow); color: #0a0a0a; }
-.level-high { background: #ffffff; color: #0a0a0a; }
+.level-high { background: var(--pink); color: #fff; }
 
 /* ============ 推荐卡 ============ */
 .partner-card, .course-card {

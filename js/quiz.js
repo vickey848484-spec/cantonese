@@ -1,20 +1,19 @@
 /* ============================================================
- * quiz.js — 水平测试：出题、计分、判等级、生成 MBTI 标签
- * 流程：10 道水平题 + 4 道 MBTI 题 + 1 张用户信息表
+ * quiz.js — 水平测试 + MBTI + 倒计时加载
  * ============================================================ */
 (function (global) {
   'use strict';
 
   const { Store, loadJSON, getLevelByScore, confetti, getQuery } = global.Cantonese;
 
-  let DATA = null;        // 全部题库
-  let state = null;       // 当前会话状态
+  let DATA = null;
+  let state = null;
 
   function defaultState() {
     return {
-      step: 0,                // 当前题号
-      levelAnswers: [],       // 10 道水平题答案
-      mbtiAnswers: [],        // 4 道 MBTI 题答案
+      step: 0,
+      levelAnswers: [],
+      mbtiAnswers: [],
       levelScore: 0,
       level: null,
       mbtiCode: '',
@@ -32,11 +31,8 @@
     }
   }
 
-  function persist() {
-    Store.set(Store.KEYS.quiz, state);
-  }
+  function persist() { Store.set(Store.KEYS.quiz, state); }
 
-  /* ---------- 出题顺序：先 10 道水平题，再 4 道 MBTI 题 ---------- */
   function getQuestionList() {
     if (!DATA) return [];
     return [...DATA.levelQuestions, ...DATA.mbtiQuestions];
@@ -45,21 +41,19 @@
     return index >= DATA.levelQuestions.length;
   }
 
-  /* ---------- 计算 MBTI 4 维字母 ---------- */
   function calcMBTICode() {
     if (!DATA) return '';
     const dims = { speed: ['S', 'M'], learn: ['P', 'T'], social: ['S', 'E'], style: ['I', 'W'] };
     const picks = { speed: 0, learn: 0, social: 0, style: 0 };
     DATA.mbtiQuestions.forEach((q, i) => {
       const ans = state.mbtiAnswers[i];
-      if (ans === 0) picks[q.dimension] = 0;  // 第一个选项
-      if (ans === 1) picks[q.dimension] = 1;  // 第二个选项
+      if (ans === 0) picks[q.dimension] = 0;
+      if (ans === 1) picks[q.dimension] = 1;
     });
     return dims.speed[picks.speed] + dims.learn[picks.learn] +
            dims.social[picks.social] + dims.style[picks.style];
   }
 
-  /* ---------- 判等级 + MBTI 类型 ---------- */
   function finalize() {
     if (!DATA) return null;
     state.levelScore = state.levelAnswers.reduce(
@@ -70,7 +64,6 @@
     return state;
   }
 
-  /* ---------- 渲染：当前题目 ---------- */
   function renderQuestion(container) {
     const list = getQuestionList();
     const total = list.length;
@@ -113,10 +106,6 @@
           state.levelAnswers[idx] = i;
         }
         persist();
-        // 短暂反馈后跳下一题
-        if (i === 0 && !isMbti) {
-          // 第一题选 A 也允许
-        }
         setTimeout(() => {
           state.step++;
           persist();
@@ -137,7 +126,6 @@
     });
   }
 
-  /* ---------- 用户信息表（年龄/性别/地域/每日学习时长）---------- */
   function renderUserForm(container) {
     container.innerHTML = `
       <div class="question-card">
@@ -200,7 +188,6 @@
       Store.set(Store.KEYS.user, u);
       finalize();
       persist();
-      // 写最终结果，跳转结果页
       const result = {
         level: state.level,
         levelScore: state.levelScore,
@@ -210,14 +197,12 @@
         timestamp: Date.now(),
       };
       Store.set(Store.KEYS.result, result);
-      // 短期庆祝一下
       confetti(document.body, 40);
-      // 倒计时加载
       showLoading(container, () => { location.href = 'result.html'; });
     });
   }
 
-  /* ---------- 倒计时加载（提交后到跳转前的过渡）---------- */
+  // 倒计时加载
   function showLoading(container, onDone) {
     const stages = [
       { text: '🔍 分析紧你嘅答案...',     duration: 700 },
@@ -269,14 +254,11 @@
     confetti(document.body, 30);
   }
 
-  /* ---------- 入口 ---------- */
   async function init(container) {
     if (!DATA) DATA = await loadJSON('data/questions.json');
     restore();
 
-    // ref=reminder 表示从邮件回流，可能要重置
     if (getQuery('ref') === 'reminder') {
-      // 保留 user 信息，但重置题
       state = defaultState();
       state.user = Store.get(Store.KEYS.user) || null;
       persist();

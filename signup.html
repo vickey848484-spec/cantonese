@@ -86,7 +86,6 @@
     Cantonese.initTheme();
     Cantonese.injectThemeToggle();
     Cantonese.injectTopbar('test');
-  </script>
 
     (async function () {
       const result = Cantonese.Store.get(Cantonese.Store.KEYS.result);
@@ -107,16 +106,13 @@
       document.getElementById('mbti-summary').textContent =
         `${mbtiCode} · ${mbtiType ? mbtiType.title : ''}`;
 
-      // 默认开始日期 = 今天
       const today = new Date().toISOString().split('T')[0];
       document.getElementById('startDate').value = today;
 
-      // 已有 user 信息则预填
       const user = Cantonese.Store.get(Cantonese.Store.KEYS.user);
       if (user && user.email) document.querySelector('[name=email]').value = user.email;
       if (user && user.wechat) document.querySelector('[name=wechat]').value = user.wechat;
 
-      // 提交
       document.getElementById('signup-form').addEventListener('submit', async (e) => {
         e.preventDefault();
         const fd = new FormData(e.target);
@@ -131,10 +127,8 @@
           source: 'signup.html',
           timestamp: Date.now(),
         };
-        // 至少存 localStorage 兜底
         Cantonese.Store.set('cantonese_subscribe_payload', payload);
 
-        // 调 API
         let apiOk = false;
         try {
           const res = await fetch('/api/subscribe', {

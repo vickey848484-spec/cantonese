@@ -38,7 +38,6 @@
     Cantonese.initTheme();
     Cantonese.injectThemeToggle();
     Cantonese.injectTopbar('partner');
-  </script>
 
     (async function () {
       const result = Cantonese.Store.get(Cantonese.Store.KEYS.result);
@@ -52,15 +51,11 @@
       const mbtiType = await Labeller.load().then(() => Labeller.resolve(mbtiCode));
       const matchTags = (mbtiType && mbtiType.matchTags) || [];
 
-      // 加载语伴
       const { partners } = await Cantonese.loadJSON('data/partners.json');
 
-      // 排序：同等级优先 + 标签匹配加分
       const scored = partners.map(p => {
         let score = 0;
         if (p.level === level.short) score += 10;
-        if (p.level === (level.key === 'entry' ? '入门' : level.key === 'mid' ? '进阶' : '高阶')) score += 5;
-        // 标签重合
         p.tags.forEach(t => { if (matchTags.includes(t)) score += 3; });
         return { ...p, _score: score };
       }).sort((a, b) => b._score - a._score).slice(0, 5);

@@ -42,7 +42,6 @@
     Cantonese.initTheme();
     Cantonese.injectThemeToggle();
     Cantonese.injectTopbar('course');
-  </script>
 
     (async function () {
       const result = Cantonese.Store.get(Cantonese.Store.KEYS.result);
@@ -59,7 +58,6 @@
 
       const { courses } = await Cantonese.loadJSON('data/courses.json');
 
-      // 排序
       const scored = courses.map(c => {
         let score = 0;
         if (c.level === level.short) score += 10;

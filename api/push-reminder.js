@@ -1,26 +1,12 @@
 // api/push-reminder.js
-// Vercel Cron Job: 每天 9:00 跑一次，找出 startDate + 30/90/180 天的用户，发邮件
-//
-// 部署前置：
-//   1. 去 https://resend.com 注册、拿 API Key
-//   2. 在 Vercel 后台设环境变量：
-//      RESEND_API_KEY = re_xxxxxx
-//      RESEND_FROM    = "Vickey 老师" <hello@your-domain.com>
-//      SITE_URL       = https://cantonese-xxx.vercel.app
-//   3. Supabase 用上面 subscribe.js 的同一个
-//   4. vercel.json 已经配好 cron 规则
-//
-// 手动测试：
-//   curl -X POST https://cantonese-xxx.vercel.app/api/push-reminder \
-//     -H "Authorization: Bearer $CRON_SECRET"
-
+// Vercel Cron Job: 每天 9:00 (北京时间) 跑一次
+// 找出 startDate + 30/90/180 天的用户，发邮件提醒重新自测
 import { createClient } from '@supabase/supabase-js';
 import { Resend } from 'resend';
 
 const REMIND_DAYS = [30, 90, 180];
 
 export default async function handler(req, res) {
-  // 鉴权（cron 自动带 header，本地手测用 CRON_SECRET）
   const auth = req.headers.authorization || '';
   const secret = process.env.CRON_SECRET;
   if (secret && auth !== `Bearer ${secret}`) {
@@ -46,12 +32,10 @@ export default async function handler(req, res) {
   const summary = { checked: 0, sent: [], skipped: [] };
 
   for (const days of REMIND_DAYS) {
-    // 算目标日期 = today - days
     const target = new Date(today);
     target.setDate(today.getDate() - days);
     const targetStr = target.toISOString().split('T')[0];
 
-    // 拉这一天开始学习 + 还没发过提醒的用户
     const flag = `reminded_${days}`;
     const { data: rows, error } = await supabase
       .from('signups')
@@ -72,7 +56,6 @@ export default async function handler(req, res) {
           resend, from: RESEND_FROM, to: u.email,
           days, level: u.level, mbtiCode: u.mbti_code, siteUrl: SITE_URL,
         });
-        // 标记已发
         await supabase.from('signups').update({ [flag]: true }).eq('id', u.id);
         summary.sent.push({ email: u.email, days });
       } catch (e) {
@@ -88,9 +71,8 @@ export default async function handler(req, res) {
 async function sendReminder({ resend, from, to, days, level, mbtiCode, siteUrl }) {
   const LEVEL_LABEL = { entry: '入门', mid: '进阶', high: '高阶' };
   const HEADLINES = {
-    30: { zh: '一个月喇！你升级咗未？', emoji: '🌱' },
-    90: { zh: '3 个月喇！是时候 show 一下', emoji: '🔥' },
-    90_2: { zh: '你讲粤语应该唔再「咩嚟㗎」啦', emoji: '💪' },
+    30:  { zh: '一个月喇！你升级咗未？', emoji: '🌱' },
+    90:  { zh: '3 个月喇！是时候 show 一下', emoji: '🔥' },
     180: { zh: '半年喇！粤语人认证？', emoji: '🏆' },
   };
 
@@ -99,9 +81,9 @@ async function sendReminder({ resend, from, to, days, level, mbtiCode, siteUrl }
   const testUrl = `${siteUrl}/test.html?ref=reminder&u=${encodeURIComponent(to)}`;
 
   const html = `
-    <div style="font-family: 'PingFang SC', sans-serif; max-width: 560px; margin: 0 auto; padding: 20px; background: #0a0e27; color: #f5f7ff; border-radius: 16px;">
+    <div style="font-family: 'PingFang SC', sans-serif; max-width: 560px; margin: 0 auto; padding: 20px; background: #0a0a0a; color: #f5f7ff; border-radius: 16px;">
       <div style="font-size: 48px; text-align: center; margin: 16px 0;">${tag.emoji}</div>
-      <h1 style="font-size: 28px; text-align: center; color: #ff3366;">${tag.zh}</h1>
+      <h1 style="font-size: 28px; text-align: center; color: #ffd60a;">${tag.zh}</h1>
       <p style="text-align: center; color: #a0a8c8; margin: 16px 0;">
         你嘅等级：<strong>${LEVEL_LABEL[level] || level}</strong> ·
         人格：<strong>${mbtiCode}</strong>
@@ -114,20 +96,15 @@ async function sendReminder({ resend, from, to, days, level, mbtiCode, siteUrl }
           : '半年喇！如果你能睇明呢封邮件嘅标题 ——<br>你大概已经系「嘴替本替」啦。重新测一次认证下！'}
       </p>
       <div style="text-align: center; margin: 32px 0;">
-        <a href="${testUrl}" style="display: inline-block; background: #ff3366; color: #fff; padding: 14px 32px; border-radius: 999px; text-decoration: none; font-weight: 700;">
+        <a href="${testUrl}" style="display: inline-block; background: #ffd60a; color: #0a0a0a; padding: 14px 32px; border-radius: 999px; text-decoration: none; font-weight: 900;">
           🚀 重新自测
         </a>
       </div>
       <p style="text-align: center; color: #a0a8c8; font-size: 13px; margin-top: 32px;">
-        唔想再收到提醒？<a href="${siteUrl}/unsubscribe.html?e=${encodeURIComponent(to)}" style="color: #00e5ff;">退订</a>
+        唔想再收到提醒？<a href="${siteUrl}/unsubscribe.html?e=${encodeURIComponent(to)}" style="color: #0066ff;">退订</a>
       </p>
     </div>
   `;
 
-  await resend.emails.send({
-    from,
-    to,
-    subject,
-    html,
-  });
+  await resend.emails.send({ from, to, subject, html });
 }

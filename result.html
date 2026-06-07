@@ -108,13 +108,11 @@
         return;
       }
 
-      // 加载 MBTI 标签库
       await Labeller.load();
 
       const { level, levelScore, levelTotal, mbtiCode, user } = result;
       const mbtiType = Labeller.resolve(mbtiCode);
 
-      // 填等级
       const badge = document.getElementById('level-badge');
       badge.textContent = level.short;
       badge.classList.add(level.cls);
@@ -122,7 +120,6 @@
       document.getElementById('level-score').textContent =
         `${levelTotal} 题答对 ${levelScore} 题`;
 
-      // 填 MBTI
       document.getElementById('mbti-emoji').textContent = mbtiType.emoji || '🌟';
       document.getElementById('mbti-code').textContent = mbtiCode;
       document.getElementById('mbti-title').textContent = mbtiType.title;
@@ -130,14 +127,12 @@
       document.getElementById('mbti-desc').textContent = mbtiType.desc;
       document.getElementById('mbti-advice').textContent = mbtiType.advice;
 
-      // 4 维标签
       const dimsHost = document.getElementById('mbti-dims');
       const dims = Labeller.dimensionsOf(mbtiCode);
       dimsHost.innerHTML = dims.map(d =>
         `<span class="tag tag-blue">${d.label}</span>`
       ).join('');
 
-      // 时长
       const t = Calc.estimate(user);
       document.getElementById('daily-mins').textContent = user.minutes;
       const lvlMap = { entry: 't-entry', mid: 't-mid', high: 't-high' };
@@ -158,17 +153,14 @@
         document.getElementById(bMap.high).className = 'badge badge-blue';
       }
 
-      // 分享卡
       Share.renderCard({
         container: '#share-card-host',
         level, mbtiType, mbtiCode,
       });
 
-      // 展示
       document.getElementById('loading').classList.add('hide');
       document.getElementById('result-wrap').classList.remove('hide');
 
-      // 小庆祝
       Cantonese.confetti(document.body, 50);
     })();
   </script>

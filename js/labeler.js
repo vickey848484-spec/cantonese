@@ -1,7 +1,5 @@
 /* ============================================================
- * labeler.js — 4 维 → 16 型 MBTI 风格标签
- * 输入：4 字母代码 (如 SPWI)
- * 输出：{ title, emoji, tagline, desc, advice, matchTags }
+ * labeler.js — 4 维 → 16 型
  * ============================================================ */
 (function (global) {
   'use strict';
@@ -14,13 +12,11 @@
     return DATA;
   }
 
-  // 把 4 字母代码转成完整类型对象
   function resolve(code) {
     if (!DATA) return null;
     return DATA.types[code] || null;
   }
 
-  // 4 维字母的展开说明（用于详情展示）
   function dimensionsOf(code) {
     if (!DATA || !code) return [];
     const d = DATA.dimensions;

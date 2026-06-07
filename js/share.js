@@ -1,19 +1,12 @@
 /* ============================================================
- * share.js — 分享卡生成（HTML 渲染 + Canvas 导出 PNG）
- * 同时支持：复制链接 / 复制文案 / 下载 PNG
+ * share.js — 分享卡（HTML 渲染 + Canvas 导出 PNG）
  * ============================================================ */
 (function (global) {
   'use strict';
 
-  /**
-   * 渲染分享卡到指定容器
-   * params: { container, level, mbtiType, mbtiCode }
-   */
   function renderCard({ container, level, mbtiType, mbtiCode }) {
     if (!mbtiType) return;
-    const el = typeof container === 'string'
-      ? document.querySelector(container)
-      : container;
+    const el = typeof container === 'string' ? document.querySelector(container) : container;
     if (!el) return;
 
     el.innerHTML = `
@@ -50,10 +43,8 @@
   function composeText(level, mbtiType, mbtiCode) {
     return [
       `我的粤语人格：${mbtiCode} · ${mbtiType.title || ''}`,
-      `${mbtiType.tagline || ''}`,
-      ``,
-      `${mbtiType.desc || ''}`,
-      ``,
+      `${mbtiType.tagline || ''}`, '',
+      `${mbtiType.desc || ''}`, '',
       `测一测你的 → 识讲粤语`,
     ].join('\n');
   }
@@ -81,13 +72,9 @@
     const orig = btn.textContent;
     btn.textContent = msg;
     btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = orig;
-      btn.disabled = false;
-    }, 1500);
+    setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1500);
   }
 
-  // 用 Canvas 重绘卡片 → PNG 下载
   // 黑底蓝黄撞色（无渐变）
   function downloadPNG(cardEl) {
     if (!cardEl) return;
@@ -102,31 +89,28 @@
     canvas.width = W; canvas.height = H;
     const ctx = canvas.getContext('2d');
 
-    // 纯黑底，不用渐变
     ctx.fillStyle = '#0a0a0a';
     ctx.fillRect(0, 0, W, H);
 
-    // 撞色边框：左半亮蓝，右半亮黄（拆开硬切）
+    // 撞色边框
     ctx.fillStyle = '#0066ff';
     ctx.fillRect(0, 0, 8, H);
     ctx.fillStyle = '#ffd60a';
     ctx.fillRect(W - 8, 0, 8, H);
 
-    // 装饰：右上小亮黄方块 + 左下小亮蓝方块
+    // 撞色装饰方块
     ctx.fillStyle = '#ffd60a';
     ctx.fillRect(W - 140, 60, 80, 80);
     ctx.fillStyle = '#0066ff';
     ctx.fillRect(60, H - 160, 80, 80);
 
-    // 文字
     ctx.textAlign = 'center';
 
-    // emoji
     ctx.font = '120px sans-serif';
     ctx.fillStyle = '#fff';
     ctx.fillText(emoji, W / 2, 180);
 
-    // level pill（黑底黄字）
+    // level pill
     ctx.font = 'bold 22px "PingFang SC", sans-serif';
     const pillW = ctx.measureText(level).width + 48;
     drawRoundRect(ctx, W / 2 - pillW / 2, 220, pillW, 44, 4);
@@ -135,27 +119,23 @@
     ctx.fillStyle = '#0a0a0a';
     ctx.fillText(level, W / 2, 250);
 
-    // code 大字（亮黄）
+    // 4 字母 code
     ctx.font = 'bold 110px "PingFang SC", sans-serif';
     ctx.fillStyle = '#ffd60a';
     ctx.fillText(code, W / 2, 380);
 
-    // tagline（亮蓝）
     ctx.font = 'bold 26px "PingFang SC", sans-serif';
     ctx.fillStyle = '#0066ff';
     ctx.fillText(tagline, W / 2, 430);
 
-    // 描述换行
     ctx.font = '20px "PingFang SC", sans-serif';
     ctx.fillStyle = 'rgba(255,255,255,0.9)';
     wrapText(ctx, desc, W / 2, 510, W - 120, 32);
 
-    // 底部 CTA
     ctx.font = '16px "PingFang SC", sans-serif';
     ctx.fillStyle = 'rgba(255,255,255,0.6)';
     ctx.fillText('扫码 / 测一测你的粤语人格 →', W / 2, H - 60);
 
-    // 下载
     const link = document.createElement('a');
     link.download = `粤语人格-${code}.png`;
     link.href = canvas.toDataURL('image/png');

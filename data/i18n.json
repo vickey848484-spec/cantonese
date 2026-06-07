@@ -447,29 +447,59 @@
       "en": "About Me"
     },
     "about.realname": {
-      "zh-HK": "梁伟琦Vickey",
+      "zh-HK": "梁偉琦Vickey",
       "zh-CN": "梁伟琦Vickey",
       "en": "Liang Weiqi Vickey"
     },
     "about.role": {
-      "zh-HK": "在线教育平台签约粤语老师 · @包妈VK教粤语",
+      "zh-HK": "在線教育平台簽約粵語老師 · @包媽VK教粵語",
       "zh-CN": "在线教育平台签约粤语老师 · @包妈VK教粤语",
       "en": "Online Cantonese teacher · @BaomaVK"
     },
     "about.bio": {
-      "zh-HK": "👩‍🏫 <strong>在线教育平台签约粤语老师</strong>，<strong style=\"color: var(--yellow);\">16 年+</strong>粤语教学经验，举一反三教学风格<br>🎙️ <strong>粤语文化传播者</strong>，自媒体平台粉丝 <strong style=\"color: var(--yellow);\">25 万+</strong><br>✨ 教学生动、接地气，让零基础也能听懂粤语<br>🌏 <strong>普通话、英语、粤语</strong>自由切换",
+      "zh-HK": "👩‍🏫 <strong>在線教育平台簽約粵語老師</strong>，<strong style=\"color: var(--yellow);\">16 年+</strong>粵語教學經驗，舉一反三教學風格<br>🎙️ <strong>粵語文化傳播者</strong>，自媒體平台粉絲 <strong style=\"color: var(--yellow);\">25 萬+</strong><br>✨ 教學生動、接地氣，讓零基礎也能聽懂粵語<br>🌏 <strong>普通話、英語、粵語</strong>自由切換",
       "zh-CN": "👩‍🏫 <strong>在线教育平台签约粤语老师</strong>，<strong style=\"color: var(--yellow);\">16 年+</strong>粤语教学经验，举一反三教学风格<br>🎙️ <strong>粤语文化传播者</strong>，自媒体平台粉丝 <strong style=\"color: var(--yellow);\">25 万+</strong><br>✨ 教学生动、接地气，让零基础也能听懂粤语<br>🌏 <strong>普通话、英语、粤语</strong>自由切换",
-      "en": "👩‍🏫 <strong>Online Cantonese teacher</strong> with <strong style=\"color: var(--yellow);\">16+ years</strong> experience<br>🎙️ <strong>Cantonese culture creator</strong>, <strong style=\"color: var(--yellow);\">250K+</strong> followers across platforms<br>✨ Engaging, down-to-earth teaching style<br>🌏 <strong>Trilingual</strong>: Mandarin, English, Cantonese"
+      "en": "👩‍🏫 <strong>Online Cantonese teacher</strong> with <strong style=\"color: var(--yellow);\">16+ years</strong> experience<br>🎙️ <strong>Cantonese culture creator</strong>, <strong style=\"color: var(--yellow);\">250K+</strong> followers<br>✨ Engaging, down-to-earth teaching<br>🌏 <strong>Trilingual</strong>: Mandarin, English, Cantonese"
     },
     "about.platforms": {
-      "zh-HK": "我在这些平台",
+      "zh-HK": "我在這些平台",
       "zh-CN": "我在这些平台",
       "en": "Find Me On"
     },
     "about.platforms-sub": {
-      "zh-HK": "全平台同名：<strong>包妈VK教粤语</strong>",
-      "zh-CN": "全平台同名：<strong>包妈VK教粤语</strong>",
+      "zh-HK": "全平台同名：<strong>@包媽VK教粵語</strong>",
+      "zh-CN": "全平台同名：<strong>@包妈VK教粤语</strong>",
       "en": "Everywhere: <strong>@BaomaVK</strong>"
+    },
+    "about.contact-email": {
+      "zh-HK": "郵箱",
+      "zh-CN": "邮箱",
+      "en": "Email"
+    },
+    "about.contact-wechat": {
+      "zh-HK": "加微信",
+      "zh-CN": "加微信",
+      "en": "WeChat"
+    },
+    "about.contact-test": {
+      "zh-HK": "測一測",
+      "zh-CN": "测一测",
+      "en": "Test"
+    },
+    "about.contact-test-sub": {
+      "zh-HK": "3 分鐘出結果",
+      "zh-CN": "3 分钟出结果",
+      "en": "3-min result"
+    },
+    "about.contact-qa": {
+      "zh-HK": "常見問題",
+      "zh-CN": "常见问题",
+      "en": "Q&A"
+    },
+    "about.contact-qa-sub": {
+      "zh-HK": "10 個 Q&A",
+      "zh-CN": "10 个 Q&A",
+      "en": "10 FAQ"
     }
   },
   "qa": [

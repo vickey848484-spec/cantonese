@@ -325,11 +325,17 @@
     }
     const lang = getLang();
     document.documentElement.lang = (lang === 'zh-HK' || lang === 'zh-CN') ? 'zh-Hant' : 'en';
-    // 替换 [data-i18n]
+    // 替换 [data-i18n]（textContent，保留 HTML 标签转义）
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const k = el.getAttribute('data-i18n');
       const s = t(k, lang);
       if (s && s !== k) el.textContent = s;
+    });
+    // 替换 [data-i18n-html]（innerHTML，保留 HTML 标签）
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const k = el.getAttribute('data-i18n-html');
+      const s = t(k, lang);
+      if (s && s !== k) el.innerHTML = s;
     });
   }
 

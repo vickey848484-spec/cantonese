@@ -246,11 +246,10 @@
 
   function icon(name, attrs = '') {
     if (!name) return '';
-    // 兼容 labels.json 里的 "ph-xxx" 命名
     const clean = String(name).replace(/^ph-/, '');
     const path = ICONS[clean];
     if (!path) return '';
-    return `<svg class="ti ti-${clean}" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" ${attrs}>${path}</svg>`;
+    return `<svg class="ti ti-${clean}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ${attrs}>${path}</svg>`;
   }
 
   /* 把页面上所有 data-icon 占位元素替换为内联 SVG */

@@ -234,9 +234,9 @@
     'dice-five':        '<rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="8" cy="8" r="1.2" fill="currentColor"/><circle cx="16" cy="8" r="1.2" fill="currentColor"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/><circle cx="8" cy="16" r="1.2" fill="currentColor"/><circle cx="16" cy="16" r="1.2" fill="currentColor"/>',
     'bolt':             '<path d="M13 2 L4 14 L11 14 L9 22 L20 10 L13 10 Z"/>',
     'smiley':           '<circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1.2" fill="currentColor"/><circle cx="15" cy="10" r="1.2" fill="currentColor"/><path d="M8 14 A5 4 0 0 0 16 14"/>',
-    'fox':              '<path d="M5 7 L9 12 L7 19 L12 16 L17 19 L15 12 L19 7 L14 9 L12 6 L10 9 Z"/><circle cx="10" cy="13" r="0.8" fill="currentColor"/><circle cx="14" cy="13" r="0.8" fill="currentColor"/>',
-    'crown':            '<path d="M3 9 L6 16 L18 16 L21 9 L17 12 L12 6 L7 12 Z"/>',
-    'egg':              '<path d="M12 3 C8 3 6 8 6 13 C6 18 8 21 12 21 C16 21 18 18 18 13 C18 8 16 3 12 3 Z"/>',
+    'fox':              '<path d="M4 8 L9 12 L7 19 L12 16 L17 19 L15 12 L20 8 L14 10 L12 5 L10 10 Z" fill="#FF3366" stroke="#0a0a0a" stroke-width="1.5"/><circle cx="10" cy="13" r="1" fill="#0a0a0a"/><circle cx="14" cy="13" r="1" fill="#0a0a0a"/><path d="M12 15.5 L11 17 L13 17 Z" fill="#0a0a0a"/>',
+    'crown':            '<path d="M3 9 L6 17 L18 17 L21 9 L17 12 L12 5 L7 12 Z" fill="#FFD60A" stroke="#0a0a0a" stroke-width="1.5"/><circle cx="12" cy="13" r="1.3" fill="#0066FF"/><circle cx="6.5" cy="12" r="0.8" fill="#FF3366"/><circle cx="17.5" cy="12" r="0.8" fill="#FF3366"/>',
+    'egg':              '<path d="M3 16 C3 20 6 21 8 21 L8 11 L3 13 Z" fill="#FFD60A" stroke="#0a0a0a" stroke-width="1.5"/><path d="M21 16 C21 20 18 21 16 21 L16 11 L21 13 Z" fill="#FFD60A" stroke="#0a0a0a" stroke-width="1.5"/><circle cx="12" cy="14" r="3.5" fill="#FFFFFF" stroke="#FF3366" stroke-width="1.5"/><circle cx="10.5" cy="13.5" r="0.7" fill="#0a0a0a"/><circle cx="13.5" cy="13.5" r="0.7" fill="#0a0a0a"/><path d="M11 15.5 L12 17 L13 15.5 Z" fill="#0066FF"/>',
     'user':             '<circle cx="12" cy="8" r="4"/><path d="M4 21 C4 16 7 13 12 13 C17 13 20 16 20 21"/>',
     'bowl-food':        '<path d="M3 11 L21 11 L19 19 A2 2 0 0 1 17 21 L7 21 A2 2 0 0 1 5 19 Z M9 8 C9 9 10 10 12 10 C14 10 15 9 15 8 M7 9 C7 10 8 10 9 10 M15 9 C15 10 16 10 17 10"/>',
     'train':            '<rect x="6" y="3" width="12" height="14" rx="3"/><path d="M9 7 L15 7 M6 12 L18 12 M8 17 L6 21 M16 17 L18 21"/><circle cx="9" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/>',
@@ -245,9 +245,12 @@
   };
 
   function icon(name, attrs = '') {
-    const path = ICONS[name];
+    if (!name) return '';
+    // 兼容 labels.json 里的 "ph-xxx" 命名
+    const clean = String(name).replace(/^ph-/, '');
+    const path = ICONS[clean];
     if (!path) return '';
-    return `<svg class="ti ti-${name}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ${attrs}>${path}</svg>`;
+    return `<svg class="ti ti-${clean}" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" ${attrs}>${path}</svg>`;
   }
 
   /* 把页面上所有 data-icon 占位元素替换为内联 SVG */

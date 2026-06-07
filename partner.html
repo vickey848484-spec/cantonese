@@ -69,7 +69,7 @@
       host.innerHTML = scored.map(p => `
         <div class="partner-card">
           <div class="row" style="gap:12px; align-items: center;">
-            <i class="partner-avatar" data-icon="${p.icon || 'user'}"></i>
+            <i class="partner-avatar">${Cantonese.icon(p.icon || 'user')}</i>
             <div>
               <div class="partner-name">${p.name}</div>
               <div class="partner-meta">${p.gender} · ${p.age} · ${p.region}</div>
@@ -80,7 +80,7 @@
             ${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}
           </div>
           <p class="partner-intro">${p.intro}</p>
-          <div class="text-sm muted"><i data-icon="envelope-simple"></i> ${p.contact}</div>
+          <div class="text-sm muted">${Cantonese.icon('envelope-simple')} ${p.contact}</div>
         </div>
       `}).join('');
     })();

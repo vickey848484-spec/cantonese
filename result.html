@@ -104,66 +104,74 @@
     Cantonese.initScrollReveal();
 
     (async function () {
-      const result = Cantonese.Store.get(Cantonese.Store.KEYS.result);
-      if (!result || !result.level) {
-        location.href = 'test.html';
-        return;
+      try {
+        const result = Cantonese.Store.get(Cantonese.Store.KEYS.result);
+        if (!result || !result.level) {
+          location.href = 'test.html';
+          return;
+        }
+
+        await Labeller.load();
+
+        const { level, levelScore, levelTotal, mbtiCode, user } = result;
+        const mbtiType = Labeller.resolve(mbtiCode);
+
+        const badge = document.getElementById('level-badge');
+        badge.textContent = level.short;
+        badge.classList.add(level.cls);
+        document.getElementById('level-name').textContent = level.name;
+        document.getElementById('level-score').textContent =
+          `${levelTotal} 题答对 ${levelScore} 题`;
+
+        document.getElementById('mbti-emoji').innerHTML = Cantonese.icon(mbtiType.icon || 'sparkle');
+        document.getElementById('mbti-code').textContent = mbtiCode;
+        document.getElementById('mbti-title').textContent = mbtiType.title;
+        document.getElementById('mbti-tagline').textContent = mbtiType.tagline;
+        document.getElementById('mbti-desc').textContent = mbtiType.desc;
+        document.getElementById('mbti-advice').textContent = mbtiType.advice;
+
+        const dimsHost = document.getElementById('mbti-dims');
+        const dims = Labeller.dimensionsOf(mbtiCode);
+        dimsHost.innerHTML = dims.map(d =>
+          `<span class="tag tag-blue">${d.label}</span>`
+        ).join('');
+
+        const t = Calc.estimate(user);
+        document.getElementById('daily-mins').textContent = user.minutes;
+        const lvlMap = { entry: 't-entry', mid: 't-mid', high: 't-high' };
+        const bMap = { mid: 'b-mid', high: 'b-high' };
+        ['entry','mid','high'].forEach(k => {
+          document.getElementById(lvlMap[k]).textContent =
+            `≈ ${t[k].months} 个月 · ${t[k].days} 天`;
+        });
+        if (level.key === 'mid') {
+          document.getElementById(bMap.mid).textContent = '已达成';
+          document.getElementById(bMap.mid).classList.remove('badge');
+          document.getElementById(bMap.mid).classList.add('badge', 'badge-blue');
+        }
+        if (level.key === 'high') {
+          document.getElementById(bMap.mid).textContent = '已达成';
+          document.getElementById(bMap.high).textContent = '已达成';
+          document.getElementById(bMap.mid).className = 'badge badge-blue';
+          document.getElementById(bMap.high).className = 'badge badge-blue';
+        }
+
+        Share.renderCard({
+          container: '#share-card-host',
+          level, mbtiType, mbtiCode,
+        });
+
+        document.getElementById('loading').classList.add('hide');
+        document.getElementById('result-wrap').classList.remove('hide');
+
+        Cantonese.confetti(document.body, 50);
+      } catch (e) {
+        console.error('[result] error:', e);
+        document.getElementById('loading').innerHTML =
+          `<div class="center"><p style="color: var(--pink); margin-bottom: 8px;">出咗错</p>
+           <p class="text-sm muted" style="margin-bottom: 16px;">${e.message}</p>
+           <a class="btn btn-ghost" href="test.html">返去重测</a></div>`;
       }
-
-      await Labeller.load();
-
-      const { level, levelScore, levelTotal, mbtiCode, user } = result;
-      const mbtiType = Labeller.resolve(mbtiCode);
-
-      const badge = document.getElementById('level-badge');
-      badge.textContent = level.short;
-      badge.classList.add(level.cls);
-      document.getElementById('level-name').textContent = level.name;
-      document.getElementById('level-score').textContent =
-        `${levelTotal} 题答对 ${levelScore} 题`;
-
-      document.getElementById('mbti-emoji').innerHTML = Cantonese.icon(mbtiType.icon || 'sparkle');
-      document.getElementById('mbti-code').textContent = mbtiCode;
-      document.getElementById('mbti-title').textContent = mbtiType.title;
-      document.getElementById('mbti-tagline').textContent = mbtiType.tagline;
-      document.getElementById('mbti-desc').textContent = mbtiType.desc;
-      document.getElementById('mbti-advice').textContent = mbtiType.advice;
-
-      const dimsHost = document.getElementById('mbti-dims');
-      const dims = Labeller.dimensionsOf(mbtiCode);
-      dimsHost.innerHTML = dims.map(d =>
-        `<span class="tag tag-blue">${d.label}</span>`
-      ).join('');
-
-      const t = Calc.estimate(user);
-      document.getElementById('daily-mins').textContent = user.minutes;
-      const lvlMap = { entry: 't-entry', mid: 't-mid', high: 't-high' };
-      const bMap = { mid: 'b-mid', high: 'b-high' };
-      ['entry','mid','high'].forEach(k => {
-        document.getElementById(lvlMap[k]).textContent =
-          `≈ ${t[k].months} 个月 · ${t[k].days} 天`;
-      });
-      if (level.key === 'mid') {
-        document.getElementById(bMap.mid).textContent = '已达成';
-        document.getElementById(bMap.mid).classList.remove('badge');
-        document.getElementById(bMap.mid).classList.add('badge', 'badge-blue');
-      }
-      if (level.key === 'high') {
-        document.getElementById(bMap.mid).textContent = '已达成';
-        document.getElementById(bMap.high).textContent = '已达成';
-        document.getElementById(bMap.mid).className = 'badge badge-blue';
-        document.getElementById(bMap.high).className = 'badge badge-blue';
-      }
-
-      Share.renderCard({
-        container: '#share-card-host',
-        level, mbtiType, mbtiCode,
-      });
-
-      document.getElementById('loading').classList.add('hide');
-      document.getElementById('result-wrap').classList.remove('hide');
-
-      Cantonese.confetti(document.body, 50);
     })();
   </script>
 </body>

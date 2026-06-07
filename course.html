@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>揾啱你嘅课 · 識讲粤语</title>
+  <title>揾啱你嘅課 · 識講粵語</title>
   <link rel="stylesheet" href="css/style.css?v=20260607b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,28 +13,28 @@
   <main class="container container-wide">
     <section class="section">
       <div class="center mb-3">
-        <h1 class="display"><i data-icon="book-open"></i> 揾啱你嘅课</h1>
-        <p class="muted mt-1" id="subtitle">按你嘅等级 + 性格筛嘅</p>
+        <h1 class="display"><i data-icon="book-open"></i> 揾啱你嘅課</h1>
+        <p class="muted mt-1" id="subtitle">按你嘅等級 + 性格篩嘅</p>
       </div>
 
       <div class="card-flat mb-3 hide" id="no-result">
-        <p>你未测试过 <a href="test.html" style="color: var(--blue);">→ 去测一测</a></p>
+        <p>你未測試過 <a href="test.html" style="color: var(--blue);">→ 去測一測</a></p>
       </div>
 
       <h2 class="display" style="font-size: 22px;" id="sec1-title"><i data-icon="star"></i> 主推</h2>
       <div id="course-list" class="grid grid-3 mt-2 mb-3"></div>
 
-      <h2 class="display mt-3" style="font-size: 22px;" id="sec2-title">更多选择</h2>
+      <h2 class="display mt-3" style="font-size: 22px;" id="sec2-title">更多選擇</h2>
       <div id="course-list-more" class="grid grid-3 mt-2"></div>
 
       <div class="center mt-3">
-        <a class="btn btn-ghost" href="result.html">← 睇返结果</a>
-        <a class="btn btn-primary" href="signup.html">下一步：留邮箱 →</a>
+        <a class="btn btn-ghost" href="result.html">← 睇返結果</a>
+        <a class="btn btn-primary" href="signup.html">下一步：留郵箱 →</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">識讲粤语 · 由 Vickey 老师主理</footer>
+  <footer class="footer">識講粵語 · 由 Vickey 老師主理</footer>
 
   <script src="js/common.js?v=20260607b"></script>
   <script src="js/labeler.js?v=20260607b"></script>
@@ -71,7 +71,7 @@
       const more = scored.slice(3);
 
       document.getElementById('subtitle').textContent =
-        `按你嘅「${level.name}」+ 「${mbtiCode}」筛嘅 ${scored.length} 门`;
+        `按你嘅「${level.name}」+ 「${mbtiCode}」篩嘅 ${scored.length} 門`;
 
       const badgeClass = level.key === 'entry' ? 'badge-blue'
                        : level.key === 'mid'   ? 'badge-pink'
@@ -91,7 +91,7 @@
               <div class="text-sm muted">${c.type} · ${c.duration}</div>
               <div class="bold" style="color: var(--pink); font-size: 18px;">${c.price}</div>
             </div>
-            <a class="btn btn-primary btn-block" href="${c.link}" target="_blank">查看课程 ${Cantonese.icon('arrow-right')}</a>
+            <a class="btn btn-primary btn-block" href="${c.link}" target="_blank">查看課程 ${Cantonese.icon('arrow-right')}</a>
           </div>
         `;
       }

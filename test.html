@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>开始测试 · 識讲粤语</title>
+  <title>開始測試 · 識講粵語</title>
   <link rel="stylesheet" href="css/style.css?v=20260607b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,13 +25,13 @@
     Cantonese.initIcons();
     Cantonese.initScrollReveal();
 
-    // 捕获邀请码（?ref=XXXX），存 localStorage 让 quiz 写入 result
+    // 捕獲邀請碼（?ref=XXXX），存 localStorage 讓 quiz 寫入 result
     const refParam = Cantonese.getQuery('ref');
     if (refParam && refParam !== 'reminder' && /^[A-Z0-9]{4,12}$/.test(refParam)) {
       Cantonese.Store.set('cantonese_referred_by', refParam);
     }
 
-    // 已测过 → 直接跳到结果页（除非是「重新测」或「邮件回流」）
+    // 已測過 → 直接跳到結果頁（除非是「重新測」或「郵件迴流」）
     const existing = Cantonese.Store.get(Cantonese.Store.KEYS.result);
     const isRestart = Cantonese.getQuery('restart') === '1';
     const isReminder = Cantonese.getQuery('ref') === 'reminder';

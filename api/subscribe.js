@@ -1,5 +1,5 @@
 // api/subscribe.js
-// Vercel Serverless Function: 收用户邮箱 + 写 Supabase
+// Vercel Serverless Function: 收用户郵箱 + 寫 Supabase
 import { createClient } from '@supabase/supabase-js';
 
 export default async function handler(req, res) {
@@ -11,10 +11,10 @@ export default async function handler(req, res) {
   const { email, wechat = '', startDate, level, mbtiCode, user = {}, result = {} } = body;
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return res.status(400).json({ ok: false, error: '邮箱格式唔啱' });
+    return res.status(400).json({ ok: false, error: '郵箱格式唔啱' });
   }
   if (!startDate || !/^\d{4}-\d{2}-\d{2}$/.test(startDate)) {
-    return res.status(400).json({ ok: false, error: '开始日期格式唔啱' });
+    return res.status(400).json({ ok: false, error: '開始日期格式唔啱' });
   }
 
   // SQL to prepare in Supabase:

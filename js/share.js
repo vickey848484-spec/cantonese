@@ -1,5 +1,5 @@
 /* ============================================================
- * share.js — 分享卡（HTML 渲染 + Canvas 导出 PNG）
+ * share.js — 分享卡（HTML 渲染 + Canvas 導出 PNG）
  * ============================================================ */
 (function (global) {
   'use strict';
@@ -18,20 +18,20 @@
           <div class="share-tagline">${mbtiType.tagline || ''}</div>
           <div class="share-desc">${mbtiType.desc || ''}</div>
         </div>
-        <div class="share-cta">扫码 / 测一测你的粤语人格 →</div>
+        <div class="share-cta">掃碼 / 測一測你的粵語人格 →</div>
       </div>
 
       <div class="row" style="justify-content: center;">
-        <button class="btn btn-ghost" id="copy-text">📋 复制文案</button>
-        <button class="btn btn-blue" id="download-png">⬇️ 下载图片</button>
+        <button class="btn btn-ghost" id="copy-text">📋 複製文案</button>
+        <button class="btn btn-blue" id="download-png">⬇️ 下載圖片</button>
       </div>
     `;
 
     el.querySelector('#copy-text').addEventListener('click', () => {
       const txt = composeText(level, mbtiType, mbtiCode);
       copyToClipboard(txt).then(
-        () => flash(el.querySelector('#copy-text'), '已复制 ✓'),
-        () => flash(el.querySelector('#copy-text'), '复制失败，手动选吧')
+        () => flash(el.querySelector('#copy-text'), '已複製 ✓'),
+        () => flash(el.querySelector('#copy-text'), '複製失敗，手動選吧')
       );
     });
 
@@ -42,10 +42,10 @@
 
   function composeText(level, mbtiType, mbtiCode) {
     return [
-      `我的粤语人格：${mbtiCode} · ${mbtiType.title || ''}`,
+      `我的粵語人格：${mbtiCode} · ${mbtiType.title || ''}`,
       `${mbtiType.tagline || ''}`, '',
       `${mbtiType.desc || ''}`, '',
-      `测一测你的 → 識讲粤语`,
+      `測一測你的 → 識講粵語`,
     ].join('\n');
   }
 
@@ -75,7 +75,7 @@
     setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1500);
   }
 
-  // 黑底蓝黄撞色（无渐变）
+  // 黑底藍黃撞色（無漸變）
   function downloadPNG(cardEl) {
     if (!cardEl) return;
     const level = cardEl.querySelector('.share-level')?.textContent || '';
@@ -92,13 +92,13 @@
     ctx.fillStyle = '#0a0a0a';
     ctx.fillRect(0, 0, W, H);
 
-    // 撞色边框
+    // 撞色邊框
     ctx.fillStyle = '#0066ff';
     ctx.fillRect(0, 0, 8, H);
     ctx.fillStyle = '#ffd60a';
     ctx.fillRect(W - 8, 0, 8, H);
 
-    // 撞色装饰方块
+    // 撞色裝飾方塊
     ctx.fillStyle = '#ffd60a';
     ctx.fillRect(W - 140, 60, 80, 80);
     ctx.fillStyle = '#0066ff';
@@ -134,10 +134,10 @@
 
     ctx.font = '16px "PingFang SC", sans-serif';
     ctx.fillStyle = 'rgba(255,255,255,0.6)';
-    ctx.fillText('扫码 / 测一测你的粤语人格 →', W / 2, H - 60);
+    ctx.fillText('掃碼 / 測一測你的粵語人格 →', W / 2, H - 60);
 
     const link = document.createElement('a');
-    link.download = `粤语人格-${code}.png`;
+    link.download = `粵語人格-${code}.png`;
     link.href = canvas.toDataURL('image/png');
     link.click();
   }
@@ -174,7 +174,7 @@
     ctx.fillText(line, x, yy);
   }
 
-  /* ---------- 专属邀请海报（750x1334 竖图，朋友圈/小红书适用）---------- */
+  /* ---------- 專屬邀請海報（750x1334 豎圖，朋友圈/小紅書適用）---------- */
   function downloadPoster({ mbtiCode, mbtiType, level, ref }) {
     if (!mbtiType) return;
     const W = 750, H = 1334;
@@ -186,23 +186,23 @@
     ctx.fillStyle = '#0a0a0a';
     ctx.fillRect(0, 0, W, H);
 
-    // 撞色横条（上下）
+    // 撞色橫條（上下）
     ctx.fillStyle = '#0066ff';
     ctx.fillRect(0, 0, W, 10);
     ctx.fillStyle = '#ffd60a';
     ctx.fillRect(0, H - 10, W, 10);
 
-    // 撞色侧条
+    // 撞色側條
     ctx.fillStyle = '#ff3366';
     ctx.fillRect(0, 0, 8, H);
 
-    // 撞色装饰方块（右上 + 左下）
+    // 撞色裝飾方塊（右上 + 左下）
     ctx.fillStyle = '#ffd60a';
     ctx.fillRect(W - 110, 80, 70, 70);
     ctx.fillStyle = '#0066ff';
     ctx.fillRect(40, H - 200, 70, 70);
 
-    // 顶部：等级徽章
+    // 頂部：等級徽章
     const badgeColor = level.cls === 'level-entry' ? '#0066ff'
                     : level.cls === 'level-mid'   ? '#ffd60a'
                     : '#ff3366';
@@ -222,7 +222,7 @@
     ctx.font = 'bold 240px "PingFang SC", sans-serif';
     ctx.fillText(mbtiCode, W / 2, 400);
 
-    // 标题
+    // 標題
     ctx.fillStyle = '#fff';
     ctx.font = 'bold 32px "PingFang SC", sans-serif';
     ctx.fillText(mbtiType.title, W / 2, 540);
@@ -232,14 +232,14 @@
     ctx.font = 'bold 26px "PingFang SC", sans-serif';
     ctx.fillText(mbtiType.tagline || '', W / 2, 590);
 
-    // 描述（换行）
+    // 描述（換行）
     ctx.fillStyle = 'rgba(255,255,255,0.9)';
     ctx.font = '22px "PingFang SC", sans-serif';
     ctx.textAlign = 'left';
     wrapText(ctx, mbtiType.desc, 60, 660, W - 120, 36);
     ctx.textAlign = 'center';
 
-    // 分隔线
+    // 分隔線
     ctx.strokeStyle = 'rgba(255,255,255,0.2)';
     ctx.lineWidth = 2;
     ctx.beginPath();
@@ -247,15 +247,15 @@
     ctx.lineTo(W - 80, 1000);
     ctx.stroke();
 
-    // CTA 钩子
+    // CTA 鈎子
     ctx.fillStyle = '#ffd60a';
     ctx.font = 'bold 36px "PingFang SC", sans-serif';
-    ctx.fillText('测一测你的粤语人格', W / 2, 1070);
+    ctx.fillText('測一測你的粵語人格', W / 2, 1070);
 
-    // 邀请码大字
+    // 邀請碼大字
     ctx.fillStyle = 'rgba(255,255,255,0.7)';
     ctx.font = '20px "PingFang SC", sans-serif';
-    ctx.fillText('你的专属邀请码', W / 2, 1115);
+    ctx.fillText('你的專屬邀請碼', W / 2, 1115);
 
     ctx.fillStyle = '#fff';
     ctx.font = 'bold 56px monospace';
@@ -264,15 +264,15 @@
     // 底部
     ctx.fillStyle = '#ffd60a';
     ctx.font = 'bold 24px "PingFang SC", sans-serif';
-    ctx.fillText('識讲粤语 · YUE 测', W / 2, 1230);
+    ctx.fillText('識講粵語 · YUE 測', W / 2, 1230);
 
     ctx.fillStyle = 'rgba(255,255,255,0.5)';
     ctx.font = '18px "PingFang SC", sans-serif';
     ctx.fillText(location.origin + '/test.html', W / 2, 1270);
 
-    // 下载
+    // 下載
     const link = document.createElement('a');
-    link.download = `粤语人格-${mbtiCode}-${ref}.png`;
+    link.download = `粵語人格-${mbtiCode}-${ref}.png`;
     link.href = canvas.toDataURL('image/png');
     link.click();
   }

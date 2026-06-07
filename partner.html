@@ -84,8 +84,8 @@
           return `
           <div class="partner-card">
             <div class="row" style="gap:14px; align-items: center;">
-              <span class="partner-avatar" style="background:${avatarBg}; color:${avatarFg};">
-                ${Cantonese.icon(p.icon || 'user')}
+              <span class="partner-avatar" style="background:${avatarBg};">
+                <span class="partner-avatar-emoji">${p.icon || '🧑'}</span>
               </span>
               <div>
                 <div class="partner-name">${p.name}</div>

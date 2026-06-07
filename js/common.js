@@ -254,6 +254,54 @@
     return `<svg class="ti ti-${clean}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ${attrs}>${path}</svg>`;
   }
 
+  /* ---------- 传播三件套：邀请码 + 分享文案 ---------- */
+  function genReferralCode() {
+    return Math.random().toString(36).slice(2, 8).toUpperCase();
+  }
+  function getReferralCode() {
+    let code = Store.get('cantonese_referral');
+    if (!code) {
+      code = genReferralCode();
+      Store.set('cantonese_referral', code);
+    }
+    return code;
+  }
+
+  const SHARE_TEMPLATES = {
+    xiaohongshu: (mbtiCode, mbtiType, ref) =>
+      `测了下粤语人格，超准！\n\n` +
+      `你是 ${mbtiCode} · ${mbtiType.title}\n` +
+      `${mbtiType.tagline}\n\n` +
+      `一分钟测出你的粤语人格 👇\n` +
+      `${location.origin}/test.html?ref=${ref}\n\n` +
+      `#粤语学习 #MBTI #自我认知 #学习博主`,
+
+    wechat: (mbtiCode, mbtiType, ref) =>
+      `我刚测了一个超准的粤语人格测试\n` +
+      `测出来是 ${mbtiCode} · ${mbtiType.title}\n` +
+      `${mbtiType.tagline}\n\n` +
+      `你也来测下，看你是哪挂的 👇\n` +
+      `${location.origin}/test.html?ref=${ref}`,
+
+    moments: (mbtiCode, mbtiType, ref) =>
+      `测了下我的粤语人格 → ${mbtiCode} ${mbtiType.title}\n` +
+      `${mbtiType.tagline}\n\n` +
+      `你也来测？\n` +
+      `${location.origin}/test.html?ref=${ref}`,
+
+    simple: (mbtiCode, mbtiType, ref) =>
+      `测了下我的粤语人格：${mbtiCode} ${mbtiType.title}\n` +
+      `${location.origin}/test.html?ref=${ref}`,
+  };
+
+  // 分享按钮点击后短暂反馈
+  function flashShare(btn, msg) {
+    const orig = btn.textContent;
+    btn.textContent = msg;
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1500);
+  }
+
   /* 把页面上所有 data-icon 占位元素替换为内联 SVG */
   function initIcons(root) {
     if (!root) root = document;
@@ -270,5 +318,6 @@
     confetti, injectThemeToggle, injectTopbar, initTheme,
     initCustomCursor, initScrollReveal,
     icon, initIcons, ICONS,
+    getReferralCode, genReferralCode, SHARE_TEMPLATES, flashShare,
   };
 })(window);

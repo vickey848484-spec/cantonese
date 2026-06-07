@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>揾你嘅语伴 · 识讲粤语</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="container container-wide">
+    <section class="section">
+      <div class="center mb-3">
+        <h1 class="display">🤝 揾你嘅粤语语伴</h1>
+        <p class="muted mt-1" id="subtitle">按你嘅等级筛嘅 3-5 位</p>
+      </div>
+
+      <div class="card-flat mb-3 hide" id="no-result">
+        <p>你未测试过 <a href="test.html" style="color: var(--blue);">→ 去测一测</a></p>
+      </div>
+
+      <div id="partner-list" class="grid grid-2"></div>
+
+      <div class="center mt-3">
+        <a class="btn btn-ghost" href="result.html">← 睇返结果</a>
+        <a class="btn btn-primary" href="course.html">下一步：揾课 →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">识讲粤语 · 由 Vickey 老师主理</footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/labeler.js"></script>
+  <script>
+    Cantonese.initTheme();
+    Cantonese.injectThemeToggle();
+    Cantonese.injectTopbar('partner');
+  </script>
+
+    (async function () {
+      const result = Cantonese.Store.get(Cantonese.Store.KEYS.result);
+      if (!result) {
+        document.getElementById('no-result').classList.remove('hide');
+        document.getElementById('partner-list').innerHTML = '';
+        return;
+      }
+
+      const { level, mbtiCode } = result;
+      const mbtiType = await Labeller.load().then(() => Labeller.resolve(mbtiCode));
+      const matchTags = (mbtiType && mbtiType.matchTags) || [];
+
+      // 加载语伴
+      const { partners } = await Cantonese.loadJSON('data/partners.json');
+
+      // 排序：同等级优先 + 标签匹配加分
+      const scored = partners.map(p => {
+        let score = 0;
+        if (p.level === level.short) score += 10;
+        if (p.level === (level.key === 'entry' ? '入门' : level.key === 'mid' ? '进阶' : '高阶')) score += 5;
+        // 标签重合
+        p.tags.forEach(t => { if (matchTags.includes(t)) score += 3; });
+        return { ...p, _score: score };
+      }).sort((a, b) => b._score - a._score).slice(0, 5);
+
+      document.getElementById('subtitle').textContent =
+        `按你嘅「${level.name}」+ 「${mbtiCode}」筛嘅 ${scored.length} 位`;
+
+      const host = document.getElementById('partner-list');
+      host.innerHTML = scored.map(p => `
+        <div class="partner-card">
+          <div class="row" style="gap:12px; align-items: center;">
+            <div class="partner-avatar">${p.emoji}</div>
+            <div>
+              <div class="partner-name">${p.name}</div>
+              <div class="partner-meta">${p.gender} · ${p.age} · ${p.region}</div>
+            </div>
+          </div>
+          <div class="row" style="gap:6px;">
+            <span class="tag tag-pink">${p.level}</span>
+            ${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+          </div>
+          <p class="partner-intro">${p.intro}</p>
+          <div class="text-sm muted">📮 ${p.contact}</div>
+        </div>
+      `).join('');
+    })();
+  </script>
+</body>
+</html>

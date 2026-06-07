@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>你的粤语结果 · 识讲粤语</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="container">
+    <section class="section center fade-in" id="loading">
+      <p class="muted">⏳ 算紧你嘅结果...</p>
+    </section>
+
+    <section class="section hide" id="result-wrap">
+      <div class="center mb-3">
+        <div class="muted text-sm">你的粤语等级</div>
+        <div class="level-badge" id="level-badge">入门</div>
+        <h1 class="display gradient-text" id="level-name">听唔明仔</h1>
+        <p class="muted" id="level-score">10 题答对 5 题</p>
+      </div>
+
+      <div class="card mt-3">
+        <div class="muted text-sm">你的粤语人格 · 4 维 16 型</div>
+        <div class="row mt-1" style="gap:12px; align-items: center;">
+          <div style="font-size: 64px; line-height: 1;" id="mbti-emoji">🌟</div>
+          <div>
+            <h2 class="display" style="margin:0; font-size: 28px;" id="mbti-code">SPWI</h2>
+            <div class="text-sm muted" id="mbti-title">速成·听讲·独狼·学院派</div>
+          </div>
+        </div>
+        <p class="mt-2" id="mbti-tagline"></p>
+        <p class="muted mt-2" id="mbti-desc"></p>
+        <div class="mt-3">
+          <div class="muted text-sm">4 维拆解</div>
+          <div id="mbti-dims" class="row mt-1" style="gap: 8px;"></div>
+        </div>
+        <div class="mt-3" style="background: var(--bg-soft); padding: 16px; border-radius: 12px;">
+          <div class="muted text-sm">💡 学习建议</div>
+          <p class="mt-1" id="mbti-advice"></p>
+        </div>
+      </div>
+
+      <div class="card mt-3">
+        <h3 class="display" style="font-size: 22px;">⏱️ 你的学习时长预测</h3>
+        <p class="muted text-sm mt-1">按你每天学 <strong id="daily-mins">30</strong> 分钟算</p>
+
+        <div class="stack mt-3">
+          <div class="row" style="justify-content: space-between; align-items: center;">
+            <div>
+              <div class="bold">入门 <span class="muted text-sm">· 你嘅位置</span></div>
+              <div class="text-sm muted" id="t-entry">≈ 0 个月</div>
+            </div>
+            <span class="badge badge-blue">DONE</span>
+          </div>
+          <div class="row" style="justify-content: space-between; align-items: center;">
+            <div>
+              <div class="bold">进阶</div>
+              <div class="text-sm muted" id="t-mid">≈ 0 个月</div>
+            </div>
+            <span class="badge" id="b-mid">目标</span>
+          </div>
+          <div class="row" style="justify-content: space-between; align-items: center;">
+            <div>
+              <div class="bold">高阶</div>
+              <div class="text-sm muted" id="t-high">≈ 0 个月</div>
+            </div>
+            <span class="badge badge-purple" id="b-high">远期</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-3">
+        <h3 class="display" style="font-size: 22px;">📤 分享你的结果</h3>
+        <p class="muted text-sm mt-1">发到小红书/朋友圈，让朋友也测一测</p>
+        <div id="share-card-host" class="share-card-wrap"></div>
+      </div>
+
+      <div class="stack mt-3">
+        <a class="btn btn-blue btn-lg btn-block" href="partner.html">🤝 揾我嘅语伴</a>
+        <a class="btn btn-primary btn-lg btn-block" href="course.html">📚 揾啱我嘅课</a>
+        <a class="btn btn-ghost btn-lg btn-block" href="signup.html">📬 留邮箱 · 1/3/6 月提醒我自测</a>
+        <a class="btn btn-ghost btn-block" href="test.html">🔁 重新测一次</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    识讲粤语 · 由 Vickey 老师主理
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/calc.js"></script>
+  <script src="js/labeler.js"></script>
+  <script src="js/share.js"></script>
+  <script>
+    Cantonese.initTheme();
+    Cantonese.injectThemeToggle();
+    Cantonese.injectTopbar('test');
+
+    (async function () {
+      const result = Cantonese.Store.get(Cantonese.Store.KEYS.result);
+      if (!result || !result.level) {
+        location.href = 'test.html';
+        return;
+      }
+
+      // 加载 MBTI 标签库
+      await Labeller.load();
+
+      const { level, levelScore, levelTotal, mbtiCode, user } = result;
+      const mbtiType = Labeller.resolve(mbtiCode);
+
+      // 填等级
+      const badge = document.getElementById('level-badge');
+      badge.textContent = level.short;
+      badge.classList.add(level.cls);
+      document.getElementById('level-name').textContent = level.name;
+      document.getElementById('level-score').textContent =
+        `${levelTotal} 题答对 ${levelScore} 题`;
+
+      // 填 MBTI
+      document.getElementById('mbti-emoji').textContent = mbtiType.emoji || '🌟';
+      document.getElementById('mbti-code').textContent = mbtiCode;
+      document.getElementById('mbti-title').textContent = mbtiType.title;
+      document.getElementById('mbti-tagline').textContent = mbtiType.tagline;
+      document.getElementById('mbti-desc').textContent = mbtiType.desc;
+      document.getElementById('mbti-advice').textContent = mbtiType.advice;
+
+      // 4 维标签
+      const dimsHost = document.getElementById('mbti-dims');
+      const dims = Labeller.dimensionsOf(mbtiCode);
+      dimsHost.innerHTML = dims.map(d =>
+        `<span class="tag tag-blue">${d.label}</span>`
+      ).join('');
+
+      // 时长
+      const t = Calc.estimate(user);
+      document.getElementById('daily-mins').textContent = user.minutes;
+      const lvlMap = { entry: 't-entry', mid: 't-mid', high: 't-high' };
+      const bMap = { mid: 'b-mid', high: 'b-high' };
+      ['entry','mid','high'].forEach(k => {
+        document.getElementById(lvlMap[k]).textContent =
+          `≈ ${t[k].months} 个月 · ${t[k].days} 天`;
+      });
+      if (level.key === 'mid') {
+        document.getElementById(bMap.mid).textContent = '已达成';
+        document.getElementById(bMap.mid).classList.remove('badge');
+        document.getElementById(bMap.mid).classList.add('badge', 'badge-blue');
+      }
+      if (level.key === 'high') {
+        document.getElementById(bMap.mid).textContent = '已达成';
+        document.getElementById(bMap.high).textContent = '已达成';
+        document.getElementById(bMap.mid).className = 'badge badge-blue';
+        document.getElementById(bMap.high).className = 'badge badge-blue';
+      }
+
+      // 分享卡
+      Share.renderCard({
+        container: '#share-card-host',
+        level, mbtiType, mbtiCode,
+      });
+
+      // 展示
+      document.getElementById('loading').classList.add('hide');
+      document.getElementById('result-wrap').classList.remove('hide');
+
+      // 小庆祝
+      Cantonese.confetti(document.body, 50);
+    })();
+  </script>
+</body>
+</html>

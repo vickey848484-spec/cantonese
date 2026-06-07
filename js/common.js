@@ -302,6 +302,43 @@
     setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1500);
   }
 
+  /* ---------- Q&A 渲染 ---------- */
+  async function renderQA(container, data) {
+    const filterEl = container.querySelector('#qa-filter');
+    const listEl = container.querySelector('#qa-list');
+
+    function render(filterText) {
+      const ft = (filterText || '').trim().toLowerCase();
+      listEl.innerHTML = data.categories.map(cat => {
+        const items = cat.items.filter(it =>
+          !ft || it.q.toLowerCase().includes(ft) || it.a.toLowerCase().includes(ft)
+        );
+        if (!items.length) return '';
+        return `
+          <div class="qa-category">
+            <h3 class="display qa-cat-title">${icon(cat.icon)} ${cat.name}</h3>
+            <div class="stack">
+              ${items.map((it, i) => `
+                <details class="qa-item">
+                  <summary class="qa-q">${it.q}</summary>
+                  <div class="qa-a">${it.a}</div>
+                </details>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }).join('');
+      if (!listEl.innerHTML.trim()) {
+        listEl.innerHTML = `<p class="muted text-sm center" style="padding: 24px;">没找到匹配「${filterText}」嘅问题</p>`;
+      }
+    }
+
+    if (filterEl) {
+      filterEl.addEventListener('input', e => render(e.target.value));
+    }
+    render('');
+  }
+
   /* 把页面上所有 data-icon 占位元素替换为内联 SVG */
   function initIcons(root) {
     if (!root) root = document;
@@ -319,5 +356,6 @@
     initCustomCursor, initScrollReveal,
     icon, initIcons, ICONS,
     getReferralCode, genReferralCode, SHARE_TEMPLATES, flashShare,
+    renderQA,
   };
 })(window);

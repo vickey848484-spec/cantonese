@@ -105,6 +105,7 @@
       { key: 'partner', label: '找语伴', href: 'partner.html' },
       { key: 'course',  label: '选课',   href: 'course.html' },
       { key: 'qa',      label: 'Q&A',   href: 'qa.html' },
+      { key: 'research',label: '调研',   href: 'research.html' },
       { key: 'about',   label: '关于我', href: 'about.html' },
     ];
     const bar = document.createElement('div');

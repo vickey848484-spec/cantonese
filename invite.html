@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的邀请记录 · 识讲粤语</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    .invite-code-box {
+      background: var(--card);
+      color: var(--card-text);
+      border: 2px dashed var(--yellow);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      margin: 24px 0;
+    }
+    .invite-code-box .label {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+    .invite-code-box .code {
+      font-family: monospace;
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      color: var(--yellow);
+      margin: 12px 0;
+    }
+    .invite-link-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 16px 0;
+    }
+    .invite-link-box .link {
+      flex: 1;
+      font-size: 14px;
+      color: var(--text);
+      word-break: break-all;
+      font-family: monospace;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .stat-card {
+      background: var(--card);
+      color: var(--card-text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-card .num {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--yellow);
+    }
+    .stat-card .label {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 4px;
+    }
+    .referral-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--card);
+      color: var(--card-text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 8px;
+    }
+    .referral-row .avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 900;
+      font-size: 14px;
+    }
+    .referral-row .info { flex: 1; }
+    .referral-row .info .name { font-weight: 700; font-size: 15px; }
+    .referral-row .info .meta { font-size: 12px; color: var(--text-soft); }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="section">
+      <div class="center mb-3">
+        <h1 class="display">我的邀请记录</h1>
+        <p class="muted mt-1">分享专属链接，朋友测完你能看到</p>
+      </div>
+
+      <!-- 邀请码 -->
+      <div class="invite-code-box">
+        <div class="label">你的专属邀请码</div>
+        <div class="code" id="my-code">—</div>
+        <button class="btn btn-primary btn-block" id="copy-code">复制邀请码</button>
+      </div>
+
+      <!-- 邀请链接 -->
+      <h3 class="display" style="font-size: 20px; margin-top: 24px;">专属邀请链接</h3>
+      <div class="invite-link-box">
+        <span class="link" id="my-link">—</span>
+        <button class="btn btn-ghost" id="copy-link">复制</button>
+      </div>
+
+      <!-- 分享文案 -->
+      <h3 class="display" style="font-size: 20px; margin-top: 24px;">分享文案</h3>
+      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 8px;">
+        <button class="btn btn-primary btn-block" data-share="xiaohongshu">📕 小红书</button>
+        <button class="btn btn-blue btn-block" data-share="wechat">💬 微信对话</button>
+        <button class="btn btn-ghost btn-block" data-share="moments">🌟 朋友圈</button>
+        <button class="btn btn-ghost btn-block" data-share="simple">🔗 简洁</button>
+      </div>
+
+      <!-- 统计 -->
+      <h3 class="display" style="font-size: 20px; margin-top: 32px;">数据</h3>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="num" id="stat-clicks">0</div>
+          <div class="label">点击链接</div>
+        </div>
+        <div class="stat-card">
+          <div class="num" id="stat-started">0</div>
+          <div class="label">开始测试</div>
+        </div>
+        <div class="stat-card">
+          <div class="num" id="stat-done">0</div>
+          <div class="label">完成测试</div>
+        </div>
+      </div>
+
+      <!-- 已邀请列表 -->
+      <h3 class="display" style="font-size: 20px; margin-top: 32px;">已邀请用户</h3>
+      <div class="muted text-sm" id="ref-list-meta">检测中...</div>
+      <div id="ref-list"></div>
+
+      <!-- 说明 -->
+      <div class="card-flat mt-3" style="background: var(--bg-soft); border: 1px dashed var(--border); padding: 16px; border-radius: 12px;">
+        <div class="text-sm bold"><i class="ph ph-info"></i> 怎么运作？</div>
+        <ul class="text-sm muted mt-1" style="list-style: disc; padding-left: 20px; line-height: 1.7;">
+          <li>把上方链接或文案分享给朋友</li>
+          <li>朋友点开 → 测完 → 数据自动记到你的邀请记录</li>
+          <li>本地版：只能看到本浏览器测过的人；部署到 Vercel 后看得到全网</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">识讲粤语 · 由 Vickey 老师主理</footer>
+
+  <script src="js/common.js"></script>
+  <script>
+    Cantonese.initTheme();
+    Cantonese.injectThemeToggle();
+    Cantonese.injectTopbar('invite');
+    Cantonese.initIcons();
+    Cantonese.initScrollReveal();
+
+    (async function () {
+      const myCode = Cantonese.getReferralCode();
+      const myLink = `${location.origin}/test.html?ref=${myCode}`;
+
+      document.getElementById('my-code').textContent = myCode;
+      document.getElementById('my-link').textContent = myLink;
+
+      // 复制邀请码
+      document.getElementById('copy-code').addEventListener('click', () => {
+        Cantonese.copyToClipboard(myCode).then(() =>
+          Cantonese.flashShare(document.getElementById('copy-code'), '已复制 ✓')
+        );
+      });
+      // 复制链接
+      document.getElementById('copy-link').addEventListener('click', () => {
+        Cantonese.copyToClipboard(myLink).then(() =>
+          Cantonese.flashShare(document.getElementById('copy-link'), '已复制 ✓')
+        );
+      });
+
+      // 分享文案按钮
+      const myResult = Cantonese.Store.get(Cantonese.Store.KEYS.result) || {};
+      const mbtiCode = myResult.mbtiCode || 'SPWI';
+      // 用一个 mock mbtiType（实际分享时用真实）
+      const mockType = { title: '粤语学习者', tagline: '', desc: '' };
+      document.querySelectorAll('[data-share]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const txt = Cantonese.SHARE_TEMPLATES[btn.dataset.share](mbtiCode, mockType, myCode);
+          Cantonese.copyToClipboard(txt).then(() => Cantonese.flashShare(btn, '已复制 ✓'));
+        });
+      });
+
+      // 尝试调 API（部署后用）；失败用 localStorage mock
+      let referrals = [];
+      try {
+        const res = await fetch(`/api/referrals?code=${myCode}`);
+        if (res.ok) {
+          const data = await res.json();
+          referrals = data.referrals || [];
+        }
+      } catch (_) {}
+
+      // Fallback：扫 localStorage 找所有 result.user.referredBy === myCode
+      if (!referrals.length) {
+        // localStorage 方案：扫所有 key
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (!key || !key.startsWith('cantonese_result_')) continue;
+          try {
+            const r = JSON.parse(localStorage.getItem(key));
+            if (r && r.user && r.user.referredBy === myCode) {
+              referrals.push(r);
+            }
+          } catch (_) {}
+        }
+      }
+
+      // 统计
+      const clicks = Cantonese.Store.get('cantonese_invite_clicks_' + myCode) || 0;
+      const started = referrals.length;
+      const done = referrals.filter(r => r.level && r.mbtiCode).length;
+      document.getElementById('stat-clicks').textContent = clicks;
+      document.getElementById('stat-started').textContent = started;
+      document.getElementById('stat-done').textContent = done;
+
+      // 列表
+      const meta = document.getElementById('ref-list-meta');
+      const list = document.getElementById('ref-list');
+      if (!referrals.length) {
+        meta.textContent = '暂无 · 快把链接分享给朋友';
+        return;
+      }
+      meta.textContent = `共 ${referrals.length} 人通过你嘅链接测过`;
+      list.innerHTML = referrals.map(r => {
+        const name = (r.user && r.user.wechat) ? r.user.wechat.slice(0, 8) : '匿名用户';
+        const date = new Date(r.timestamp || Date.now()).toLocaleDateString('zh-CN');
+        return `
+          <div class="referral-row">
+            <div class="avatar">${(name[0] || '?').toUpperCase()}</div>
+            <div class="info">
+              <div class="name">${name}</div>
+              <div class="meta">${date} · ${r.level ? r.level.short : '测试中'} · ${r.mbtiCode || '—'}</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    })();
+  </script>
+</body>
+</html>

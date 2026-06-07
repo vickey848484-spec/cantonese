@@ -193,15 +193,18 @@
       Store.set(Store.KEYS.user, u);
       finalize();
       persist();
+      const referredBy = Store.get('cantonese_referred_by') || null;
       const result = {
         level: state.level,
         levelScore: state.levelScore,
         levelTotal: DATA.levelQuestions.length,
         mbtiCode: state.mbtiCode,
-        user: u,
+        user: { ...u, referredBy },
         timestamp: Date.now(),
       };
       Store.set(Store.KEYS.result, result);
+      // 测完后清掉 ref（避免影响下次测试）
+      Store.remove('cantonese_referred_by');
       confetti(document.body, 40);
       showLoading(container, () => { location.href = 'result.html'; });
     });

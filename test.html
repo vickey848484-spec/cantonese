@@ -25,6 +25,12 @@
     Cantonese.initIcons();
     Cantonese.initScrollReveal();
 
+    // 捕获邀请码（?ref=XXXX），存 localStorage 让 quiz 写入 result
+    const refParam = Cantonese.getQuery('ref');
+    if (refParam && refParam !== 'reminder' && /^[A-Z0-9]{4,12}$/.test(refParam)) {
+      Cantonese.Store.set('cantonese_referred_by', refParam);
+    }
+
     // 已测过 → 直接跳到结果页（除非是「重新测」或「邮件回流」）
     const existing = Cantonese.Store.get(Cantonese.Store.KEYS.result);
     const isRestart = Cantonese.getQuery('restart') === '1';

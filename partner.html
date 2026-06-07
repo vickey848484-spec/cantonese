@@ -75,10 +75,18 @@
           `按你嘅「${level.name}」筛嘅 ${scored.length} 位${mbtiType ? '（已按性格匹配）' : ''}`;
 
         const host = document.getElementById('partner-list');
-        host.innerHTML = scored.map(p => `
+        host.innerHTML = scored.map(p => {
+          // 头像：圆形色块 + 简单人形（按性别配色）
+          const isMale   = p.gender === '男';
+          const isFemale = p.gender === '女';
+          const avatarBg = isMale ? 'var(--blue)' : isFemale ? 'var(--pink)' : 'var(--yellow)';
+          const avatarFg = isMale || isFemale ? '#fff' : '#0a0a0a';
+          return `
           <div class="partner-card">
-            <div class="row" style="gap:12px; align-items: center;">
-              <i class="partner-avatar">${Cantonese.icon(p.icon || 'user')}</i>
+            <div class="row" style="gap:14px; align-items: center;">
+              <span class="partner-avatar" style="background:${avatarBg}; color:${avatarFg};">
+                ${Cantonese.icon('user')}
+              </span>
               <div>
                 <div class="partner-name">${p.name}</div>
                 <div class="partner-meta">${p.gender} · ${p.age} · ${p.region}</div>
@@ -91,7 +99,7 @@
             <p class="partner-intro">${p.intro}</p>
             <div class="text-sm muted">${Cantonese.icon('envelope-simple')} ${p.contact}</div>
           </div>
-        `).join('');
+        `}).join('');
       } catch (e) {
         console.error('[partner] error:', e);
         document.getElementById('no-result').classList.remove('hide');

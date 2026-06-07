@@ -110,10 +110,10 @@
     識讲粤语 · 由 Vickey 老师主理
   </footer>
 
-  <script src="js/common.js?v=20260607b"></script>
-  <script src="js/calc.js?v=20260607b"></script>
-  <script src="js/labeler.js?v=20260607b"></script>
-  <script src="js/share.js?v=20260607b"></script>
+  <script src="js/common.js?v=20260607f"></script>
+  <script src="js/calc.js?v=20260607f"></script>
+  <script src="js/labeler.js?v=20260607f"></script>
+  <script src="js/share.js?v=20260607f"></script>
   <script>
     Cantonese.initTheme();
     Cantonese.injectThemeToggle();
@@ -131,20 +131,29 @@
 
         await Labeller.load();
 
+        // 用最新字母映射从 quiz state 重算 mbtiCode（修 localStorage 旧数据）
+        const DIMS = { speed: ['S', 'M'], learn: ['P', 'T'], social: ['T', 'W'], style: ['I', 'E'] };
+        const quizState = Cantonese.Store.get(Cantonese.Store.KEYS.quiz);
+        if (quizState && Array.isArray(quizState.mbtiAnswers) && quizState.mbtiAnswers.length === 4) {
+          const picks = { speed: 0, learn: 0, social: 0, style: 0 };
+          quizState.mbtiAnswers.forEach((ans, i) => {
+            const dim = ['speed', 'learn', 'social', 'style'][i];
+            if (ans === 0 || ans === 1) picks[dim] = ans;
+          });
+          const newCode = DIMS.speed[picks.speed] + DIMS.learn[picks.learn] +
+                          DIMS.social[picks.social] + DIMS.style[picks.style];
+          if (newCode && newCode !== result.mbtiCode) {
+            result.mbtiCode = newCode;
+            Cantonese.Store.set(Cantonese.Store.KEYS.result, result);
+          }
+        }
+
         const { level, levelScore, levelTotal, mbtiCode, user } = result;
-        const mbtiType = Labeller.resolve(mbtiCode);
+        let mbtiType = Labeller.resolve(mbtiCode);
 
         if (!mbtiType) {
-          // 调试：显示出 mbtiCode + LABELS 里的 keys
-          const keys = (await Labeller.load()).types ? Object.keys((await Labeller.load()).types).join(',') : '无 types';
-          document.getElementById('loading').innerHTML =
-            `<div class="center" style="padding: 24px;">
-              <p style="color: var(--pink); font-weight: 900; margin-bottom: 8px;">MBTI 解析失败</p>
-              <p class="text-sm muted" style="margin-bottom: 8px;">你的 code: <code style="color: var(--yellow);">${mbtiCode || '(空)'}</code></p>
-              <p class="text-sm muted" style="margin-bottom: 16px;">数据库里的 code: <code style="font-size: 11px;">${keys}</code></p>
-              <a class="btn btn-ghost" href="test.html">返去重测</a>
-            </div>`;
-          return;
+          // 实在找不到时降级到 SPTI（不再显示"解析失败"）
+          mbtiType = Labeller.resolve('SPTI') || { title: '粤语学习者', tagline: '', desc: '', icon: 'sparkle', matchTags: [] };
         }
 
         const badge = document.getElementById('level-badge');

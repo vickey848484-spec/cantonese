@@ -45,6 +45,24 @@
       </div>
 
       <div class="card mt-3">
+        <h3 class="display" style="font-size: 22px;"><i data-icon="megaphone"></i> 分享俾朋友</h3>
+        <p class="muted text-sm mt-1">选个风格一键复制 + 生成专属邀请海报</p>
+
+        <div class="text-sm bold mt-3" style="color: var(--text-soft);">选个文案风格：</div>
+        <div class="grid mt-2" style="grid-template-columns: 1fr 1fr; gap: 8px;">
+          <button class="btn btn-primary btn-block" data-share="xiaohongshu">📕 小红书</button>
+          <button class="btn btn-blue btn-block" data-share="wechat">💬 微信对话</button>
+          <button class="btn btn-ghost btn-block" data-share="moments">🌟 朋友圈</button>
+          <button class="btn btn-ghost btn-block" data-share="simple">🔗 简洁</button>
+        </div>
+
+        <div class="row mt-3" style="gap: 8px;">
+          <button class="btn btn-ghost btn-block" id="share-link">🔗 复制专属链接</button>
+          <button class="btn btn-primary btn-block" id="share-poster">🎨 生成专属海报</button>
+        </div>
+      </div>
+
+      <div class="card mt-3">
         <h3 class="display" style="font-size: 22px;"><i data-icon="clock"></i> 你的学习时长预测</h3>
         <p class="muted text-sm mt-1">按你每天学 <strong id="daily-mins">30</strong> 分钟算</p>
 
@@ -172,6 +190,25 @@
         Share.renderCard({
           container: '#share-card-host',
           level, mbtiType, mbtiCode,
+        });
+
+        // 分享按钮（4 模板 + 链接 + 海报）
+        const ref = Cantonese.getReferralCode();
+        const safeType = mbtiType || { title: '粤语学习者', tagline: '', desc: '' };
+        document.querySelectorAll('[data-share]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const txt = Cantonese.SHARE_TEMPLATES[btn.dataset.share](mbtiCode, safeType, ref);
+            Cantonese.copyToClipboard(txt).then(() => Cantonese.flashShare(btn, '已复制 ✓'));
+          });
+        });
+        document.getElementById('share-link').addEventListener('click', () => {
+          const link = `${location.origin}/test.html?ref=${ref}`;
+          Cantonese.copyToClipboard(link).then(() =>
+            Cantonese.flashShare(document.getElementById('share-link'), '已复制 ✓')
+          );
+        });
+        document.getElementById('share-poster').addEventListener('click', () => {
+          Share.downloadPoster({ mbtiCode, mbtiType: safeType, level, ref });
         });
 
         document.getElementById('loading').classList.add('hide');

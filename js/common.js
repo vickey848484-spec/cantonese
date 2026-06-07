@@ -303,35 +303,34 @@
     setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1500);
   }
 
-  /* ---------- Q&A 渲染 ---------- */
+  /* ---------- Q&A 渲染（10 个常见问题，扁平）---------- */
   async function renderQA(container, data) {
     const filterEl = container.querySelector('#qa-filter');
     const listEl = container.querySelector('#qa-list');
 
     function render(filterText) {
       const ft = (filterText || '').trim().toLowerCase();
-      listEl.innerHTML = data.categories.map(cat => {
-        const items = cat.items.filter(it =>
-          !ft || it.q.toLowerCase().includes(ft) || it.a.toLowerCase().includes(ft)
-        );
-        if (!items.length) return '';
-        return `
-          <div class="qa-category">
-            <h3 class="display qa-cat-title">${icon(cat.icon)} ${cat.name}</h3>
-            <div class="stack">
-              ${items.map((it, i) => `
-                <details class="qa-item">
-                  <summary class="qa-q">${it.q}</summary>
-                  <div class="qa-a">${it.a}</div>
-                </details>
-              `).join('')}
-            </div>
-          </div>
-        `;
-      }).join('');
-      if (!listEl.innerHTML.trim()) {
+      const items = (data.items || []).filter(it =>
+        !ft || it.q.toLowerCase().includes(ft) || it.a.toLowerCase().includes(ft) || (it.tag || '').toLowerCase().includes(ft)
+      );
+      if (!items.length) {
         listEl.innerHTML = `<p class="muted text-sm center" style="padding: 24px;">没找到匹配「${filterText}」嘅问题</p>`;
+        return;
       }
+      listEl.innerHTML = `
+        <div class="text-sm muted" style="margin-bottom: 12px;">共 ${items.length} 个常见问题 · 点击展开</div>
+        <div class="stack">
+          ${items.map((it, i) => `
+            <details class="qa-item">
+              <summary class="qa-q">
+                <span class="qa-q-tag">${it.tag || ''}</span>
+                <span class="qa-q-text">${it.q}</span>
+              </summary>
+              <div class="qa-a">${it.a}</div>
+            </details>
+          `).join('')}
+        </div>
+      `;
     }
 
     if (filterEl) {

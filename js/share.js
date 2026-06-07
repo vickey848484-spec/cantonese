@@ -174,5 +174,108 @@
     ctx.fillText(line, x, yy);
   }
 
-  global.Share = { renderCard, composeText, copyToClipboard, downloadPNG };
+  /* ---------- 专属邀请海报（750x1334 竖图，朋友圈/小红书适用）---------- */
+  function downloadPoster({ mbtiCode, mbtiType, level, ref }) {
+    if (!mbtiType) return;
+    const W = 750, H = 1334;
+    const canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d');
+
+    // 黑底
+    ctx.fillStyle = '#0a0a0a';
+    ctx.fillRect(0, 0, W, H);
+
+    // 撞色横条（上下）
+    ctx.fillStyle = '#0066ff';
+    ctx.fillRect(0, 0, W, 10);
+    ctx.fillStyle = '#ffd60a';
+    ctx.fillRect(0, H - 10, W, 10);
+
+    // 撞色侧条
+    ctx.fillStyle = '#ff3366';
+    ctx.fillRect(0, 0, 8, H);
+
+    // 撞色装饰方块（右上 + 左下）
+    ctx.fillStyle = '#ffd60a';
+    ctx.fillRect(W - 110, 80, 70, 70);
+    ctx.fillStyle = '#0066ff';
+    ctx.fillRect(40, H - 200, 70, 70);
+
+    // 顶部：等级徽章
+    const badgeColor = level.cls === 'level-entry' ? '#0066ff'
+                    : level.cls === 'level-mid'   ? '#ffd60a'
+                    : '#ff3366';
+    const badgeTextColor = level.cls === 'level-mid' ? '#0a0a0a' : '#fff';
+    ctx.fillStyle = badgeColor;
+    const badgeW = 240, badgeH = 70;
+    const badgeX = (W - badgeW) / 2;
+    ctx.fillRect(badgeX, 100, badgeW, badgeH);
+    ctx.fillStyle = badgeTextColor;
+    ctx.font = 'bold 30px "PingFang SC", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(level.name, W / 2, 100 + badgeH / 2);
+
+    // 4 字母 MBTI 大字
+    ctx.fillStyle = '#ffd60a';
+    ctx.font = 'bold 240px "PingFang SC", sans-serif';
+    ctx.fillText(mbtiCode, W / 2, 400);
+
+    // 标题
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 32px "PingFang SC", sans-serif';
+    ctx.fillText(mbtiType.title, W / 2, 540);
+
+    // tagline
+    ctx.fillStyle = '#0066ff';
+    ctx.font = 'bold 26px "PingFang SC", sans-serif';
+    ctx.fillText(mbtiType.tagline || '', W / 2, 590);
+
+    // 描述（换行）
+    ctx.fillStyle = 'rgba(255,255,255,0.9)';
+    ctx.font = '22px "PingFang SC", sans-serif';
+    ctx.textAlign = 'left';
+    wrapText(ctx, mbtiType.desc, 60, 660, W - 120, 36);
+    ctx.textAlign = 'center';
+
+    // 分隔线
+    ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(80, 1000);
+    ctx.lineTo(W - 80, 1000);
+    ctx.stroke();
+
+    // CTA 钩子
+    ctx.fillStyle = '#ffd60a';
+    ctx.font = 'bold 36px "PingFang SC", sans-serif';
+    ctx.fillText('测一测你的粤语人格', W / 2, 1070);
+
+    // 邀请码大字
+    ctx.fillStyle = 'rgba(255,255,255,0.7)';
+    ctx.font = '20px "PingFang SC", sans-serif';
+    ctx.fillText('你的专属邀请码', W / 2, 1115);
+
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 56px monospace';
+    ctx.fillText(ref, W / 2, 1170);
+
+    // 底部
+    ctx.fillStyle = '#ffd60a';
+    ctx.font = 'bold 24px "PingFang SC", sans-serif';
+    ctx.fillText('识讲粤语 · YUE 测', W / 2, 1230);
+
+    ctx.fillStyle = 'rgba(255,255,255,0.5)';
+    ctx.font = '18px "PingFang SC", sans-serif';
+    ctx.fillText(location.origin + '/test.html', W / 2, 1270);
+
+    // 下载
+    const link = document.createElement('a');
+    link.download = `粤语人格-${mbtiCode}-${ref}.png`;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  }
+
+  global.Share = { renderCard, composeText, copyToClipboard, downloadPNG, downloadPoster };
 })(window);

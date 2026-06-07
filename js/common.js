@@ -111,7 +111,7 @@
     bar.className = 'topbar';
     bar.innerHTML = `
       <div class="topbar-inner">
-        <a class="logo" href="index.html"><span class="pink">识</span>讲粤语</a>
+        <a class="logo" href="index.html"><span class="pink" style="font-size: 30px;">識</span><span style="font-size: 22px;">讲粤语</span></a>
         <nav class="row topbar-nav" style="gap:4px;">
           ${items.map(it => `
             <a href="${it.href}" class="topbar-link ${active === it.key ? 'is-active' : ''}">${it.label}</a>

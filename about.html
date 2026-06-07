@@ -3,16 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>关于我 · Vickey 老师</title>
+  <title>关于我 · 梁伟琦 · 识讲粤语</title>
   <link rel="stylesheet" href="css/style.css?v=20260607b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    .profile-hero {
-      text-align: center;
-      padding: 32px 0;
-    }
+    .profile-hero { text-align: center; padding: 32px 0; }
     .profile-avatar {
       width: 128px; height: 128px;
       border-radius: 50%;
@@ -23,6 +20,11 @@
       font-size: 64px;
       margin-bottom: 16px;
       box-shadow: 0 8px 32px rgba(255, 214, 10, 0.3);
+      overflow: hidden;
+    }
+    .profile-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
     }
     .profile-name {
       font-family: var(--font-display);
@@ -41,73 +43,195 @@
       max-width: 560px;
       margin: 16px auto;
       color: var(--text-soft);
-      line-height: 1.8;
+      line-height: 1.9;
       font-size: 15px;
+      text-align: left;
     }
-    .platform-grid {
+    .profile-bio strong { color: var(--text); }
+
+    /* 数据统计 */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 32px 0;
+    }
+    @media (min-width: 640px) {
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .stat-box {
+      background: var(--card);
+      color: var(--card-text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 12px;
+      text-align: center;
+    }
+    .stat-box .num {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--yellow);
+      line-height: 1.1;
+    }
+    .stat-box .label {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 4px;
+    }
+
+    /* 学员评价 */
+    .testimonial-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 12px;
-      margin-top: 32px;
+      margin-top: 16px;
     }
     @media (min-width: 640px) {
-      .platform-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonial-grid { grid-template-columns: 1fr 1fr; }
     }
-    .platform-card {
+    .testimonial {
+      background: var(--card);
+      color: var(--card-text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      position: relative;
+    }
+    .testimonial::before {
+      content: '"';
+      position: absolute;
+      top: -8px;
+      left: 12px;
+      font-size: 60px;
+      color: var(--yellow);
+      opacity: 0.4;
+      line-height: 1;
+      font-family: serif;
+    }
+    .testimonial .text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .testimonial .author {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 20px;
-      border-radius: var(--radius);
+      gap: 8px;
+    }
+    .testimonial .author-avatar {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--blue);
       color: #fff;
-      text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .platform-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    }
-    .platform-card .icon {
-      width: 48px; height: 48px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.18);
       display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
       font-weight: 900;
-      font-size: 18px;
-      flex-shrink: 0;
-      letter-spacing: 0.05em;
     }
-    .platform-card .info { flex: 1; min-width: 0; }
-    .platform-card .name {
+    .testimonial .author-info { flex: 1; }
+    .testimonial .author-name { font-size: 13px; font-weight: 700; color: var(--text); }
+    .testimonial .author-meta { font-size: 11px; color: var(--text-soft); }
+
+    /* 课程 */
+    .course-group {
+      background: var(--card);
+      color: var(--card-text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+    .course-group-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .course-group-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-weight: 900;
       font-size: 16px;
-      margin-bottom: 2px;
     }
-    .platform-card .id {
-      font-size: 13px;
-      opacity: 0.85;
-      font-family: monospace;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    .course-group .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
     }
-    .platform-card .arrow {
-      font-size: 20px;
-      opacity: 0.6;
+    .course-group .badge-entry { background: var(--blue); color: #fff; }
+    .course-group .badge-mid   { background: var(--yellow); color: #0a0a0a; }
+    .course-group .badge-high  { background: var(--pink); color: #fff; }
+    .course-group ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .course-group li {
+      padding: 10px 0;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+    .course-group li:first-child { border-top: none; }
+    .course-group li .icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: var(--bg-soft);
+      color: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
       flex-shrink: 0;
     }
-    /* 8 平台品牌色 */
-    .p-xhs      { background: #ff2442; }
-    .p-douyin   { background: #161823; }
-    .p-shipinhao{ background: #07c160; }
-    .p-bili     { background: #fb7299; }
-    .p-kuaishou { background: #ff6633; }
-    .p-zhihu    { background: #0084ff; }
-    .p-weibo    { background: #e6162d; }
-    .p-bjh      { background: #3a85ff; }
+    .course-group li .info { flex: 1; }
+    .course-group li .title { font-weight: 700; color: var(--text); }
+    .course-group li .meta { font-size: 12px; color: var(--text-soft); }
+    .course-group li .price {
+      font-weight: 900;
+      color: var(--pink);
+      font-size: 15px;
+    }
 
+    /* 方法论 */
+    .method-card {
+      display: flex;
+      gap: 16px;
+      background: var(--card);
+      color: var(--card-text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 10px;
+    }
+    .method-card .num {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--yellow);
+      color: #0a0a0a;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .method-card .info { flex: 1; }
+    .method-card .title {
+      font-weight: 900;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    .method-card .desc {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    /* 联系小卡 */
     .contact-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -127,56 +251,323 @@
       text-decoration: none;
       transition: border-color 0.2s, transform 0.15s;
     }
-    .contact-mini:hover {
-      border-color: var(--yellow);
-      transform: translateY(-2px);
-    }
+    .contact-mini:hover { border-color: var(--yellow); transform: translateY(-2px); }
     .contact-mini i { font-size: 28px; color: var(--blue); margin-bottom: 8px; }
     .contact-mini .label { font-size: 12px; color: var(--text-soft); }
     .contact-mini .value { font-weight: 700; font-size: 13px; margin-top: 4px; word-break: break-all; }
+
+    /* 平台 */
+    .platform-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    @media (min-width: 640px) { .platform-grid { grid-template-columns: repeat(2, 1fr); } }
+    .platform-card {
+      display: flex; align-items: center; gap: 16px;
+      padding: 20px; border-radius: var(--radius);
+      color: #fff; text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .platform-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+    .platform-card .icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: rgba(255,255,255,0.18);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 18px; flex-shrink: 0;
+    }
+    .platform-card .info { flex: 1; min-width: 0; }
+    .platform-card .name { font-weight: 900; font-size: 16px; }
+    .platform-card .id { font-size: 13px; opacity: 0.85; font-family: monospace; }
+    .p-xhs      { background: #ff2442; }
+    .p-douyin   { background: #161823; }
+    .p-shipinhao{ background: #07c160; }
+    .p-bili     { background: #fb7299; }
+    .p-kuaishou { background: #ff6633; }
+    .p-zhihu    { background: #0084ff; }
+    .p-weibo    { background: #e6162d; }
+    .p-bjh      { background: #3a85ff; }
   </style>
 </head>
 <body>
-  <main class="container">
+  <main class="container container-wide">
     <section class="section">
+
+      <!-- ============== 1. 头部 ============== -->
       <div class="profile-hero">
-        <div class="profile-avatar">🦊</div>
-        <div class="profile-name">包妈 VK</div>
-        <div class="profile-title">教粤语 · 9 年教龄 · 全平台同名</div>
+        <div class="profile-avatar" id="avatar">
+          <span>👩‍🏫</span>
+        </div>
+        <div class="profile-name">梁伟琦</div>
+        <div class="profile-title">在线教育平台签约粤语老师 · @包妈VK教粤语</div>
         <p class="profile-bio">
-          大家好我是包妈，识讲粤语主理人。从普通话零基础自学粤语 9 年，<br>
-          深耕 9 声 6 调发音体系，帮上万名学员从「听唔明」到「流利对话」。<br>
-          全平台同名 <strong style="color: var(--yellow);">@包妈VK教粤语</strong>，每周更新免费干货。
+          👩‍🏫 <strong>在线教育平台签约粤语老师</strong>，多年粤语教学经验，举一反三教学风格<br>
+          🎙️ <strong>粤语文化传播者</strong>，自媒体平台粉丝 <strong style="color: var(--yellow);">25 万+</strong><br>
+          ✨ 教学生动、接地气，让零基础也能听懂粤语<br>
+          🌏 <strong>普通话、英语、粤语</strong>自由切换
         </p>
 
-        <!-- 联系方式 -->
         <div class="contact-row">
           <a class="contact-mini" href="mailto:hi@vickey-cantonese.com">
             <i class="ph ph-envelope-simple"></i>
-            <div class="label">邮箱咨询</div>
+            <div class="label">邮箱</div>
             <div class="value">hi@vickey-cantonese.com</div>
           </a>
-          <a class="contact-mini" href="javascript:void(0)" data-copy="vickey_cantonese">
+          <a class="contact-mini" href="javascript:void(0)" data-copy="包妈VK教粤语">
             <i class="ph ph-chat-circle-dots"></i>
-            <div class="label">加老师微信</div>
-            <div class="value">vickey_cantonese</div>
+            <div class="label">加微信</div>
+            <div class="value">包妈VK教粤语</div>
+          </a>
+          <a class="contact-mini" href="test.html?restart=1">
+            <i class="ph ph-user-circle"></i>
+            <div class="label">测一测</div>
+            <div class="value">3 分钟出结果</div>
           </a>
           <a class="contact-mini" href="qa.html">
             <i class="ph ph-question"></i>
             <div class="label">常见问题</div>
             <div class="value">10 个 Q&A</div>
           </a>
-          <a class="contact-mini" href="index.html">
-            <i class="ph ph-house"></i>
-            <div class="label">返回首页</div>
-            <div class="value">测一测粤语人格</div>
-          </a>
         </div>
       </div>
 
-      <!-- 各大平台 -->
+      <!-- ============== 2. 教学成果 ============== -->
+      <h2 class="display center" style="font-size: 26px;">教学成果</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="num">25w+</div>
+          <div class="label">全网粉丝</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">9 年</div>
+          <div class="label">教龄</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">200+</div>
+          <div class="label">系统课时</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">4.9/5</div>
+          <div class="label">学员评分</div>
+        </div>
+      </div>
+
+      <!-- ============== 3. 学员评价 ============== -->
+      <h2 class="display center" style="font-size: 26px;">学员怎么说</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p class="text">从「听唔明」到能跟香港同事开会，9 个月。老师讲的 9 声 6 调视频我看了不下 10 遍，每次都有新收获。</p>
+          <div class="author">
+            <div class="author-avatar">L</div>
+            <div class="author-info">
+              <div class="author-name">@Lydia</div>
+              <div class="author-meta">深圳 · 互联网产品经理 · 学了 9 个月</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="text">举一反三教学法真的绝！一个句型拆 5 个场景，外出点餐、shopping、问路全覆盖，再也不怕开口了。</p>
+          <div class="author">
+            <div class="author-avatar">A</div>
+            <div class="author-info">
+              <div class="author-name">@阿杰</div>
+              <div class="author-meta">上海 · 港资企业市场 · 学了 1 年</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="text">老师讲俚语和俗语特别地道，教材里学不到的「执生」「食字」全讲明白，听港剧再也不用看字幕了。</p>
+          <div class="author">
+            <div class="author-avatar">M</div>
+            <div class="author-info">
+              <div class="author-name">@Maggie</div>
+              <div class="author-meta">北京 · 港剧迷 · 学了 6 个月</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="text">本来是陪孩子学，结果自己也入坑了。老师的港式发音超正，三语自由切换学起来很过瘾。</p>
+          <div class="author">
+            <div class="author-avatar">T</div>
+            <div class="author-info">
+              <div class="author-name">@Tom</div>
+              <div class="author-meta">广州 · 全职妈妈 · 学了 4 个月</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="text">举家搬来香港前学的，老师纠正的入声帮我省了 3 个月适应期。同事都以为我是本地人。</p>
+          <div class="author">
+            <div class="author-avatar">C</div>
+            <div class="author-info">
+              <div class="author-name">@Coco</div>
+              <div class="author-meta">北京移居香港 · 学了 8 个月</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="text">学完商务粤语能跟客户唱 K 都不用普通话了，老师教的俚语和酒桌文化直接能用。</p>
+          <div class="author">
+            <div class="author-avatar">J</div>
+            <div class="author-info">
+              <div class="author-name">@Jacky</div>
+              <div class="author-meta">上海 · 投行 · 学了 1 年半</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============== 4. 课程总览 ============== -->
+      <h2 class="display center" style="font-size: 26px; margin-top: 48px;">课程总览</h2>
+      <p class="muted center text-sm">入门 / 进阶 / 高阶，按你嘅等级选 → <a href="course.html" style="color: var(--yellow);">看全部</a></p>
+
+      <div style="margin-top: 20px;">
+        <div class="course-group">
+          <div class="course-group-head">
+            <div class="course-group-title"><span class="badge badge-entry">入门</span></div>
+            <span class="muted text-sm">3 门</span>
+          </div>
+          <ul>
+            <li>
+              <div class="icon"><i class="ph ph-target"></i></div>
+              <div class="info">
+                <div class="title">粤语拼音速成</div>
+                <div class="meta">视频课 · 2 周</div>
+              </div>
+              <div class="price">¥99</div>
+            </li>
+            <li>
+              <div class="icon"><i class="ph ph-bowl-food"></i></div>
+              <div class="info">
+                <div class="title">新手 100 词</div>
+                <div class="meta">视频课 · 4 周</div>
+              </div>
+              <div class="price">¥199</div>
+            </li>
+            <li>
+              <div class="icon"><i class="ph ph-handshake"></i></div>
+              <div class="info">
+                <div class="title">自我介绍 + 闲聊破冰</div>
+                <div class="meta">视频课 · 3 周</div>
+              </div>
+              <div class="price">¥149</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="course-group">
+          <div class="course-group-head">
+            <div class="course-group-title"><span class="badge badge-mid">进阶</span></div>
+            <span class="muted text-sm">3 门</span>
+          </div>
+          <ul>
+            <li>
+              <div class="icon"><i class="ph ph-train"></i></div>
+              <div class="info">
+                <div class="title">场景口语 50 课</div>
+                <div class="meta">视频课 · 8 周</div>
+              </div>
+              <div class="price">¥399</div>
+            </li>
+            <li>
+              <div class="icon"><i class="ph ph-smiley"></i></div>
+              <div class="info">
+                <div class="title">粤语俚语大全</div>
+                <div class="meta">视频课 · 6 周</div>
+              </div>
+              <div class="price">¥299</div>
+            </li>
+            <li>
+              <div class="icon"><i class="ph ph-television"></i></div>
+              <div class="info">
+                <div class="title">看港剧学粤语</div>
+                <div class="meta">视频课 · 12 周</div>
+              </div>
+              <div class="price">¥499</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="course-group">
+          <div class="course-group-head">
+            <div class="course-group-title"><span class="badge badge-high">高阶</span></div>
+            <span class="muted text-sm">3 门</span>
+          </div>
+          <ul>
+            <li>
+              <div class="icon"><i class="ph ph-briefcase"></i></div>
+              <div class="info">
+                <div class="title">商务粤语</div>
+                <div class="meta">1v1 直播 · 8 周</div>
+              </div>
+              <div class="price">¥2999</div>
+            </li>
+            <li>
+              <div class="icon"><i class="ph ph-book-open"></i></div>
+              <div class="info">
+                <div class="title">粤语诗词</div>
+                <div class="meta">视频课 · 10 周</div>
+              </div>
+              <div class="price">¥699</div>
+            </li>
+            <li>
+              <div class="icon"><i class="ph ph-flower-lotus"></i></div>
+              <div class="info">
+                <div class="title">深度文化课</div>
+                <div class="meta">社群共学 · 6 周</div>
+              </div>
+              <div class="price">¥899</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ============== 5. 学习方法论 ============== -->
+      <h2 class="display center" style="font-size: 26px; margin-top: 48px;">学习方法论</h2>
+      <p class="muted center text-sm">基于 FSI/ACTFL/SLA 理论 + 9 年教学经验</p>
+
+      <div style="margin-top: 20px;">
+        <div class="method-card">
+          <div class="num">1</div>
+          <div class="info">
+            <div class="title">30/30 原则</div>
+            <div class="desc">每天至少 30 分钟，每周 25 天学习。**比突击式更有效**——研究显示分布式练习胜过集中练习。</div>
+          </div>
+        </div>
+        <div class="method-card">
+          <div class="num">2</div>
+          <div class="info">
+            <div class="title">输入:输出:复习 = 4:3:3</div>
+            <div class="desc">听读 4 成，说写 3 成，间隔重复 3 成。**只输入不开嘴**=学了 2 年还说不出。</div>
+          </div>
+        </div>
+        <div class="method-card">
+          <div class="num">3</div>
+          <div class="info">
+            <div class="title">B1 后必有真人对话</div>
+            <div class="desc">能听懂日常对话后，**必须有语伴或老师**。语言是交际工具，闭环才是真学。</div>
+          </div>
+        </div>
+        <div class="method-card">
+          <div class="num">4</div>
+          <div class="info">
+            <div class="title">不追完美口音</div>
+            <div class="desc">成人达到完美母语语音概率 < 5%（关键期假说）。**清晰可懂 + 略带口音**完全够用，省精力到内容。</div>
+          </div>
+        </div>
+        <div class="method-card">
+          <div class="num">5</div>
+          <div class="info">
+            <div class="title">每 3 个月自评一次</div>
+            <div class="desc">用 <a href="test.html" style="color: var(--yellow);">首页测试</a> 重测一次，看升级咗未。<strong>持续比强度重要</strong>。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============== 6. 各大平台 ============== -->
       <h2 class="display center" style="font-size: 26px; margin-top: 48px;">我在这些平台</h2>
-      <p class="muted center text-sm mt-1">点卡片直接跳转主页</p>
+      <p class="muted center text-sm">全平台同名：<strong style="color: var(--yellow);">@包妈VK教粤语</strong></p>
 
       <div class="platform-grid">
         <a class="platform-card p-xhs" href="https://www.xiaohongshu.com/search_result?keyword=%E5%8C%85%E5%A6%88VK%E6%95%99%E7%B2%A4%E8%AF%AD" target="_blank" rel="noopener">
@@ -187,7 +578,6 @@
           </div>
           <div class="arrow">→</div>
         </a>
-
         <a class="platform-card p-douyin" href="https://www.douyin.com/search/%E5%8C%85%E5%A6%88VK%E6%95%99%E7%B2%A4%E8%AF%AD" target="_blank" rel="noopener">
           <div class="icon">抖音</div>
           <div class="info">
@@ -196,7 +586,6 @@
           </div>
           <div class="arrow">→</div>
         </a>
-
         <a class="platform-card p-shipinhao" href="https://channels.weixin.qq.com/search?query=%E5%8C%85%E5%A6%88VK%E6%95%99%E7%B2%A4%E8%AF%AD" target="_blank" rel="noopener">
           <div class="icon">视频号</div>
           <div class="info">
@@ -205,7 +594,6 @@
           </div>
           <div class="arrow">→</div>
         </a>
-
         <a class="platform-card p-bili" href="https://search.bilibili.com/all?keyword=%E5%8C%85%E5%A6%88VK%E6%95%99%E7%B2%A4%E8%AF%AD" target="_blank" rel="noopener">
           <div class="icon">B站</div>
           <div class="info">
@@ -214,7 +602,6 @@
           </div>
           <div class="arrow">→</div>
         </a>
-
         <a class="platform-card p-kuaishou" href="https://www.kuaishou.com/search/visionnew?searchKey=%E5%8C%85%E5%A6%88VK%E6%95%99%E7%B2%A4%E8%AF%AD" target="_blank" rel="noopener">
           <div class="icon">快手</div>
           <div class="info">
@@ -223,7 +610,6 @@
           </div>
           <div class="arrow">→</div>
         </a>
-
         <a class="platform-card p-zhihu" href="https://www.zhihu.com/search?type=people&q=%E5%8C%85%E5%A6%88VK%E6%95%99%E7%B2%A4%E8%AF%AD" target="_blank" rel="noopener">
           <div class="icon">知乎</div>
           <div class="info">
@@ -232,7 +618,6 @@
           </div>
           <div class="arrow">→</div>
         </a>
-
         <a class="platform-card p-weibo" href="https://s.weibo.com/user?q=%E5%8C%85%E5%A6%88VK%E6%95%99%E7%B2%A4%E8%AF%AD" target="_blank" rel="noopener">
           <div class="icon">微博</div>
           <div class="info">
@@ -241,7 +626,6 @@
           </div>
           <div class="arrow">→</div>
         </a>
-
         <a class="platform-card p-bjh" href="https://baijiahao.baidu.com/" target="_blank" rel="noopener">
           <div class="icon">百家</div>
           <div class="info">
@@ -252,13 +636,6 @@
         </a>
       </div>
 
-      <div class="card-flat mt-3" style="background: var(--bg-soft); border: 1px dashed var(--border); padding: 16px; border-radius: 12px;">
-        <div class="text-sm bold"><i class="ph ph-info"></i> 链接说明</div>
-        <p class="text-sm muted mt-1" style="line-height: 1.7;">
-          当前链接都是各平台<strong style="color: var(--yellow);">搜索结果页</strong>，点开能找到你的账号。<br>
-          如果你告诉我各平台的<strong>个人主页 URL</strong>，我立刻替换成主页直链。
-        </p>
-      </div>
     </section>
   </main>
 

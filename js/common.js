@@ -207,6 +207,8 @@
     'envelope':         '<rect x="3" y="6" width="18" height="13" rx="1.5"/><path d="M3 7 L12 13 L21 7"/>',
     'envelope-simple':  '<rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M3 7 L12 13 L21 7"/>',
     'handshake':        '<path d="M3 12 L7 8 L10 11 L7 14 Z M21 12 L17 8 L14 11 L17 14 Z M10 11 L14 11 L14 14 L10 14 Z M7 14 L7 17 L10 14"/>',
+    'heart':            '<path d="M12 21 C5 15 3 11 3 8 A5 5 0 0 1 12 6 A5 5 0 0 1 21 8 C21 11 19 15 12 21 Z" fill="currentColor" stroke="none"/>',
+    'graduation-cap':   '<path d="M2 9 L12 4 L22 9 L12 14 Z" fill="currentColor" stroke="currentColor"/><path d="M6 11 L6 16 C6 17 9 19 12 19 C15 19 18 17 18 16 L18 11 M22 9 L22 14"/>',
     'share-network':    '<circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 11 L16 7 M8 13 L16 17"/>',
     'chat-circle-dots': '<path d="M21 12 A9 9 0 1 1 12 3 A9 9 0 0 1 21 12 Z M8 10 L8 10.01 M12 10 L12 10.01 M16 10 L16 10.01"/>',
     'microphone':       '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11 A7 7 0 0 0 19 11 M12 18 L12 21"/>',

@@ -13,7 +13,7 @@
       ],
       "intro": "从普通话零基础自学粤语 2 年，最懂入门阶段的痛点。",
       "contact": "wechat: ahhin_cantonese",
-      "icon": "ph-user"
+      "icon": "smiley"
     },
     {
       "id": "p2",
@@ -28,7 +28,7 @@
       ],
       "intro": "在香港公司带过 50+ 新移民讲粤语，语速慢、纠音准。",
       "contact": "wechat: siuming_hk",
-      "icon": "ph-user"
+      "icon": "graduation-cap"
     },
     {
       "id": "p3",
@@ -43,7 +43,7 @@
       ],
       "intro": "陪练型语伴，专陪你讲日常生活：点餐、问路、shopping。",
       "contact": "wechat: kaian_陪你倾",
-      "icon": "ph-user"
+      "icon": "heart"
     },
     {
       "id": "p4",
@@ -58,7 +58,7 @@
       ],
       "intro": "粤语播音专业毕业，喜欢跟你聊时事新闻，词汇量爆炸。",
       "contact": "wechat: jie_broadcast",
-      "icon": "ph-user"
+      "icon": "microphone"
     },
     {
       "id": "p5",
@@ -73,7 +73,7 @@
       ],
       "intro": "粤语语言学硕士，专治发音怪和音调怪，能讲清楚九声六调。",
       "contact": "wechat: vivi_linguist",
-      "icon": "ph-user"
+      "icon": "book-open"
     },
     {
       "id": "p6",
@@ -88,7 +88,7 @@
       ],
       "intro": "做外贸的香港通，俚语/俗语/职场黑话满级。",
       "contact": "wechat: jiaming_trade",
-      "icon": "ph-user"
+      "icon": "briefcase"
     }
   ]
 }

@@ -269,10 +269,16 @@
     if (!DATA) DATA = await loadJSON('data/questions.json');
     restore();
 
-    if (getQuery('ref') === 'reminder') {
+    // 重新测一次（带 ?restart=1）或邮件回流（?ref=reminder）→ 重置 state
+    if (getQuery('restart') === '1' || getQuery('ref') === 'reminder') {
       state = defaultState();
       state.user = Store.get(Store.KEYS.user) || null;
       persist();
+      // 清掉 URL 参数，避免刷新再次重置
+      const url = new URL(location.href);
+      url.searchParams.delete('restart');
+      url.searchParams.delete('ref');
+      history.replaceState(null, '', url.toString());
     }
 
     if (state.step >= DATA.levelQuestions.length + DATA.mbtiQuestions.length) {

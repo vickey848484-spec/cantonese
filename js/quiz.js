@@ -43,7 +43,12 @@
 
   function calcMBTICode() {
     if (!DATA) return '';
-    const dims = { speed: ['S', 'M'], learn: ['P', 'T'], social: ['S', 'E'], style: ['I', 'W'] };
+    // 字母映射必须跟 data/labels.json 里的 16 个 type key 完全一致
+    //   speed:  S=速成  M=慢热
+    //   learn:  P=听讲  T=倾偈
+    //   social: T=社交  W=独狼
+    //   style:  I=学院  E=野生
+    const dims = { speed: ['S', 'M'], learn: ['P', 'T'], social: ['T', 'W'], style: ['I', 'E'] };
     const picks = { speed: 0, learn: 0, social: 0, style: 0 };
     DATA.mbtiQuestions.forEach((q, i) => {
       const ans = state.mbtiAnswers[i];

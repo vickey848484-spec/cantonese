@@ -325,6 +325,19 @@ h3.display { font-size: clamp(20px, 3vw, 24px); margin-bottom: 12px; }
 }
 .partner-card:hover, .course-card:hover { transform: translateY(-4px); border-color: var(--yellow); }
 .partner-avatar, .course-emoji { font-size: 48px; line-height: 1; }
+.partner-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.partner-avatar-emoji {
+  font-size: 44px;
+  line-height: 1;
+  display: inline-block;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", sans-serif;
+}
 .partner-name { font-size: 20px; font-weight: 900; }
 .partner-meta, .course-meta { font-size: 13px; color: var(--text-soft); }
 .partner-intro, .course-highlight { font-size: 14px; line-height: 1.5; }

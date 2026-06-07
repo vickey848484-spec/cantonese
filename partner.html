@@ -42,47 +42,64 @@
     Cantonese.initScrollReveal();
 
     (async function () {
-      const result = Cantonese.Store.get(Cantonese.Store.KEYS.result);
-      if (!result) {
-        document.getElementById('no-result').classList.remove('hide');
-        document.getElementById('partner-list').innerHTML = '';
-        return;
-      }
+      try {
+        const result = Cantonese.Store.get(Cantonese.Store.KEYS.result);
+        if (!result) {
+          document.getElementById('no-result').classList.remove('hide');
+          document.getElementById('partner-list').innerHTML = '';
+          return;
+        }
 
-      const { level, mbtiCode } = result;
-      const mbtiType = await Labeller.load().then(() => Labeller.resolve(mbtiCode));
-      const matchTags = (mbtiType && mbtiType.matchTags) || [];
+        const { level, mbtiCode } = result;
+        let mbtiType = null;
+        try {
+          await Labeller.load();
+          mbtiType = Labeller.resolve(mbtiCode);
+        } catch (e) {
+          console.warn('[partner] labels.json 加载失败，用 fallback', e);
+        }
+        const matchTags = (mbtiType && mbtiType.matchTags) || [];
 
-      const { partners } = await Cantonese.loadJSON('data/partners.json');
+        const { partners } = await Cantonese.loadJSON('data/partners.json');
 
-      const scored = partners.map(p => {
-        let score = 0;
-        if (p.level === level.short) score += 10;
-        p.tags.forEach(t => { if (matchTags.includes(t)) score += 3; });
-        return { ...p, _score: score };
-      }).sort((a, b) => b._score - a._score).slice(0, 5);
+        const scored = partners.map(p => {
+          let score = 0;
+          if (p.level === level.short) score += 10;
+          if (Array.isArray(p.tags)) {
+            p.tags.forEach(t => { if (matchTags.includes(t)) score += 3; });
+          }
+          return { ...p, _score: score };
+        }).sort((a, b) => b._score - a._score).slice(0, 5);
 
-      document.getElementById('subtitle').textContent =
-        `按你嘅「${level.name}」+ 「${mbtiCode}」筛嘅 ${scored.length} 位`;
+        document.getElementById('subtitle').textContent =
+          `按你嘅「${level.name}」筛嘅 ${scored.length} 位${mbtiType ? '（已按性格匹配）' : ''}`;
 
-      const host = document.getElementById('partner-list');
-      host.innerHTML = scored.map(p => `
-        <div class="partner-card">
-          <div class="row" style="gap:12px; align-items: center;">
-            <i class="partner-avatar">${Cantonese.icon(p.icon || 'user')}</i>
-            <div>
-              <div class="partner-name">${p.name}</div>
-              <div class="partner-meta">${p.gender} · ${p.age} · ${p.region}</div>
+        const host = document.getElementById('partner-list');
+        host.innerHTML = scored.map(p => `
+          <div class="partner-card">
+            <div class="row" style="gap:12px; align-items: center;">
+              <i class="partner-avatar">${Cantonese.icon(p.icon || 'user')}</i>
+              <div>
+                <div class="partner-name">${p.name}</div>
+                <div class="partner-meta">${p.gender} · ${p.age} · ${p.region}</div>
+              </div>
             </div>
+            <div class="row" style="gap:6px;">
+              <span class="tag tag-pink">${p.level}</span>
+              ${(p.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}
+            </div>
+            <p class="partner-intro">${p.intro}</p>
+            <div class="text-sm muted">${Cantonese.icon('envelope-simple')} ${p.contact}</div>
           </div>
-          <div class="row" style="gap:6px;">
-            <span class="tag tag-pink">${p.level}</span>
-            ${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-          </div>
-          <p class="partner-intro">${p.intro}</p>
-          <div class="text-sm muted">${Cantonese.icon('envelope-simple')} ${p.contact}</div>
-        </div>
-      `}).join('');
+        `).join('');
+      } catch (e) {
+        console.error('[partner] error:', e);
+        document.getElementById('no-result').classList.remove('hide');
+        document.getElementById('no-result').innerHTML =
+          `<p style="color: var(--pink); margin-bottom: 8px;">出咗错</p>
+           <p class="text-sm muted" style="margin-bottom: 16px;">${e.message}</p>
+           <a class="btn btn-ghost" href="test.html">返去重测</a>`;
+      }
     })();
   </script>
 </body>

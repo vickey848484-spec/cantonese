@@ -4,109 +4,136 @@
       "id": "c1",
       "title": "粤语拼音速成 · 9 声 6 调一次搞懂",
       "level": "入门",
-      "tags": ["速成", "学院"],
+      "tags": [
+        "速成",
+        "学院"
+      ],
       "type": "视频课",
       "duration": "2 周",
       "price": "¥99",
-      "emoji": "🎯",
       "highlight": "发音准不准看这课。9 声 6 调 + 拼音对照表一次性讲清。",
-      "link": "#"
+      "link": "#",
+      "icon": "ph-target"
     },
     {
       "id": "c2",
       "title": "新手 100 词 · 出门/点餐/搭讪全 cover",
       "level": "入门",
-      "tags": ["听讲", "学院"],
+      "tags": [
+        "听讲",
+        "学院"
+      ],
       "type": "视频课",
       "duration": "4 周",
       "price": "¥199",
-      "emoji": "🍜",
       "highlight": "高频生活词汇 100 个，配场景短句，到香港/广州落地直接能用。",
-      "link": "#"
+      "link": "#",
+      "icon": "ph-bowl-food"
     },
     {
       "id": "c3",
       "title": "自我介绍 + 闲聊破冰 · 30 个句型模板",
       "level": "入门",
-      "tags": ["倾偈", "社交"],
+      "tags": [
+        "倾偈",
+        "社交"
+      ],
       "type": "视频课",
       "duration": "3 周",
       "price": "¥149",
-      "emoji": "🤝",
       "highlight": "陌生人破冰 / 工作介绍 / 加微信问候，30 个句型直接套。",
-      "link": "#"
+      "link": "#",
+      "icon": "ph-handshake"
     },
     {
       "id": "c4",
       "title": "场景口语 50 课 · 搭地铁/睇医生/Shopping",
       "level": "进阶",
-      "tags": ["倾偈", "社交"],
+      "tags": [
+        "倾偈",
+        "社交"
+      ],
       "type": "视频课",
       "duration": "8 周",
       "price": "¥399",
-      "emoji": "🚇",
       "highlight": "50 个真实生活场景，每课 5 分钟，看完就能用。",
-      "link": "#"
+      "link": "#",
+      "icon": "ph-train"
     },
     {
       "id": "c5",
       "title": "粤语俚语大全 · 听唔明=文盲",
       "level": "进阶",
-      "tags": ["速成", "野生"],
+      "tags": [
+        "速成",
+        "野生"
+      ],
       "type": "视频课",
       "duration": "6 周",
       "price": "¥299",
-      "emoji": "🤪",
       "highlight": "本地人天天讲的 200+ 俚语/俗语，从「执生」到「食字」全讲。",
-      "link": "#"
+      "link": "#",
+      "icon": "ph-smiley"
     },
     {
       "id": "c6",
       "title": "看港剧学粤语 · 经典台词逐句拆解",
       "level": "进阶",
-      "tags": ["听讲", "野生"],
+      "tags": [
+        "听讲",
+        "野生"
+      ],
       "type": "视频课",
       "duration": "12 周",
       "price": "¥499",
-      "emoji": "📺",
       "highlight": "《使徒行者》《难兄难弟》经典台词逐句拆，听懂港剧不再靠字幕。",
-      "link": "#"
+      "link": "#",
+      "icon": "ph-television"
     },
     {
       "id": "c7",
       "title": "商务粤语 · Email/会议/谈判",
       "level": "高阶",
-      "tags": ["学院", "独狼"],
+      "tags": [
+        "学院",
+        "独狼"
+      ],
       "type": "1v1 直播",
       "duration": "8 周",
       "price": "¥2999",
-      "emoji": "💼",
       "highlight": "客户接待/会议发言/书面邮件全 cover，配 1v1 老师纠错。",
-      "link": "#"
+      "link": "#",
+      "icon": "ph-briefcase"
     },
     {
       "id": "c8",
       "title": "粤语诗词 · 从《西厢记》到黄伟文",
       "level": "高阶",
-      "tags": ["学院", "野生"],
+      "tags": [
+        "学院",
+        "野生"
+      ],
       "type": "视频课",
       "duration": "10 周",
       "price": "¥699",
-      "emoji": "📚",
       "highlight": "粤语古诗词+现代粤语歌词赏析，文化底蕴拉满。",
-      "link": "#"
+      "link": "#",
+      "icon": "ph-book-open"
     },
     {
       "id": "c9",
       "title": "深度文化课 · 饮茶/拜神/婚丧全解",
       "level": "高阶",
-      "tags": ["野生", "社交"],
+      "tags": [
+        "野生",
+        "社交"
+      ],
       "type": "社群共学",
       "duration": "6 周",
       "price": "¥899",
-      "emoji": "🪷",
       "highlight": "茶楼/庙宇/婚丧习俗全解，跟本地人聊文化不再露怯。",
-      "link": "#"
+      "link": "#",
+      "icon": "ph-flower-lotus"
     }
   ]
 }

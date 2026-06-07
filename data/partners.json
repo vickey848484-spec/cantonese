@@ -3,74 +3,92 @@
     {
       "id": "p1",
       "name": "阿欣",
-      "emoji": "👧🏻",
       "gender": "女",
       "age": 24,
       "region": "广州",
       "level": "入门",
-      "tags": ["听讲", "社交"],
+      "tags": [
+        "听讲",
+        "社交"
+      ],
       "intro": "从普通话零基础自学粤语 2 年，最懂入门阶段的痛点。",
-      "contact": "wechat: ahhin_cantonese"
+      "contact": "wechat: ahhin_cantonese",
+      "icon": "ph-user"
     },
     {
       "id": "p2",
       "name": "小明",
-      "emoji": "🧑🏻",
       "gender": "男",
       "age": 28,
       "region": "香港",
       "level": "入门",
-      "tags": ["听讲", "独狼"],
+      "tags": [
+        "听讲",
+        "独狼"
+      ],
       "intro": "在香港公司带过 50+ 新移民讲粤语，语速慢、纠音准。",
-      "contact": "wechat: siuming_hk"
+      "contact": "wechat: siuming_hk",
+      "icon": "ph-user"
     },
     {
       "id": "p3",
       "name": "嘉欣",
-      "emoji": "👩🏻",
       "gender": "女",
       "age": 26,
       "region": "澳门",
       "level": "进阶",
-      "tags": ["倾偈", "社交"],
+      "tags": [
+        "倾偈",
+        "社交"
+      ],
       "intro": "陪练型语伴，专陪你讲日常生活：点餐、问路、shopping。",
-      "contact": "wechat: kaian_陪你倾"
+      "contact": "wechat: kaian_陪你倾",
+      "icon": "ph-user"
     },
     {
       "id": "p4",
       "name": "阿杰",
-      "emoji": "🧔🏻",
       "gender": "男",
       "age": 30,
       "region": "广州",
       "level": "进阶",
-      "tags": ["速成", "独狼"],
+      "tags": [
+        "速成",
+        "独狼"
+      ],
       "intro": "粤语播音专业毕业，喜欢跟你聊时事新闻，词汇量爆炸。",
-      "contact": "wechat: jie_broadcast"
+      "contact": "wechat: jie_broadcast",
+      "icon": "ph-user"
     },
     {
       "id": "p5",
       "name": "Vivi",
-      "emoji": "👩🏼",
       "gender": "女",
       "age": 32,
       "region": "香港",
       "level": "高阶",
-      "tags": ["倾偈", "学院"],
+      "tags": [
+        "倾偈",
+        "学院"
+      ],
       "intro": "粤语语言学硕士，专治发音怪和音调怪，能讲清楚九声六调。",
-      "contact": "wechat: vivi_linguist"
+      "contact": "wechat: vivi_linguist",
+      "icon": "ph-user"
     },
     {
       "id": "p6",
       "name": "家明",
-      "emoji": "👨🏼",
       "gender": "男",
       "age": 35,
       "region": "广州",
       "level": "高阶",
-      "tags": ["速成", "野生"],
+      "tags": [
+        "速成",
+        "野生"
+      ],
       "intro": "做外贸的香港通，俚语/俗语/职场黑话满级。",
-      "contact": "wechat: jiaming_trade"
+      "contact": "wechat: jiaming_trade",
+      "icon": "ph-user"
     }
   ]
 }

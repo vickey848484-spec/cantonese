@@ -13,7 +13,7 @@
   <main class="container">
     <section class="section">
       <div class="center mb-3">
-        <h1 class="display">📬 留个联系方式</h1>
+        <h1 class="display"><i data-icon="envelope"></i> 留个联系方式</h1>
         <p class="muted mt-1">学咗 1 / 3 / 6 个月，我哋会自动提醒你重新自测<br>顺便睇下你升级咗未 🎉</p>
       </div>
 
@@ -52,12 +52,12 @@
             <span>我同意 Vickey 老师用上面嘅联系方式发推送（1/3/6 个月 + 重要通知），可以随时退订。</span>
           </label>
 
-          <button class="btn btn-primary btn-lg btn-block" type="submit">🚀 锁定提醒</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit"><i data-icon="rocket"></i> 锁定提醒</button>
         </form>
       </div>
 
       <div class="card hide center" id="success">
-        <div style="font-size: 64px;">🎉</div>
+        <i data-icon="confetti" style="font-size: 64px; color: var(--yellow);"></i>
         <h2 class="display mt-2">搞掂！</h2>
         <p class="mt-2 muted" id="success-msg">已加入提醒名单，到期会自动发邮件俾你。</p>
         <div class="row mt-3 center" style="justify-content: center;">
@@ -67,7 +67,7 @@
       </div>
 
       <div class="card-flat mt-3">
-        <div class="text-sm bold">💡 你会收到几时嘅提醒？</div>
+        <div class="text-sm bold"><i data-icon="lightbulb"></i> 你会收到几时嘅提醒？</div>
         <ul class="text-sm muted mt-1" style="list-style: disc; padding-left: 20px;">
           <li>今日：欢迎邮件 + 你的结果 PDF</li>
           <li>30 天后：1 个月自测，看看你升级咗未</li>
@@ -86,7 +86,7 @@
     Cantonese.initTheme();
     Cantonese.injectThemeToggle();
     Cantonese.injectTopbar('test');
-    Cantonese.initCustomCursor();
+    Cantonese.initIcons();
     Cantonese.initScrollReveal();
 
     (async function () {
@@ -145,9 +145,9 @@
 
         document.getElementById('form-wrap').classList.add('hide');
         document.getElementById('success').classList.remove('hide');
-        document.getElementById('success-msg').textContent = apiOk
-          ? '已加入提醒名单 ✅ 到期会自动发邮件俾你。'
-          : '信息已保存（本地模式） ✅ 上线后会同步到服务器。';
+        document.getElementById('success-msg').innerHTML = apiOk
+          ? '已加入提醒名单 <i data-icon="check-circle" style="color: var(--green);"></i> 到期会自动发邮件俾你。'
+          : '信息已保存（本地模式） <i data-icon="check-circle" style="color: var(--green);"></i> 上线后会同步到服务器。';
         Cantonese.confetti(document.body, 30);
       });
     })();

@@ -13,7 +13,7 @@
   <main class="container container-wide">
     <section class="section">
       <div class="center mb-3">
-        <h1 class="display">🤝 揾你嘅粤语语伴</h1>
+        <h1 class="display"><i data-icon="handshake"></i> 揾你嘅粤语语伴</h1>
         <p class="muted mt-1" id="subtitle">按你嘅等级筛嘅 3-5 位</p>
       </div>
 
@@ -38,7 +38,7 @@
     Cantonese.initTheme();
     Cantonese.injectThemeToggle();
     Cantonese.injectTopbar('partner');
-    Cantonese.initCustomCursor();
+    Cantonese.initIcons();
     Cantonese.initScrollReveal();
 
     (async function () {
@@ -69,7 +69,7 @@
       host.innerHTML = scored.map(p => `
         <div class="partner-card">
           <div class="row" style="gap:12px; align-items: center;">
-            <div class="partner-avatar">${p.emoji}</div>
+            <i class="partner-avatar" data-icon="${p.icon || 'user'}"></i>
             <div>
               <div class="partner-name">${p.name}</div>
               <div class="partner-meta">${p.gender} · ${p.age} · ${p.region}</div>
@@ -80,9 +80,9 @@
             ${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}
           </div>
           <p class="partner-intro">${p.intro}</p>
-          <div class="text-sm muted">📮 ${p.contact}</div>
+          <div class="text-sm muted"><i data-icon="envelope-simple"></i> ${p.contact}</div>
         </div>
-      `).join('');
+      `}).join('');
     })();
   </script>
 </body>

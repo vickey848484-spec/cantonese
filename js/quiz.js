@@ -202,55 +202,61 @@
     });
   }
 
-  // 倒计时加载
+  // 倒计时加载（5 秒内完成 → 跳转）
   function showLoading(container, onDone) {
     const stages = [
-      { text: '🔍 分析紧你嘅答案...',     duration: 700 },
-      { text: '🧮 揾你嘅学习时长...',     duration: 700 },
-      { text: '🧬 生成 MBTI 人格...',     duration: 800 },
-      { text: '🎯 匹配课程同语伴...',     duration: 800 },
-      { text: '🚀 准备好喇！',             duration: 500 },
+      { icon: 'magnifying-glass', text: '分析紧你嘅答案...',   duration: 900 },
+      { icon: 'calculator',        text: '揾你嘅学习时长...',   duration: 900 },
+      { icon: 'dna',               text: '生成 MBTI 人格...',   duration: 1000 },
+      { icon: 'funnel',            text: '匹配课程同语伴...',   duration: 900 },
+      { icon: 'rocket',            text: '准备好喇！',            duration: 600 },
     ];
-    const total = stages.reduce((s, st) => s + st.duration, 0);
+    const total = stages.reduce((s, st) => s + st.duration, 0); // 4300ms
 
     container.innerHTML = `
       <div class="question-card" style="min-height: 380px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px 24px;">
-        <div style="font-size: 80px; line-height: 1; margin-bottom: 24px;" id="loading-emoji">🔍</div>
+        <div style="font-size: 80px; line-height: 1; margin-bottom: 24px; color: var(--blue);" id="loading-icon"></div>
         <div class="display" style="font-size: 22px; margin-bottom: 32px; max-width: 320px; min-height: 30px;" id="loading-text">分析紧你嘅答案...</div>
         <div style="width: 100%; max-width: 320px;">
           <div class="progress"><div class="progress-fill" id="loading-bar" style="width: 0%"></div></div>
         </div>
         <div class="muted text-sm mt-2">
-          倒数 <span id="loading-eta">${Math.ceil(total/1000)}</span> 秒
+          倒数 <span id="loading-eta">${(total/1000).toFixed(1)}</span> 秒
         </div>
       </div>
     `;
 
-    const bar   = container.querySelector('#loading-bar');
-    const text  = container.querySelector('#loading-text');
-    const emoji = container.querySelector('#loading-emoji');
-    const eta   = container.querySelector('#loading-eta');
+    // 渲染图标
+    const iconHost = container.querySelector('#loading-icon');
+    iconHost.innerHTML = global.Cantonese.icon(stages[0].icon);
+
+    const bar  = container.querySelector('#loading-bar');
+    const text = container.querySelector('#loading-text');
+    const eta  = container.querySelector('#loading-eta');
 
     let elapsed = 0;
     let i = 0;
 
     function tick() {
       if (i >= stages.length) {
+        // 强制 100%
+        bar.style.width = '100%';
+        // 立即跳转（不等动画）
         onDone();
         return;
       }
       const stage = stages[i];
-      text.textContent  = stage.text;
-      emoji.textContent = stage.text.split(' ')[0];
+      text.textContent = stage.text;
+      iconHost.innerHTML = global.Cantonese.icon(stage.icon);
       elapsed += stage.duration;
       const pct = Math.min(100, (elapsed / total) * 100);
       bar.style.width = pct + '%';
-      eta.textContent = Math.max(0, Math.ceil((total - elapsed) / 1000));
+      eta.textContent = Math.max(0, ((total - elapsed) / 1000).toFixed(1));
       i++;
       setTimeout(tick, stage.duration);
     }
 
-    setTimeout(tick, 100);
+    setTimeout(tick, 50);
     confetti(document.body, 30);
   }
 

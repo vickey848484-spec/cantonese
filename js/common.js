@@ -111,12 +111,9 @@
     bar.innerHTML = `
       <div class="topbar-inner">
         <a class="logo" href="index.html"><span class="pink">识</span>讲粤语</a>
-        <nav class="row" style="gap:4px;">
+        <nav class="row topbar-nav" style="gap:4px;">
           ${items.map(it => `
-            <a href="${it.href}" style="
-              padding: 8px 12px; border-radius: 999px; font-size: 14px; font-weight: 700;
-              ${active === it.key ? 'background: var(--pink); color: #fff;' : 'color: var(--text-soft);'}
-            ">${it.label}</a>
+            <a href="${it.href}" class="topbar-link ${active === it.key ? 'is-active' : ''}">${it.label}</a>
           `).join('')}
         </nav>
       </div>
@@ -124,8 +121,77 @@
     document.body.prepend(bar);
   }
 
+  /* ---------- 自定义光标（桌面端）---------- */
+  function initCustomCursor() {
+    if (window.matchMedia('(pointer: coarse)').matches) return; // 移动端跳过
+    if (document.getElementById('custom-cursor')) return;
+    document.body.classList.add('has-custom-cursor');
+
+    const cursor = document.createElement('div');
+    cursor.id = 'custom-cursor';
+    cursor.innerHTML = '<div class="cursor-dot"></div><div class="cursor-ring"></div>';
+    document.body.appendChild(cursor);
+
+    const dot = cursor.querySelector('.cursor-dot');
+    const ring = cursor.querySelector('.cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    let raf = null;
+
+    document.addEventListener('mousemove', (e) => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.transform = `translate(${mx - 3}px, ${my - 3}px)`;
+      if (!raf) raf = requestAnimationFrame(loop);
+    });
+
+    function loop() {
+      rx += (mx - rx) * 0.18;
+      ry += (my - ry) * 0.18;
+      ring.style.transform = `translate(${rx - 16}px, ${ry - 16}px)`;
+      if (Math.abs(mx - rx) > 0.1 || Math.abs(my - ry) > 0.1) {
+        raf = requestAnimationFrame(loop);
+      } else {
+        raf = null;
+      }
+    }
+
+    // 悬停可点击元素时光标变大
+    document.addEventListener('mouseover', (e) => {
+      if (e.target.closest('a, button, .card, .partner-card, .course-card, .card-flat, input, select, label')) {
+        cursor.classList.add('is-hover');
+      }
+    });
+    document.addEventListener('mouseout', (e) => {
+      if (e.target.closest('a, button, .card, .partner-card, .course-card, .card-flat, input, select, label')) {
+        cursor.classList.remove('is-hover');
+      }
+    });
+
+    // 离开窗口时隐藏
+    document.addEventListener('mouseleave', () => cursor.classList.add('is-hidden'));
+    document.addEventListener('mouseenter', () => cursor.classList.remove('is-hidden'));
+  }
+
+  /* ---------- 滚动触发动画（IntersectionObserver）---------- */
+  function initScrollReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    const els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    els.forEach(el => io.observe(el));
+  }
+
   global.Cantonese = {
     Store, LEVELS, loadJSON, getLevelByScore, getQuery,
     confetti, injectThemeToggle, injectTopbar, initTheme,
+    initCustomCursor, initScrollReveal,
   };
 })(window);

@@ -84,6 +84,20 @@ h2.display { font-size: clamp(26px, 5vw, 38px); margin-bottom: 16px; }
 h3.display { font-size: clamp(20px, 3vw, 24px); margin-bottom: 12px; }
 .muted { color: var(--text-soft); }
 
+/* 文字 + 图标 同行不换行 */
+.inline-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+.inline-icon i {
+  font-size: 0.85em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
 /* ============ 布局 ============ */
 .container { max-width: 720px; margin: 0 auto; padding: 24px 20px 80px; }
 .container-wide { max-width: 960px; }
@@ -457,6 +471,81 @@ body.light .topbar { background: rgba(255, 255, 255, 0.9); }
   z-index: 100;
   border: 2px solid #0a0a0a;
   font-weight: 900;
+}
+
+/* ============ 顶导链接（细化）============ */
+.topbar-link {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-soft);
+  transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s, transform 0.15s;
+}
+.topbar-link:hover {
+  background: var(--bg-soft);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+.topbar-link.is-active {
+  background: var(--yellow);
+  color: #0a0a0a;
+}
+
+/* ============ 滚动触发动画 ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============ 自定义光标（桌面端）============ */
+body { cursor: default; }
+@media (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor * { cursor: none !important; }
+  body.has-custom-cursor a,
+  body.has-custom-cursor button { cursor: none !important; }
+  #custom-cursor {
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 99999;
+    mix-blend-mode: difference;
+  }
+  .cursor-dot {
+    position: fixed;
+    width: 6px; height: 6px;
+    background: var(--yellow);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.05s;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 32px; height: 32px;
+    border: 2px solid var(--yellow);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), width 0.25s, height 0.25s, border-color 0.25s, background 0.25s;
+  }
+  #custom-cursor.is-hover .cursor-ring {
+    width: 56px;
+    height: 56px;
+    background: rgba(0, 102, 255, 0.18);
+    border-color: var(--blue);
+  }
+  #custom-cursor.is-hover .cursor-dot { opacity: 0; }
+  #custom-cursor.is-hidden { opacity: 0; }
 }
 
 /* ============ 工具类 ============ */

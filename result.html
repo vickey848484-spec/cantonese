@@ -19,7 +19,7 @@
       <div class="center mb-3">
         <div class="muted text-sm">你的粤语等级</div>
         <div class="level-badge" id="level-badge">入门</div>
-        <h1 class="display gradient-text" id="level-name">听唔明仔</h1>
+        <h1 class="display" style="color: var(--yellow);" id="level-name">听唔明仔</h1>
         <p class="muted" id="level-score">10 题答对 5 题</p>
       </div>
 
@@ -100,6 +100,8 @@
     Cantonese.initTheme();
     Cantonese.injectThemeToggle();
     Cantonese.injectTopbar('test');
+    Cantonese.initCustomCursor();
+    Cantonese.initScrollReveal();
 
     (async function () {
       const result = Cantonese.Store.get(Cantonese.Store.KEYS.result);

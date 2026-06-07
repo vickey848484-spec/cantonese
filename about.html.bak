@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>關於我 · 梁偉琦Vickey · 識講粵語</title>
+  <title>关于我 · 梁伟琦Vickey · 識讲粤语</title>
   <link rel="stylesheet" href="css/style.css?v=20260607b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +52,7 @@
     }
     .profile-bio strong { color: var(--text); }
 
-    /* 數據統計 */
+    /* 数据统计 */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -83,7 +83,7 @@
       margin-top: 4px;
     }
 
-    /* 學員評價 */
+    /* 学员评价 */
     .testimonial-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -136,7 +136,7 @@
     .testimonial .author-name { font-size: 13px; font-weight: 700; color: var(--text); }
     .testimonial .author-meta { font-size: 11px; color: var(--text-soft); }
 
-    /* 課程 */
+    /* 课程 */
     .course-group {
       background: var(--card);
       color: var(--card-text);
@@ -201,7 +201,7 @@
       font-size: 15px;
     }
 
-    /* 方法論 */
+    /* 方法论 */
     .method-card {
       display: flex;
       gap: 16px;
@@ -234,7 +234,7 @@
       line-height: 1.6;
     }
 
-    /* 聯繫小卡 */
+    /* 联系小卡 */
     .contact-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -297,7 +297,7 @@
   <main class="container container-wide">
     <section class="section">
 
-      <!-- 頂部"返回首頁"快速通道（讓用户能一鍵跳回 index.html） -->
+      <!-- 顶部"返回首页"快速通道（让用户能一键跳回 index.html） -->
       <a href="index.html" class="back-home" style="
         display: inline-flex;
         align-items: center;
@@ -311,164 +311,164 @@
         text-decoration: none;
         margin-bottom: 16px;
         transition: transform 0.15s;
-      ">← 返回首頁</a>
+      ">← 返回首页</a>
 
-      <!-- ============== 1. 頭部 ============== -->
+      <!-- ============== 1. 头部 ============== -->
       <div class="profile-hero">
         <div class="profile-avatar">
-          <img src="images/avatar.jpg?v=20260607b" alt="梁偉琦Vickey">
+          <img src="images/avatar.jpg?v=20260607b" alt="梁伟琦Vickey">
         </div>
-        <div class="profile-name">梁偉琦Vickey</div>
-        <div class="profile-title">在線教育平台簽約粵語老師 · @包媽VK教粵語</div>
+        <div class="profile-name">梁伟琦Vickey</div>
+        <div class="profile-title">在线教育平台签约粤语老师 · @包妈VK教粤语</div>
         <p class="profile-bio">
-          👩‍🏫 <strong>在線教育平台簽約粵語老師</strong>，<strong style="color: var(--yellow);">16 年+</strong>粵語教學經驗，舉一反三教學風格<br>
-          🎙️ <strong>粵語文化傳播者</strong>，自媒體平台粉絲 <strong style="color: var(--yellow);">25 萬+</strong><br>
-          ✨ 教學生動、接地氣，讓零基礎也能聽懂粵語<br>
-          🌏 <strong>普通話、英語、粵語</strong>自由切換
+          👩‍🏫 <strong>在线教育平台签约粤语老师</strong>，<strong style="color: var(--yellow);">16 年+</strong>粤语教学经验，举一反三教学风格<br>
+          🎙️ <strong>粤语文化传播者</strong>，自媒体平台粉丝 <strong style="color: var(--yellow);">25 万+</strong><br>
+          ✨ 教学生动、接地气，让零基础也能听懂粤语<br>
+          🌏 <strong>普通话、英语、粤语</strong>自由切换
         </p>
 
         <div class="contact-row">
           <a class="contact-mini" href="mailto:hi@vickey-cantonese.com">
             <i class="ph ph-envelope-simple"></i>
-            <div class="label">郵箱</div>
+            <div class="label">邮箱</div>
             <div class="value">hi@vickey-cantonese.com</div>
           </a>
-          <a class="contact-mini" href="javascript:void(0)" data-copy="包媽VK教粵語">
+          <a class="contact-mini" href="javascript:void(0)" data-copy="包妈VK教粤语">
             <i class="ph ph-chat-circle-dots"></i>
             <div class="label">加微信</div>
-            <div class="value">包媽VK教粵語</div>
+            <div class="value">包妈VK教粤语</div>
           </a>
           <a class="contact-mini" href="test.html?restart=1">
             <i class="ph ph-user-circle"></i>
-            <div class="label">測一測</div>
-            <div class="value">3 分鐘出結果</div>
+            <div class="label">测一测</div>
+            <div class="value">3 分钟出结果</div>
           </a>
           <a class="contact-mini" href="qa.html">
             <i class="ph ph-question"></i>
-            <div class="label">常見問題</div>
-            <div class="value">10 個 Q&A</div>
+            <div class="label">常见问题</div>
+            <div class="value">10 个 Q&A</div>
           </a>
         </div>
       </div>
 
-      <!-- ============== 2. 教學成果 ============== -->
-      <h2 class="display center" style="font-size: 26px;">教學成果</h2>
+      <!-- ============== 2. 教学成果 ============== -->
+      <h2 class="display center" style="font-size: 26px;">教学成果</h2>
       <div class="stats-grid">
         <div class="stat-box">
           <div class="num">25w+</div>
-          <div class="label">全網粉絲</div>
+          <div class="label">全网粉丝</div>
         </div>
         <div class="stat-box">
           <div class="num">16+ 年</div>
-          <div class="label">教齡</div>
+          <div class="label">教龄</div>
         </div>
         <div class="stat-box">
           <div class="num">200+</div>
-          <div class="label">系統課時</div>
+          <div class="label">系统课时</div>
         </div>
         <div class="stat-box">
           <div class="num">4.9/5</div>
-          <div class="label">學員評分</div>
+          <div class="label">学员评分</div>
         </div>
       </div>
 
-      <!-- ============== 3. 學員評價 ============== -->
-      <h2 class="display center" style="font-size: 26px;">學員怎麼説</h2>
+      <!-- ============== 3. 学员评价 ============== -->
+      <h2 class="display center" style="font-size: 26px;">学员怎么说</h2>
       <div class="testimonial-grid">
         <div class="testimonial">
-          <p class="text">從「聽唔明」到能跟香港同事開會，9 個月。老師講的 9 聲 6 調視頻我看了不下 10 遍，每次都有新收穫。</p>
+          <p class="text">从「听唔明」到能跟香港同事开会，9 个月。老师讲的 9 声 6 调视频我看了不下 10 遍，每次都有新收获。</p>
           <div class="author">
             <div class="author-avatar">L</div>
             <div class="author-info">
               <div class="author-name">@Lydia</div>
-              <div class="author-meta">深圳 · 互聯網產品經理 · 學了 9 個月</div>
+              <div class="author-meta">深圳 · 互联网产品经理 · 学了 9 个月</div>
             </div>
           </div>
         </div>
         <div class="testimonial">
-          <p class="text">舉一反三教學法真的絕！一個句型拆 5 個場景，外出點餐、shopping、問路全覆蓋，再也不怕開口了。</p>
+          <p class="text">举一反三教学法真的绝！一个句型拆 5 个场景，外出点餐、shopping、问路全覆盖，再也不怕开口了。</p>
           <div class="author">
             <div class="author-avatar">A</div>
             <div class="author-info">
               <div class="author-name">@阿杰</div>
-              <div class="author-meta">上海 · 港資企業市場 · 學了 1 年</div>
+              <div class="author-meta">上海 · 港资企业市场 · 学了 1 年</div>
             </div>
           </div>
         </div>
         <div class="testimonial">
-          <p class="text">老師講俚語和俗語特別地道，教材裏學不到的「執生」「食字」全講明白，聽港劇再也不用看字幕了。</p>
+          <p class="text">老师讲俚语和俗语特别地道，教材里学不到的「执生」「食字」全讲明白，听港剧再也不用看字幕了。</p>
           <div class="author">
             <div class="author-avatar">M</div>
             <div class="author-info">
               <div class="author-name">@Maggie</div>
-              <div class="author-meta">北京 · 港劇迷 · 學了 6 個月</div>
+              <div class="author-meta">北京 · 港剧迷 · 学了 6 个月</div>
             </div>
           </div>
         </div>
         <div class="testimonial">
-          <p class="text">本來是陪孩子學，結果自己也入坑了。老師的港式發音超正，三語自由切換學起來很過癮。</p>
+          <p class="text">本来是陪孩子学，结果自己也入坑了。老师的港式发音超正，三语自由切换学起来很过瘾。</p>
           <div class="author">
             <div class="author-avatar">T</div>
             <div class="author-info">
               <div class="author-name">@Tom</div>
-              <div class="author-meta">廣州 · 全職媽媽 · 學了 4 個月</div>
+              <div class="author-meta">广州 · 全职妈妈 · 学了 4 个月</div>
             </div>
           </div>
         </div>
         <div class="testimonial">
-          <p class="text">舉家搬來香港前學的，老師糾正的入聲幫我省了 3 個月適應期。同事都以為我是本地人。</p>
+          <p class="text">举家搬来香港前学的，老师纠正的入声帮我省了 3 个月适应期。同事都以为我是本地人。</p>
           <div class="author">
             <div class="author-avatar">C</div>
             <div class="author-info">
               <div class="author-name">@Coco</div>
-              <div class="author-meta">北京移居香港 · 學了 8 個月</div>
+              <div class="author-meta">北京移居香港 · 学了 8 个月</div>
             </div>
           </div>
         </div>
         <div class="testimonial">
-          <p class="text">學完商務粵語能跟客户唱 K 都不用普通話了，老師教的俚語和酒桌文化直接能用。</p>
+          <p class="text">学完商务粤语能跟客户唱 K 都不用普通话了，老师教的俚语和酒桌文化直接能用。</p>
           <div class="author">
             <div class="author-avatar">J</div>
             <div class="author-info">
               <div class="author-name">@Jacky</div>
-              <div class="author-meta">上海 · 投行 · 學了 1 年半</div>
+              <div class="author-meta">上海 · 投行 · 学了 1 年半</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ============== 4. 課程總覽 ============== -->
-      <h2 class="display center" style="font-size: 26px; margin-top: 48px;">課程總覽</h2>
-      <p class="muted center text-sm">入門 / 進階 / 高階，按你嘅等級選 → <a href="course.html" style="color: var(--yellow);">看全部</a></p>
+      <!-- ============== 4. 课程总览 ============== -->
+      <h2 class="display center" style="font-size: 26px; margin-top: 48px;">课程总览</h2>
+      <p class="muted center text-sm">入门 / 进阶 / 高阶，按你嘅等级选 → <a href="course.html" style="color: var(--yellow);">看全部</a></p>
 
       <div style="margin-top: 20px;">
         <div class="course-group">
           <div class="course-group-head">
-            <div class="course-group-title"><span class="badge badge-entry">入門</span></div>
-            <span class="muted text-sm">3 門</span>
+            <div class="course-group-title"><span class="badge badge-entry">入门</span></div>
+            <span class="muted text-sm">3 门</span>
           </div>
           <ul>
             <li>
               <div class="icon"><i class="ph ph-target"></i></div>
               <div class="info">
-                <div class="title">粵語拼音速成</div>
-                <div class="meta">視頻課 · 2 周</div>
+                <div class="title">粤语拼音速成</div>
+                <div class="meta">视频课 · 2 周</div>
               </div>
               <div class="price">¥99</div>
             </li>
             <li>
               <div class="icon"><i class="ph ph-bowl-food"></i></div>
               <div class="info">
-                <div class="title">新手 100 詞</div>
-                <div class="meta">視頻課 · 4 周</div>
+                <div class="title">新手 100 词</div>
+                <div class="meta">视频课 · 4 周</div>
               </div>
               <div class="price">¥199</div>
             </li>
             <li>
               <div class="icon"><i class="ph ph-handshake"></i></div>
               <div class="info">
-                <div class="title">自我介紹 + 閒聊破冰</div>
-                <div class="meta">視頻課 · 3 周</div>
+                <div class="title">自我介绍 + 闲聊破冰</div>
+                <div class="meta">视频课 · 3 周</div>
               </div>
               <div class="price">¥149</div>
             </li>
@@ -477,31 +477,31 @@
 
         <div class="course-group">
           <div class="course-group-head">
-            <div class="course-group-title"><span class="badge badge-mid">進階</span></div>
-            <span class="muted text-sm">3 門</span>
+            <div class="course-group-title"><span class="badge badge-mid">进阶</span></div>
+            <span class="muted text-sm">3 门</span>
           </div>
           <ul>
             <li>
               <div class="icon"><i class="ph ph-train"></i></div>
               <div class="info">
-                <div class="title">場景口語 50 課</div>
-                <div class="meta">視頻課 · 8 周</div>
+                <div class="title">场景口语 50 课</div>
+                <div class="meta">视频课 · 8 周</div>
               </div>
               <div class="price">¥399</div>
             </li>
             <li>
               <div class="icon"><i class="ph ph-smiley"></i></div>
               <div class="info">
-                <div class="title">粵語俚語大全</div>
-                <div class="meta">視頻課 · 6 周</div>
+                <div class="title">粤语俚语大全</div>
+                <div class="meta">视频课 · 6 周</div>
               </div>
               <div class="price">¥299</div>
             </li>
             <li>
               <div class="icon"><i class="ph ph-television"></i></div>
               <div class="info">
-                <div class="title">看港劇學粵語</div>
-                <div class="meta">視頻課 · 12 周</div>
+                <div class="title">看港剧学粤语</div>
+                <div class="meta">视频课 · 12 周</div>
               </div>
               <div class="price">¥499</div>
             </li>
@@ -510,14 +510,14 @@
 
         <div class="course-group">
           <div class="course-group-head">
-            <div class="course-group-title"><span class="badge badge-high">高階</span></div>
-            <span class="muted text-sm">3 門</span>
+            <div class="course-group-title"><span class="badge badge-high">高阶</span></div>
+            <span class="muted text-sm">3 门</span>
           </div>
           <ul>
             <li>
               <div class="icon"><i class="ph ph-briefcase"></i></div>
               <div class="info">
-                <div class="title">商務粵語</div>
+                <div class="title">商务粤语</div>
                 <div class="meta">1v1 直播 · 8 周</div>
               </div>
               <div class="price">¥2999</div>
@@ -525,16 +525,16 @@
             <li>
               <div class="icon"><i class="ph ph-book-open"></i></div>
               <div class="info">
-                <div class="title">粵語詩詞</div>
-                <div class="meta">視頻課 · 10 周</div>
+                <div class="title">粤语诗词</div>
+                <div class="meta">视频课 · 10 周</div>
               </div>
               <div class="price">¥699</div>
             </li>
             <li>
               <div class="icon"><i class="ph ph-flower-lotus"></i></div>
               <div class="info">
-                <div class="title">深度文化課</div>
-                <div class="meta">社羣共學 · 6 周</div>
+                <div class="title">深度文化课</div>
+                <div class="meta">社群共学 · 6 周</div>
               </div>
               <div class="price">¥899</div>
             </li>
@@ -542,58 +542,58 @@
         </div>
       </div>
 
-      <!-- ============== 5. 學習方法論 ============== -->
-      <h2 class="display center" style="font-size: 26px; margin-top: 48px;">學習方法論</h2>
-      <p class="muted center text-sm">基於 FSI/ACTFL/SLA 理論 + 9 年教學經驗</p>
+      <!-- ============== 5. 学习方法论 ============== -->
+      <h2 class="display center" style="font-size: 26px; margin-top: 48px;">学习方法论</h2>
+      <p class="muted center text-sm">基于 FSI/ACTFL/SLA 理论 + 9 年教学经验</p>
 
       <div style="margin-top: 20px;">
         <div class="method-card">
           <div class="num">1</div>
           <div class="info">
-            <div class="title">30/30 原則</div>
-            <div class="desc">每天至少 30 分鐘，每週 25 天學習。**比突擊式更有效**——研究顯示分佈式練習勝過集中練習。</div>
+            <div class="title">30/30 原则</div>
+            <div class="desc">每天至少 30 分钟，每周 25 天学习。**比突击式更有效**——研究显示分布式练习胜过集中练习。</div>
           </div>
         </div>
         <div class="method-card">
           <div class="num">2</div>
           <div class="info">
-            <div class="title">輸入:輸出:複習 = 4:3:3</div>
-            <div class="desc">聽讀 4 成，説寫 3 成，間隔重複 3 成。**只輸入不開嘴**=學了 2 年還説不出。</div>
+            <div class="title">输入:输出:复习 = 4:3:3</div>
+            <div class="desc">听读 4 成，说写 3 成，间隔重复 3 成。**只输入不开嘴**=学了 2 年还说不出。</div>
           </div>
         </div>
         <div class="method-card">
           <div class="num">3</div>
           <div class="info">
-            <div class="title">B1 後必有真人對話</div>
-            <div class="desc">能聽懂日常對話後，**必須有語伴或老師**。語言是交際工具，閉環才是真學。</div>
+            <div class="title">B1 后必有真人对话</div>
+            <div class="desc">能听懂日常对话后，**必须有语伴或老师**。语言是交际工具，闭环才是真学。</div>
           </div>
         </div>
         <div class="method-card">
           <div class="num">4</div>
           <div class="info">
             <div class="title">不追完美口音</div>
-            <div class="desc">成人達到完美母語語音概率 < 5%（關鍵期假説）。**清晰可懂 + 略帶口音**完全夠用，省精力到內容。</div>
+            <div class="desc">成人达到完美母语语音概率 < 5%（关键期假说）。**清晰可懂 + 略带口音**完全够用，省精力到内容。</div>
           </div>
         </div>
         <div class="method-card">
           <div class="num">5</div>
           <div class="info">
-            <div class="title">每 3 個月自評一次</div>
-            <div class="desc">用 <a href="test.html" style="color: var(--yellow);">首頁測試</a> 重測一次，看升級咗未。<strong>持續比強度重要</strong>。</div>
+            <div class="title">每 3 个月自评一次</div>
+            <div class="desc">用 <a href="test.html" style="color: var(--yellow);">首页测试</a> 重测一次，看升级咗未。<strong>持续比强度重要</strong>。</div>
           </div>
         </div>
       </div>
 
       <!-- ============== 6. 各大平台 ============== -->
-      <h2 class="display center" style="font-size: 26px; margin-top: 48px;">我在這些平台</h2>
-      <p class="muted center text-sm">全平台同名：<strong style="color: var(--yellow);">@包媽VK教粵語</strong></p>
+      <h2 class="display center" style="font-size: 26px; margin-top: 48px;">我在这些平台</h2>
+      <p class="muted center text-sm">全平台同名：<strong style="color: var(--yellow);">@包妈VK教粤语</strong></p>
 
       <div class="platform-grid">
         <a class="platform-card p-xhs" href="https://www.xiaohongshu.com/search_result_ai?keyword=%25E5%258C%2585%25E5%25A6%2588VK%25E6%2595%2599%25E7%25B2%25A4%25E8%25AF%25AD&source=web_explore_feed" target="_blank" rel="noopener">
-          <div class="icon">小紅</div>
+          <div class="icon">小红</div>
           <div class="info">
-            <div class="name">小紅書</div>
-            <div class="id">@包媽VK教粵語</div>
+            <div class="name">小红书</div>
+            <div class="id">@包妈VK教粤语</div>
           </div>
           <div class="arrow">→</div>
         </a>
@@ -601,23 +601,23 @@
           <div class="icon">抖音</div>
           <div class="info">
             <div class="name">抖音</div>
-            <div class="id">@包媽VK教粵語</div>
+            <div class="id">@包妈VK教粤语</div>
           </div>
           <div class="arrow">→</div>
         </a>
         <a class="platform-card p-shipinhao" href="https://channels.weixin.qq.com/search?query=%E5%8C%85%E5%A6%88VK%E6%95%99%E7%B2%A4%E8%AF%AD" target="_blank" rel="noopener">
-          <div class="icon">視頻號</div>
+          <div class="icon">视频号</div>
           <div class="info">
-            <div class="name">微信視頻號</div>
-            <div class="id">@包媽VK教粵語</div>
+            <div class="name">微信视频号</div>
+            <div class="id">@包妈VK教粤语</div>
           </div>
           <div class="arrow">→</div>
         </a>
         <a class="platform-card p-bili" href="https://search.bilibili.com/all?keyword=%E5%8C%85%E5%A6%88VK%E6%95%99%E7%B2%A4%E8%AF%AD" target="_blank" rel="noopener">
           <div class="icon">B站</div>
           <div class="info">
-            <div class="name">嗶哩嗶哩</div>
-            <div class="id">@包媽VK教粵語</div>
+            <div class="name">哔哩哔哩</div>
+            <div class="id">@包妈VK教粤语</div>
           </div>
           <div class="arrow">→</div>
         </a>
@@ -625,7 +625,7 @@
           <div class="icon">快手</div>
           <div class="info">
             <div class="name">快手</div>
-            <div class="id">@包媽VK教粵語</div>
+            <div class="id">@包妈VK教粤语</div>
           </div>
           <div class="arrow">→</div>
         </a>
@@ -633,7 +633,7 @@
           <div class="icon">知乎</div>
           <div class="info">
             <div class="name">知乎</div>
-            <div class="id">@包媽VK教粵語</div>
+            <div class="id">@包妈VK教粤语</div>
           </div>
           <div class="arrow">→</div>
         </a>
@@ -641,15 +641,15 @@
           <div class="icon">微博</div>
           <div class="info">
             <div class="name">微博</div>
-            <div class="id">@包媽VK教粵語</div>
+            <div class="id">@包妈VK教粤语</div>
           </div>
           <div class="arrow">→</div>
         </a>
         <a class="platform-card p-bjh" href="https://baijiahao.baidu.com/" target="_blank" rel="noopener">
           <div class="icon">百家</div>
           <div class="info">
-            <div class="name">百家號</div>
-            <div class="id">@包媽VK教粵語</div>
+            <div class="name">百家号</div>
+            <div class="id">@包妈VK教粤语</div>
           </div>
           <div class="arrow">→</div>
         </a>
@@ -658,7 +658,7 @@
     </section>
   </main>
 
-  <footer class="footer">識講粵語 · 由梁偉琦Vickey 主理</footer>
+  <footer class="footer">識讲粤语 · 由梁伟琦Vickey 主理</footer>
 
   <script src="js/common.js?v=20260607b"></script>
   <script>
@@ -667,16 +667,15 @@
     Cantonese.injectTopbar('about');
     Cantonese.initIcons();
     Cantonese.initScrollReveal();
-    Cantonese.applyI18n();
 
-    // 複製微信號
+    // 复制微信号
     document.querySelectorAll('[data-copy]').forEach(el => {
       el.addEventListener('click', e => {
         e.preventDefault();
         const txt = el.dataset.copy;
         Cantonese.copyToClipboard(txt).then(() => {
           const orig = el.querySelector('.value').textContent;
-          el.querySelector('.value').textContent = '已複製 ✓';
+          el.querySelector('.value').textContent = '已复制 ✓';
           setTimeout(() => { el.querySelector('.value').textContent = orig; }, 1500);
         });
       });

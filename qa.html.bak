@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>粵語學習 Q&A · 識講粵語</title>
+  <title>粤语学习 Q&A · 識讲粤语</title>
   <link rel="stylesheet" href="css/style.css?v=20260607b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,31 +150,31 @@
   <main class="container">
     <section class="section">
       <div class="center mb-3">
-        <h1 class="display">學習 Q&A + 客服</h1>
-        <p class="muted mt-1">唔怕問題多，怕你唔問</p>
+        <h1 class="display">学习 Q&A + 客服</h1>
+        <p class="muted mt-1">唔怕问题多，怕你唔问</p>
       </div>
 
-      <input class="qa-search" type="search" id="qa-filter" placeholder="搜問題：例如「發音」「多久」「退款」…">
+      <input class="qa-search" type="search" id="qa-filter" placeholder="搜问题：例如「发音」「多久」「退款」…">
 
       <div id="qa-list"></div>
 
       <div class="contact-card">
-        <h2 class="display" style="font-size: 22px;">📞 聯繫客服</h2>
-        <p class="muted text-sm mt-1">3 種方式揾到 Vickey 老師</p>
+        <h2 class="display" style="font-size: 22px;">📞 联系客服</h2>
+        <p class="muted text-sm mt-1">3 种方式搵到 Vickey 老师</p>
 
         <div class="contact-row" id="contact-rows">
           <!-- JS 渲染 -->
         </div>
 
         <div class="mt-3" style="background: var(--bg-soft); padding: 16px; border-radius: 12px; border: 1px solid var(--border);">
-          <div class="text-sm bold"><i class="ph ph-clock"></i> 客服時間</div>
+          <div class="text-sm bold"><i class="ph ph-clock"></i> 客服时间</div>
           <p class="muted text-sm mt-1" id="contact-hours">—</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">識講粵語 · 由 Vickey 老師主理</footer>
+  <footer class="footer">識讲粤语 · 由 Vickey 老师主理</footer>
 
   <script src="js/common.js?v=20260607b"></script>
   <script>
@@ -183,44 +183,43 @@
     Cantonese.injectTopbar('qa');
     Cantonese.initIcons();
     Cantonese.initScrollReveal();
-    Cantonese.applyI18n();
 
     (async function () {
       try {
         const data = await Cantonese.loadJSON('data/qa.json');
         await Cantonese.renderQA(document, data);
 
-        // 客服區
+        // 客服区
         const c = data.contact;
         const rows = document.getElementById('contact-rows');
         rows.innerHTML = `
           <div class="contact-item">
             <div class="icon-wrap">${Cantonese.icon('chat-circle-dots')}</div>
-            <div class="label">${c.wechat.label || '微信諮詢'}</div>
+            <div class="label">${c.wechat.label || '微信咨询'}</div>
             <div class="value">${c.wechat.id}</div>
-            <button class="copy-btn" data-copy="${c.wechat.id}">複製微信號</button>
+            <button class="copy-btn" data-copy="${c.wechat.id}">复制微信号</button>
           </div>
           <div class="contact-item">
             <div class="icon-wrap">${Cantonese.icon('envelope')}</div>
-            <div class="label">郵件諮詢</div>
+            <div class="label">邮件咨询</div>
             <div class="value" style="font-size: 14px; word-break: break-all;">${c.email}</div>
-            <button class="copy-btn" data-copy="${c.email}">複製郵箱</button>
+            <button class="copy-btn" data-copy="${c.email}">复制邮箱</button>
           </div>
           <div class="contact-item">
             <div class="icon-wrap">${Cantonese.icon('chat-circle-dots')}</div>
-            <div class="label">${c.wechat.name || '老師'}</div>
-            <div class="value" style="font-size: 13px; line-height: 1.5;">${c.phone || '微信最及時'}</div>
-            <a class="copy-btn" style="text-decoration: none; display: inline-block;" href="mailto:${c.email}">發郵件</a>
+            <div class="label">${c.wechat.name || '老师'}</div>
+            <div class="value" style="font-size: 13px; line-height: 1.5;">${c.phone || '微信最及时'}</div>
+            <a class="copy-btn" style="text-decoration: none; display: inline-block;" href="mailto:${c.email}">发邮件</a>
           </div>
         `;
 
-        // 複製按鈕
+        // 复制按钮
         rows.querySelectorAll('.copy-btn[data-copy]').forEach(btn => {
           btn.addEventListener('click', () => {
             const txt = btn.getAttribute('data-copy');
             Cantonese.copyToClipboard(txt).then(() => {
               const orig = btn.textContent;
-              btn.textContent = '已複製 ✓';
+              btn.textContent = '已复制 ✓';
               setTimeout(() => { btn.textContent = orig; }, 1500);
             });
           });
@@ -231,7 +230,7 @@
       } catch (e) {
         console.error('[qa] error:', e);
         document.getElementById('qa-list').innerHTML =
-          `<p style="color: var(--pink);">加載失敗：${e.message}</p>`;
+          `<p style="color: var(--pink);">加载失败：${e.message}</p>`;
       }
     })();
   </script>

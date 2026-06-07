@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>你的粵語結果 · 識講粵語</title>
+  <title>你的粤语结果 · 識讲粤语</title>
   <link rel="stylesheet" href="css/style.css?v=20260607b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,102 +12,102 @@
 <body>
   <main class="container">
     <section class="section center fade-in" id="loading">
-      <p class="muted"><i data-icon="hourglass"></i> 算緊你嘅結果...</p>
+      <p class="muted"><i data-icon="hourglass"></i> 算紧你嘅结果...</p>
     </section>
 
     <section class="section hide" id="result-wrap">
       <div class="center mb-3">
-        <div class="muted text-sm">你的粵語等級</div>
-        <div class="level-badge" id="level-badge">入門</div>
-        <h1 class="display" style="color: var(--yellow);" id="level-name">聽唔明仔</h1>
-        <p class="muted" id="level-score">10 題答對 5 題</p>
+        <div class="muted text-sm">你的粤语等级</div>
+        <div class="level-badge" id="level-badge">入门</div>
+        <h1 class="display" style="color: var(--yellow);" id="level-name">听唔明仔</h1>
+        <p class="muted" id="level-score">10 题答对 5 题</p>
       </div>
 
       <div class="card mt-3">
-        <div class="muted text-sm">你的粵語人格 · 4 維 16 型</div>
+        <div class="muted text-sm">你的粤语人格 · 4 维 16 型</div>
         <div class="row mt-1" style="gap:12px; align-items: center;">
           <i style="font-size: 64px; line-height: 1; color: var(--blue);" id="mbti-emoji" data-icon="sparkle"></i>
           <div>
             <h2 class="display" style="margin:0; font-size: 28px;" id="mbti-code">SPWI</h2>
-            <div class="text-sm muted" id="mbti-title">速成·聽講·獨狼·學院派</div>
+            <div class="text-sm muted" id="mbti-title">速成·听讲·独狼·学院派</div>
           </div>
         </div>
         <p class="mt-2" id="mbti-tagline"></p>
         <p class="muted mt-2" id="mbti-desc"></p>
         <div class="mt-3">
-          <div class="muted text-sm">4 維拆解</div>
+          <div class="muted text-sm">4 维拆解</div>
           <div id="mbti-dims" class="row mt-1" style="gap: 8px;"></div>
         </div>
         <div class="mt-3" style="background: var(--bg-soft); padding: 16px; border-radius: 12px;">
-          <div class="muted text-sm"><i data-icon="lightbulb"></i> 學習建議</div>
+          <div class="muted text-sm"><i data-icon="lightbulb"></i> 学习建议</div>
           <p class="mt-1" id="mbti-advice"></p>
         </div>
       </div>
 
       <div class="card mt-3">
         <h3 class="display" style="font-size: 22px;"><i data-icon="megaphone"></i> 分享俾朋友</h3>
-        <p class="muted text-sm mt-1">選個風格一鍵複製 + 生成專屬邀請海報</p>
+        <p class="muted text-sm mt-1">选个风格一键复制 + 生成专属邀请海报</p>
 
-        <div class="text-sm bold mt-3" style="color: var(--text-soft);">選個文案風格：</div>
+        <div class="text-sm bold mt-3" style="color: var(--text-soft);">选个文案风格：</div>
         <div class="grid mt-2" style="grid-template-columns: 1fr 1fr; gap: 8px;">
-          <button class="btn btn-primary btn-block" data-share="xiaohongshu">📕 小紅書</button>
-          <button class="btn btn-blue btn-block" data-share="wechat">💬 微信對話</button>
+          <button class="btn btn-primary btn-block" data-share="xiaohongshu">📕 小红书</button>
+          <button class="btn btn-blue btn-block" data-share="wechat">💬 微信对话</button>
           <button class="btn btn-ghost btn-block" data-share="moments">🌟 朋友圈</button>
-          <button class="btn btn-ghost btn-block" data-share="simple">🔗 簡潔</button>
+          <button class="btn btn-ghost btn-block" data-share="simple">🔗 简洁</button>
         </div>
 
         <div class="row mt-3" style="gap: 8px;">
-          <button class="btn btn-ghost btn-block" id="share-link">🔗 複製專屬鏈接</button>
-          <button class="btn btn-primary btn-block" id="share-poster">🎨 生成專屬海報</button>
+          <button class="btn btn-ghost btn-block" id="share-link">🔗 复制专属链接</button>
+          <button class="btn btn-primary btn-block" id="share-poster">🎨 生成专属海报</button>
         </div>
       </div>
 
       <div class="card mt-3">
-        <h3 class="display" style="font-size: 22px;"><i data-icon="clock"></i> 你的學習時長預測</h3>
-        <p class="muted text-sm mt-1">按你每天學 <strong id="daily-mins">30</strong> 分鐘算</p>
+        <h3 class="display" style="font-size: 22px;"><i data-icon="clock"></i> 你的学习时长预测</h3>
+        <p class="muted text-sm mt-1">按你每天学 <strong id="daily-mins">30</strong> 分钟算</p>
 
         <div class="stack mt-3">
           <div class="row" style="justify-content: space-between; align-items: center;">
             <div>
-              <div class="bold">入門 <span class="muted text-sm">· 你嘅位置</span></div>
-              <div class="text-sm muted" id="t-entry">≈ 0 個月</div>
+              <div class="bold">入门 <span class="muted text-sm">· 你嘅位置</span></div>
+              <div class="text-sm muted" id="t-entry">≈ 0 个月</div>
             </div>
             <span class="badge badge-blue">DONE</span>
           </div>
           <div class="row" style="justify-content: space-between; align-items: center;">
             <div>
-              <div class="bold">進階</div>
-              <div class="text-sm muted" id="t-mid">≈ 0 個月</div>
+              <div class="bold">进阶</div>
+              <div class="text-sm muted" id="t-mid">≈ 0 个月</div>
             </div>
-            <span class="badge" id="b-mid">目標</span>
+            <span class="badge" id="b-mid">目标</span>
           </div>
           <div class="row" style="justify-content: space-between; align-items: center;">
             <div>
-              <div class="bold">高階</div>
-              <div class="text-sm muted" id="t-high">≈ 0 個月</div>
+              <div class="bold">高阶</div>
+              <div class="text-sm muted" id="t-high">≈ 0 个月</div>
             </div>
-            <span class="badge badge-purple" id="b-high">遠期</span>
+            <span class="badge badge-purple" id="b-high">远期</span>
           </div>
         </div>
       </div>
 
       <div class="card mt-3">
-        <h3 class="display" style="font-size: 22px;"><i data-icon="share-network"></i> 分享你的結果</h3>
-        <p class="muted text-sm mt-1">發到小紅書/朋友圈，讓朋友也測一測</p>
+        <h3 class="display" style="font-size: 22px;"><i data-icon="share-network"></i> 分享你的结果</h3>
+        <p class="muted text-sm mt-1">发到小红书/朋友圈，让朋友也测一测</p>
         <div id="share-card-host" class="share-card-wrap"></div>
       </div>
 
       <div class="stack mt-3">
-        <a class="btn btn-blue btn-lg btn-block" href="partner.html"><i data-icon="handshake"></i> 揾我嘅語伴</a>
-        <a class="btn btn-primary btn-lg btn-block" href="course.html"><i data-icon="book-open"></i> 揾啱我嘅課</a>
-        <a class="btn btn-ghost btn-lg btn-block" href="signup.html"><i data-icon="envelope"></i> 留郵箱 · 1/3/6 月提醒我自測</a>
-        <a class="btn btn-ghost btn-block" href="test.html?restart=1"><i data-icon="arrow-counter-clockwise"></i> 重新測一次</a>
+        <a class="btn btn-blue btn-lg btn-block" href="partner.html"><i data-icon="handshake"></i> 揾我嘅语伴</a>
+        <a class="btn btn-primary btn-lg btn-block" href="course.html"><i data-icon="book-open"></i> 揾啱我嘅课</a>
+        <a class="btn btn-ghost btn-lg btn-block" href="signup.html"><i data-icon="envelope"></i> 留邮箱 · 1/3/6 月提醒我自测</a>
+        <a class="btn btn-ghost btn-block" href="test.html?restart=1"><i data-icon="arrow-counter-clockwise"></i> 重新测一次</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    識講粵語 · 由 Vickey 老師主理
+    識讲粤语 · 由 Vickey 老师主理
   </footer>
 
   <script src="js/common.js?v=20260607f"></script>
@@ -120,7 +120,6 @@
     Cantonese.injectTopbar('test');
     Cantonese.initIcons();
     Cantonese.initScrollReveal();
-    Cantonese.applyI18n();
 
     (async function () {
       try {
@@ -132,7 +131,7 @@
 
         await Labeller.load();
 
-        // 用最新字母映射從 quiz state 重算 mbtiCode（修 localStorage 舊數據）
+        // 用最新字母映射从 quiz state 重算 mbtiCode（修 localStorage 旧数据）
         const DIMS = { speed: ['S', 'M'], learn: ['P', 'T'], social: ['T', 'W'], style: ['I', 'E'] };
         const quizState = Cantonese.Store.get(Cantonese.Store.KEYS.quiz);
         if (quizState && Array.isArray(quizState.mbtiAnswers) && quizState.mbtiAnswers.length === 4) {
@@ -153,8 +152,8 @@
         let mbtiType = Labeller.resolve(mbtiCode);
 
         if (!mbtiType) {
-          // 實在找不到時降級到 SPTI（不再顯示"解析失敗"）
-          mbtiType = Labeller.resolve('SPTI') || { title: '粵語學習者', tagline: '', desc: '', icon: 'sparkle', matchTags: [] };
+          // 实在找不到时降级到 SPTI（不再显示"解析失败"）
+          mbtiType = Labeller.resolve('SPTI') || { title: '粤语学习者', tagline: '', desc: '', icon: 'sparkle', matchTags: [] };
         }
 
         const badge = document.getElementById('level-badge');
@@ -162,7 +161,7 @@
         badge.classList.add(level.cls);
         document.getElementById('level-name').textContent = level.name;
         document.getElementById('level-score').textContent =
-          `${levelTotal} 題答對 ${levelScore} 題`;
+          `${levelTotal} 题答对 ${levelScore} 题`;
 
         document.getElementById('mbti-emoji').innerHTML = Cantonese.icon(mbtiType.icon || 'sparkle');
         document.getElementById('mbti-code').textContent = mbtiCode;
@@ -183,16 +182,16 @@
         const bMap = { mid: 'b-mid', high: 'b-high' };
         ['entry','mid','high'].forEach(k => {
           document.getElementById(lvlMap[k]).textContent =
-            `≈ ${t[k].months} 個月 · ${t[k].days} 天`;
+            `≈ ${t[k].months} 个月 · ${t[k].days} 天`;
         });
         if (level.key === 'mid') {
-          document.getElementById(bMap.mid).textContent = '已達成';
+          document.getElementById(bMap.mid).textContent = '已达成';
           document.getElementById(bMap.mid).classList.remove('badge');
           document.getElementById(bMap.mid).classList.add('badge', 'badge-blue');
         }
         if (level.key === 'high') {
-          document.getElementById(bMap.mid).textContent = '已達成';
-          document.getElementById(bMap.high).textContent = '已達成';
+          document.getElementById(bMap.mid).textContent = '已达成';
+          document.getElementById(bMap.high).textContent = '已达成';
           document.getElementById(bMap.mid).className = 'badge badge-blue';
           document.getElementById(bMap.high).className = 'badge badge-blue';
         }
@@ -202,19 +201,19 @@
           level, mbtiType, mbtiCode,
         });
 
-        // 分享按鈕（4 模板 + 鏈接 + 海報）
+        // 分享按钮（4 模板 + 链接 + 海报）
         const ref = Cantonese.getReferralCode();
-        const safeType = mbtiType || { title: '粵語學習者', tagline: '', desc: '' };
+        const safeType = mbtiType || { title: '粤语学习者', tagline: '', desc: '' };
         document.querySelectorAll('[data-share]').forEach(btn => {
           btn.addEventListener('click', () => {
             const txt = Cantonese.SHARE_TEMPLATES[btn.dataset.share](mbtiCode, safeType, ref);
-            Cantonese.copyToClipboard(txt).then(() => Cantonese.flashShare(btn, '已複製 ✓'));
+            Cantonese.copyToClipboard(txt).then(() => Cantonese.flashShare(btn, '已复制 ✓'));
           });
         });
         document.getElementById('share-link').addEventListener('click', () => {
           const link = `${location.origin}/test.html?ref=${ref}`;
           Cantonese.copyToClipboard(link).then(() =>
-            Cantonese.flashShare(document.getElementById('share-link'), '已複製 ✓')
+            Cantonese.flashShare(document.getElementById('share-link'), '已复制 ✓')
           );
         });
         document.getElementById('share-poster').addEventListener('click', () => {
@@ -228,9 +227,9 @@
       } catch (e) {
         console.error('[result] error:', e);
         document.getElementById('loading').innerHTML =
-          `<div class="center"><p style="color: var(--pink); margin-bottom: 8px;">出咗錯</p>
+          `<div class="center"><p style="color: var(--pink); margin-bottom: 8px;">出咗错</p>
            <p class="text-sm muted" style="margin-bottom: 16px;">${e.message}</p>
-           <a class="btn btn-ghost" href="test.html">返去重測</a></div>`;
+           <a class="btn btn-ghost" href="test.html">返去重测</a></div>`;
       }
     })();
   </script>

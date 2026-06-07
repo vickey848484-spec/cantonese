@@ -102,8 +102,9 @@
     const items = [
       { key: 'home',    label: '首页',   href: 'index.html' },
       { key: 'test',    label: '测一测', href: 'test.html' },
-      { key: 'course',  label: '选课',   href: 'course.html' },
       { key: 'partner', label: '找语伴', href: 'partner.html' },
+      { key: 'course',  label: '选课',   href: 'course.html' },
+      { key: 'qa',      label: 'Q&A',   href: 'qa.html' },
       { key: 'research',label: '调研',   href: 'research.html' },
     ];
     const bar = document.createElement('div');

@@ -381,27 +381,48 @@
     setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1500);
   }
 
-  /* ---------- Q&A 渲染（10 個常見問題，扁平）---------- */
+  /* ---------- Q&A 渲染（10 個常見問題，三語 i18n）---------- */
   async function renderQA(container, data) {
     const filterEl = container.querySelector('#qa-filter');
     const listEl = container.querySelector('#qa-list');
+    const lang = getLang();
+    I18N = data;  // 注入字典
+
+    // 兼容两种数据源：i18n.json（多语）或 qa.json（单语）
+    const items = data.qa || data.items || [];
+
+    function pick(obj) {
+      if (!obj) return '';
+      if (typeof obj === 'string') return obj;
+      return obj[lang] || obj['zh-HK'] || obj['zh-CN'] || obj['en'] || '';
+    }
 
     function render(filterText) {
       const ft = (filterText || '').trim().toLowerCase();
-      const items = (data.items || []).filter(it =>
-        !ft || it.q.toLowerCase().includes(ft) || it.a.toLowerCase().includes(ft) || (it.tag || '').toLowerCase().includes(ft)
+      const matched = items.map(it => ({
+        q: pick(it.q),
+        a: pick(it.a),
+        tag: pick(it.tag) || '',
+      })).filter(it =>
+        !ft || it.q.toLowerCase().includes(ft) || it.a.toLowerCase().includes(ft) || it.tag.toLowerCase().includes(ft)
       );
-      if (!items.length) {
-        listEl.innerHTML = `<p class="muted text-sm center" style="padding: 24px;">沒找到匹配「${filterText}」嘅問題</p>`;
+      if (!matched.length) {
+        const noMatch = lang === 'en' ? `No match for "${filterText}"`
+                       : lang === 'zh-CN' ? `没找到匹配「${filterText}」的问题`
+                       : `沒找到匹配「${filterText}」嘅問題`;
+        listEl.innerHTML = `<p class="muted text-sm center" style="padding: 24px;">${noMatch}</p>`;
         return;
       }
+      const countLabel = lang === 'en' ? `${matched.length} FAQ · click to expand`
+                       : lang === 'zh-CN' ? `共 ${matched.length} 个常见问题 · 点击展开`
+                       : `共 ${matched.length} 個常見問題 · 點擊展開`;
       listEl.innerHTML = `
-        <div class="text-sm muted" style="margin-bottom: 12px;">共 ${items.length} 個常見問題 · 點擊展開</div>
+        <div class="text-sm muted" style="margin-bottom: 12px;">${countLabel}</div>
         <div class="stack">
-          ${items.map((it, i) => `
+          ${matched.map((it, i) => `
             <details class="qa-item">
               <summary class="qa-q">
-                <span class="qa-q-tag">${it.tag || ''}</span>
+                <span class="qa-q-tag">${it.tag}</span>
                 <span class="qa-q-text">${it.q}</span>
               </summary>
               <div class="qa-a">${it.a}</div>

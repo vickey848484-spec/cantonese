@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我 · Vickey 老师</title>
+  <link rel="stylesheet" href="css/style.css?v=20260607b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    .profile-hero {
+      text-align: center;
+      padding: 32px 0;
+    }
+    .profile-avatar {
+      width: 128px; height: 128px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--yellow));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 32px rgba(255, 214, 10, 0.3);
+    }
+    .profile-name {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    .profile-title {
+      color: var(--yellow);
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+    .profile-bio {
+      max-width: 560px;
+      margin: 16px auto;
+      color: var(--text-soft);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+    .platform-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    @media (min-width: 640px) {
+      .platform-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .platform-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      border-radius: var(--radius);
+      color: #fff;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .platform-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .platform-card .icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.18);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900;
+      font-size: 18px;
+      flex-shrink: 0;
+      letter-spacing: 0.05em;
+    }
+    .platform-card .info { flex: 1; min-width: 0; }
+    .platform-card .name {
+      font-weight: 900;
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+    .platform-card .id {
+      font-size: 13px;
+      opacity: 0.85;
+      font-family: monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .platform-card .arrow {
+      font-size: 20px;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+    /* 8 平台品牌色 */
+    .p-xhs      { background: #ff2442; }
+    .p-douyin   { background: #161823; }
+    .p-shipinhao{ background: #07c160; }
+    .p-bili     { background: #fb7299; }
+    .p-kuaishou { background: #ff6633; }
+    .p-zhihu    { background: #0084ff; }
+    .p-weibo    { background: #e6162d; }
+    .p-bjh      { background: #3a85ff; }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    @media (min-width: 640px) {
+      .contact-row { grid-template-columns: repeat(4, 1fr); }
+    }
+    .contact-mini {
+      background: var(--card);
+      color: var(--card-text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .contact-mini:hover {
+      border-color: var(--yellow);
+      transform: translateY(-2px);
+    }
+    .contact-mini i { font-size: 28px; color: var(--blue); margin-bottom: 8px; }
+    .contact-mini .label { font-size: 12px; color: var(--text-soft); }
+    .contact-mini .value { font-weight: 700; font-size: 13px; margin-top: 4px; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="section">
+      <div class="profile-hero">
+        <div class="profile-avatar">🦊</div>
+        <div class="profile-name">Vickey 老师</div>
+        <div class="profile-title">粤语教学 · 20 万粉丝 · 9 年教龄</div>
+        <p class="profile-bio">
+          识讲粤语主理人。从普通话零基础自学粤语 9 年，深耕 9 声 6 调发音体系。<br>
+          帮助上万名学员从「听唔明」到「流利对话」，用 200+ 节系统课 + 1v1 纠音 + 学员群陪练。<br>
+          抖音、小红书、B站同名 <strong style="color: var(--yellow);">@Vickey 粤语老师</strong>，每周更新免费干货。
+        </p>
+
+        <!-- 联系方式 -->
+        <div class="contact-row">
+          <a class="contact-mini" href="mailto:hi@vickey-cantonese.com">
+            <i class="ph ph-envelope-simple"></i>
+            <div class="label">邮箱咨询</div>
+            <div class="value">hi@vickey-cantonese.com</div>
+          </a>
+          <a class="contact-mini" href="javascript:void(0)" data-copy="vickey_cantonese">
+            <i class="ph ph-chat-circle-dots"></i>
+            <div class="label">加老师微信</div>
+            <div class="value">vickey_cantonese</div>
+          </a>
+          <a class="contact-mini" href="qa.html">
+            <i class="ph ph-question"></i>
+            <div class="label">常见问题</div>
+            <div class="value">10 个 Q&A</div>
+          </a>
+          <a class="contact-mini" href="index.html">
+            <i class="ph ph-house"></i>
+            <div class="label">返回首页</div>
+            <div class="value">测一测粤语人格</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 各大平台 -->
+      <h2 class="display center" style="font-size: 26px; margin-top: 48px;">我在这些平台</h2>
+      <p class="muted center text-sm mt-1">点卡片直接跳转主页</p>
+
+      <div class="platform-grid">
+        <a class="platform-card p-xhs" href="https://www.xiaohongshu.com/user/profile/YOUR_ID" target="_blank" rel="noopener">
+          <div class="icon">小红</div>
+          <div class="info">
+            <div class="name">小红书</div>
+            <div class="id">@Vickey 粤语老师</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+
+        <a class="platform-card p-douyin" href="https://www.douyin.com/user/YOUR_ID" target="_blank" rel="noopener">
+          <div class="icon">抖音</div>
+          <div class="info">
+            <div class="name">抖音</div>
+            <div class="id">@Vickey 粤语老师</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+
+        <a class="platform-card p-shipinhao" href="https://channels.weixin.qq.com/platform/live" target="_blank" rel="noopener">
+          <div class="icon">视频号</div>
+          <div class="info">
+            <div class="name">微信视频号</div>
+            <div class="id">搜索「Vickey 粤语老师」</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+
+        <a class="platform-card p-bili" href="https://space.bilibili.com/YOUR_ID" target="_blank" rel="noopener">
+          <div class="icon">B站</div>
+          <div class="info">
+            <div class="name">哔哩哔哩</div>
+            <div class="id">@Vickey 粤语老师</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+
+        <a class="platform-card p-kuaishou" href="https://www.kuaishou.com/profile/YOUR_ID" target="_blank" rel="noopener">
+          <div class="icon">快手</div>
+          <div class="info">
+            <div class="name">快手</div>
+            <div class="id">@Vickey 粤语老师</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+
+        <a class="platform-card p-zhihu" href="https://www.zhihu.com/people/YOUR_ID" target="_blank" rel="noopener">
+          <div class="icon">知乎</div>
+          <div class="info">
+            <div class="name">知乎</div>
+            <div class="id">@Vickey 粤语老师</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+
+        <a class="platform-card p-weibo" href="https://weibo.com/YOUR_ID" target="_blank" rel="noopener">
+          <div class="icon">微博</div>
+          <div class="info">
+            <div class="name">微博</div>
+            <div class="id">@Vickey 粤语老师</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+
+        <a class="platform-card p-bjh" href="https://baijiahao.baidu.com/builder/rc/edit" target="_blank" rel="noopener">
+          <div class="icon">百家</div>
+          <div class="info">
+            <div class="name">百家号</div>
+            <div class="id">@Vickey 粤语老师</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+      </div>
+
+      <div class="card-flat mt-3" style="background: var(--bg-soft); border: 1px dashed var(--border); padding: 16px; border-radius: 12px;">
+        <div class="text-sm bold"><i class="ph ph-info"></i> 链接说明</div>
+        <p class="text-sm muted mt-1" style="line-height: 1.7;">
+          上方链接里的 <code style="color: var(--yellow);">YOUR_ID</code> 是占位符。<br>
+          告诉我你各平台的真实账号 ID，我立刻替换成可点击的真实链接。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">识讲粤语 · 由 Vickey 老师主理</footer>
+
+  <script src="js/common.js?v=20260607b"></script>
+  <script>
+    Cantonese.initTheme();
+    Cantonese.injectThemeToggle();
+    Cantonese.injectTopbar('about');
+    Cantonese.initIcons();
+    Cantonese.initScrollReveal();
+
+    // 复制微信号
+    document.querySelectorAll('[data-copy]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        const txt = el.dataset.copy;
+        Cantonese.copyToClipboard(txt).then(() => {
+          const orig = el.querySelector('.value').textContent;
+          el.querySelector('.value').textContent = '已复制 ✓';
+          setTimeout(() => { el.querySelector('.value').textContent = orig; }, 1500);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

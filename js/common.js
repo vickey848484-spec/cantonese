@@ -104,9 +104,8 @@
       { key: 'test',    label: '测一测', href: 'test.html' },
       { key: 'partner', label: '找语伴', href: 'partner.html' },
       { key: 'course',  label: '选课',   href: 'course.html' },
-      { key: 'invite',  label: '邀请',   href: 'invite.html' },
       { key: 'qa',      label: 'Q&A',   href: 'qa.html' },
-      { key: 'research',label: '调研',   href: 'research.html' },
+      { key: 'about',   label: '关于我', href: 'about.html' },
     ];
     const bar = document.createElement('div');
     bar.className = 'topbar';

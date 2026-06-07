@@ -45,7 +45,7 @@
       `我的粤语人格：${mbtiCode} · ${mbtiType.title || ''}`,
       `${mbtiType.tagline || ''}`, '',
       `${mbtiType.desc || ''}`, '',
-      `测一测你的 → 识讲粤语`,
+      `测一测你的 → 識讲粤语`,
     ].join('\n');
   }
 
@@ -264,7 +264,7 @@
     // 底部
     ctx.fillStyle = '#ffd60a';
     ctx.font = 'bold 24px "PingFang SC", sans-serif';
-    ctx.fillText('识讲粤语 · YUE 测', W / 2, 1230);
+    ctx.fillText('識讲粤语 · YUE 测', W / 2, 1230);
 
     ctx.fillStyle = 'rgba(255,255,255,0.5)';
     ctx.font = '18px "PingFang SC", sans-serif';

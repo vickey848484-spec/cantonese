@@ -50,7 +50,7 @@
 
   const LEVELS = [
     { key: 'entry',  code: 0, name: '听唔明仔',     short: '入门', cls: 'level-entry' },
-    { key: 'mid',    code: 1, name: '识少少扮代表', short: '进阶', cls: 'level-mid'   },
+    { key: 'mid',    code: 1, name: '識少少扮代表', short: '进阶', cls: 'level-mid'   },
     { key: 'high',   code: 2, name: '嘴替本替',     short: '高阶', cls: 'level-high'  },
   ];
   function getLevelByScore(score, total) {

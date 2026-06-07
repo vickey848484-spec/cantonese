@@ -90,7 +90,7 @@ async function sendReminder({ resend, from, to, days, level, mbtiCode, siteUrl }
       </p>
       <p style="text-align: center; line-height: 1.6; margin: 24px 0;">
         ${days === 30
-          ? '一个月前你测过嘅「听唔明仔」/「识少少扮代表」/「嘴替本替」<br>依家可能已经升级啦 —— 重新测一次睇下！'
+          ? '一个月前你测过嘅「听唔明仔」/「識少少扮代表」/「嘴替本替」<br>依家可能已经升级啦 —— 重新测一次睇下！'
           : days === 90
           ? '3 个月喇，唔少学员已经可以同香港朋友倾偈无障碍。<br>你㗎呢？重新测一次，睇下你升级咗未！'
           : '半年喇！如果你能睇明呢封邮件嘅标题 ——<br>你大概已经系「嘴替本替」啦。重新测一次认证下！'}

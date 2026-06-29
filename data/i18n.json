@@ -7,22 +7,22 @@
   "defaultLang": "zh-HK",
   "ui": {
     "topbar.home": {
-      "zh-HK": "首页",
+      "zh-HK": "首頁",
       "zh-CN": "首页",
       "en": "Home"
     },
     "topbar.test": {
-      "zh-HK": "测一测",
+      "zh-HK": "測一測",
       "zh-CN": "测一测",
       "en": "Test"
     },
     "topbar.partner": {
-      "zh-HK": "找语伴",
+      "zh-HK": "找語伴",
       "zh-CN": "找语伴",
       "en": "Partners"
     },
     "topbar.course": {
-      "zh-HK": "选课",
+      "zh-HK": "選課",
       "zh-CN": "选课",
       "en": "Courses"
     },
@@ -32,167 +32,467 @@
       "en": "Q&A"
     },
     "topbar.research": {
-      "zh-HK": "调研",
+      "zh-HK": "調研",
       "zh-CN": "调研",
       "en": "Research"
     },
+    "topbar.speak": {
+      "zh-HK": "跟讀",
+      "zh-CN": "跟读",
+      "en": "Speak"
+    },
+    "speak.h1": {
+      "zh-HK": "AI 跟讀 · 即評即改",
+      "zh-CN": "AI 跟读 · 即评即改",
+      "en": "AI Reading · Instant Feedback"
+    },
+    "speak.sub": {
+      "zh-HK": "揀一句 · 跟住讀 · AI 即刻幫你打分數",
+      "zh-CN": "挑一句 · 跟着读 · AI 立刻帮你打分",
+      "en": "Pick a sentence · read it out loud · AI scores you instantly"
+    },
+    "speak.step1": {
+      "zh-HK": "1. 揀一句",
+      "zh-CN": "1. 选一句",
+      "en": "1. Pick a sentence"
+    },
+    "speak.step2": {
+      "zh-HK": "2. 跟住讀",
+      "zh-CN": "2. 跟着读",
+      "en": "2. Read it out loud"
+    },
+    "speak.step3": {
+      "zh-HK": "3. 睇評分",
+      "zh-CN": "3. 看评分",
+      "en": "3. Get your score"
+    },
+    "speak.level.entry": {
+      "zh-HK": "入門",
+      "zh-CN": "入门",
+      "en": "Entry"
+    },
+    "speak.level.mid": {
+      "zh-HK": "進階",
+      "zh-CN": "进阶",
+      "en": "Mid"
+    },
+    "speak.level.high": {
+      "zh-HK": "高階",
+      "zh-CN": "高阶",
+      "en": "High"
+    },
+    "speak.btn.play": {
+      "zh-HK": "▶ 聽示範",
+      "zh-CN": "▶ 听示范",
+      "en": "▶ Play demo"
+    },
+    "speak.btn.record": {
+      "zh-HK": "🔴 撳一下開始錄音",
+      "zh-CN": "🔴 点一下开始录音",
+      "en": "🔴 Tap to record"
+    },
+    "speak.btn.recording": {
+      "zh-HK": "⏹ 錄緊…再撳一下停",
+      "zh-CN": "⏹ 录着…再点一下停",
+      "en": "⏹ Recording… tap to stop"
+    },
+    "speak.btn.scoring": {
+      "zh-HK": "🤔 評分中…",
+      "zh-CN": "🤔 评分中…",
+      "en": "🤔 Scoring…"
+    },
+    "speak.btn.retry": {
+      "zh-HK": "↻ 再讀一次",
+      "zh-CN": "↻ 再读一次",
+      "en": "↻ Try again"
+    },
+    "speak.tip.no-mic": {
+      "zh-HK": "請允許瀏覽器用麥克風（Safari/Chrome 首次要點允許）",
+      "zh-CN": "请允许浏览器用麦克风（Safari/Chrome 首次要点允许）",
+      "en": "Please allow microphone access (Safari/Chrome will prompt on first use)"
+    },
+    "speak.tip.short": {
+      "zh-HK": "太短啦，再讀多兩秒",
+      "zh-CN": "太短啦，再读多两秒",
+      "en": "Too short — try speaking for 2+ seconds"
+    },
+    "speak.tip.error": {
+      "zh-HK": "評分失敗，請再試一次",
+      "zh-CN": "评分失败，请再试一次",
+      "en": "Scoring failed — please try again"
+    },
+    "speak.result.overall": {
+      "zh-HK": "總分",
+      "zh-CN": "总分",
+      "en": "Overall"
+    },
+    "speak.result.transcript": {
+      "zh-HK": "AI 聽到你講：",
+      "zh-CN": "AI 听到你说：",
+      "en": "AI heard you say:"
+    },
+    "speak.result.scores.pronunciation": {
+      "zh-HK": "發音準確",
+      "zh-CN": "发音准确",
+      "en": "Pronunciation"
+    },
+    "speak.result.scores.tone": {
+      "zh-HK": "聲調自然",
+      "zh-CN": "声调自然",
+      "en": "Tones"
+    },
+    "speak.result.scores.fluency": {
+      "zh-HK": "流利度",
+      "zh-CN": "流利度",
+      "en": "Fluency"
+    },
+    "speak.result.scores.vocabulary": {
+      "zh-HK": "用詞啱唔啱",
+      "zh-CN": "用词对不对",
+      "en": "Word choice"
+    },
+    "speak.result.tip": {
+      "zh-HK": "改善建議",
+      "zh-CN": "改善建议",
+      "en": "Tip"
+    },
+    "speak.result.again": {
+      "zh-HK": "再挑一句挑戰",
+      "zh-CN": "再挑一句挑战",
+      "en": "Try another sentence"
+    },
+    "speak.privacy": {
+      "zh-HK": "🔒 錄音只傳去 AI 評分，不會儲存、唔會公開",
+      "zh-CN": "🔒 录音只传给 AI 评分，不会储存、不会公开",
+      "en": "🔒 Your audio is sent to AI for scoring only — never stored or shared"
+    },
     "topbar.about": {
-      "zh-HK": "关于我",
+      "zh-HK": "關於我",
       "zh-CN": "关于我",
       "en": "About"
     },
     "topbar.lang": {
-      "zh-HK": "语言",
+      "zh-HK": "語言",
       "zh-CN": "语言",
       "en": "Lang"
     },
     "footer.main": {
-      "zh-HK": "识讲粤语 · 由梁伟琦Vickey 主理",
+      "zh-HK": "識講粵語 · 由梁偉琦Vickey 主理",
       "zh-CN": "识讲粤语 · 由梁伟琦Vickey 主理",
       "en": "Cantonese Mastery · by Liang Weiqi Vickey"
     },
+    "result.more-from": {
+      "zh-HK": "繼續探索：",
+      "zh-CN": "继续探索：",
+      "en": "Keep going:"
+    },
+    "result.nav-about": {
+      "zh-HK": "👩‍🏫 認識 Vickey",
+      "zh-CN": "👩‍🏫 认识 Vickey",
+      "en": "👩‍🏫 Meet Vickey"
+    },
+    "result.nav-qa": {
+      "zh-HK": "❓ 常見問題",
+      "zh-CN": "❓ 常见问题",
+      "en": "❓ FAQ"
+    },
+    "result.nav-course": {
+      "zh-HK": "📚 揀啱我嘅課",
+      "zh-CN": "📚 选我的课",
+      "en": "📚 Pick my course"
+    },
     "btn.start": {
-      "zh-HK": "开始测试",
+      "zh-HK": "開始測試",
       "zh-CN": "开始测试",
       "en": "Start the Test"
     },
     "btn.back-home": {
-      "zh-HK": "← 返回首页",
+      "zh-HK": "← 返回首頁",
       "zh-CN": "← 返回首页",
       "en": "← Home"
     },
     "btn.restart": {
-      "zh-HK": "重新测一次",
+      "zh-HK": "重新測一次",
       "zh-CN": "重新测一次",
       "en": "Retake Test"
     },
     "btn.find-partner": {
-      "zh-HK": "揾我嘅语伴",
+      "zh-HK": "揾我嘅語伴",
       "zh-CN": "揾我嘅语伴",
       "en": "Find My Partners"
     },
     "btn.find-course": {
-      "zh-HK": "揾啱我嘅课",
+      "zh-HK": "揾啱我嘅課",
       "zh-CN": "揾啱我嘅课",
       "en": "Find My Courses"
     },
     "btn.signup": {
-      "zh-HK": "留邮箱 · 1/3/6 月提醒我自测",
+      "zh-HK": "留郵箱 · 1/3/6 月提醒我自測",
       "zh-CN": "留邮箱 · 1/3/6 月提醒我自测",
       "en": "Save my email · 1/3/6-month retest"
     },
     "btn.copy": {
-      "zh-HK": "📋 复制文案",
+      "zh-HK": "📋 複製文案",
       "zh-CN": "📋 复制文案",
       "en": "📋 Copy text"
     },
     "btn.download": {
-      "zh-HK": "⬇️ 下载图片",
+      "zh-HK": "⬇️ 下載圖片",
       "zh-CN": "⬇️ 下载图片",
       "en": "⬇️ Download image"
     },
     "btn.copy-link": {
-      "zh-HK": "🔗 复制专属链接",
+      "zh-HK": "🔗 複製專屬鏈接",
       "zh-CN": "🔗 复制专属链接",
       "en": "🔗 Copy invite link"
     },
     "btn.gen-poster": {
-      "zh-HK": "🎨 生成专属海报",
+      "zh-HK": "🎨 生成專屬海報",
       "zh-CN": "🎨 生成专属海报",
       "en": "🎨 Generate poster"
     },
     "btn.send": {
-      "zh-HK": "🚀 锁定提醒",
+      "zh-HK": "🚀 鎖定提醒",
       "zh-CN": "🚀 锁定提醒",
       "en": "🚀 Lock in reminders"
     },
     "btn.signup-success": {
-      "zh-HK": "已加入提醒名单",
+      "zh-HK": "已加入提醒名單",
       "zh-CN": "已加入提醒名单",
       "en": "You're on the list"
     },
     "btn.view-result": {
-      "zh-HK": "睇返结果",
+      "zh-HK": "睇返結果",
       "zh-CN": "睇返结果",
       "en": "View result"
     },
     "btn.find-course-arrow": {
-      "zh-HK": "揾课 →",
+      "zh-HK": "揾課 →",
       "zh-CN": "揾课 →",
       "en": "Courses →"
     },
     "home.hero-title": {
-      "zh-HK": "你嘅粤语，<br>究竟去到边度？",
-      "zh-CN": "你的粤语，<br>究竟去到边度？",
-      "en": "How good<br>is your Cantonese?"
+      "zh-HK": "你嘅<span style=\"color: var(--yellow);\">粵語</span>，<br>究竟去到邊度？",
+      "zh-CN": "你的<span style=\"color: var(--yellow);\">粤语</span>，<br>究竟去到哪里？",
+      "en": "How good is your<br><span style=\"color: var(--yellow);\">Cantonese</span>, really?"
     },
     "home.hero-sub": {
-      "zh-HK": "3 分钟 14 道题，测出你的<br><strong>水平等级</strong> + <strong>MBTI 风格人格</strong> + <strong>学习时长</strong>",
+      "zh-HK": "3 分鐘 14 道題，測出你的<br><strong>水平等級</strong> + <strong>MBTI 風格人格</strong> + <strong>學習時長</strong>",
       "zh-CN": "3 分钟 14 道题，测出你的<br><strong>水平等级</strong> + <strong>MBTI 风格人格</strong> + <strong>学习时长</strong>",
       "en": "14 questions in 3 min to find your<br><strong>level</strong> + <strong>MBTI personality</strong> + <strong>study time</strong>"
     },
     "home.tested-by": {
-      "zh-HK": "已有 12,000+ 学员测过 · 真实数据驱动",
+      "zh-HK": "已有 12,000+ 學員測過 · 真實數據驅動",
       "zh-CN": "已有 12,000+ 学员测过 · 真实数据驱动",
       "en": "12,000+ students tested · real data driven"
     },
+    "home.brand": {
+      "zh-HK": "識講粵語 · YUE 測",
+      "zh-CN": "识讲粤语 · YUE 测",
+      "en": "Cantonese Mastery · YUE Test"
+    },
+    "home.hero-cta": {
+      "zh-HK": "測一測我幾勁 🚀",
+      "zh-CN": "测一测我几强 🚀",
+      "en": "Take the test 🚀"
+    },
+    "home.lv-badge-1": {
+      "zh-HK": "入門",
+      "zh-CN": "入门",
+      "en": "Beginner"
+    },
+    "home.lv-badge-2": {
+      "zh-HK": "進階",
+      "zh-CN": "进阶",
+      "en": "Intermediate"
+    },
+    "home.lv-badge-3": {
+      "zh-HK": "高階",
+      "zh-CN": "高阶",
+      "en": "Advanced"
+    },
+    "home.lv1-name": {
+      "zh-HK": "聽唔明仔",
+      "zh-CN": "听不懂",
+      "en": "Clueless"
+    },
+    "home.lv1-quote": {
+      "zh-HK": "「你講咩啊？」",
+      "zh-CN": "「你讲咩啊？」",
+      "en": "“What?”"
+    },
+    "home.lv1-desc": {
+      "zh-HK": "看到「你食咗飯未啊」要反應 3 秒。",
+      "zh-CN": "看到「你食咗饭未啊」要反应 3 秒。",
+      "en": "Need 3 seconds to process 「你食咗饭未啊」."
+    },
+    "home.lv2-name": {
+      "zh-HK": "識少少扮代表",
+      "zh-CN": "识少少扮代表",
+      "en": "Know-it-all (sort of)"
+    },
+    "home.lv2-quote": {
+      "zh-HK": "「咩嚟㗎？」",
+      "zh-CN": "「咩嚟㗎？」",
+      "en": "“What’s that?”"
+    },
+    "home.lv2-desc": {
+      "zh-HK": "能聽懂日常對話，但開口卡殼。",
+      "zh-CN": "能听懂日常对话，但开口卡壳。",
+      "en": "Understand daily chat, but freeze when speaking."
+    },
+    "home.lv3-name": {
+      "zh-HK": "嘴替本替",
+      "zh-CN": "嘴替本替",
+      "en": "Born spokesperson"
+    },
+    "home.lv3-quote": {
+      "zh-HK": "「我嚟講嘢啦！」",
+      "zh-CN": "「我嚟讲嘢啦！」",
+      "en": "“Let me do the talking!”"
+    },
+    "home.lv3-desc": {
+      "zh-HK": "俚語/俗語/職場粵語滿級。",
+      "zh-CN": "俚语/俗语/职场粤语满级。",
+      "en": "Slang, idioms, office Cantonese — all maxed out."
+    },
+    "home.get-lv": {
+      "zh-HK": "你的粵語等級",
+      "zh-CN": "你的粤语等级",
+      "en": "Your Cantonese level"
+    },
+    "home.get-lv-sub": {
+      "zh-HK": "聽唔明仔 / 識少少 / 嘴替本替",
+      "zh-CN": "听不懂 / 识少少 / 嘴替本替",
+      "en": "Clueless / Know-it-all / Born spokesperson"
+    },
+    "home.get-mbti": {
+      "zh-HK": "你的 MBTI 風格人格",
+      "zh-CN": "你的 MBTI 风格人格",
+      "en": "Your MBTI-style personality"
+    },
+    "home.get-mbti-sub": {
+      "zh-HK": "16 型之一 · 比如「SPWI 速成·聽講·獨狼·學院派」",
+      "zh-CN": "16 型之一 · 比如「SPWI 速成·听讲·独狼·学院派」",
+      "en": "One of 16 types — e.g. SPWI Speed · Listening · Solo · Academic"
+    },
+    "home.get-time": {
+      "zh-HK": "你的學習時長",
+      "zh-CN": "你的学习时长",
+      "en": "Your study timeline"
+    },
+    "home.get-time-sub": {
+      "zh-HK": "按年齡/地域/每日時長算的精確預測",
+      "zh-CN": "按年龄/地域/每日时长算的精确预测",
+      "en": "Precise forecast based on age, region, daily minutes"
+    },
+    "home.get-match": {
+      "zh-HK": "匹配語伴 + 課程",
+      "zh-CN": "匹配语伴 + 课程",
+      "en": "Matched partners + courses"
+    },
+    "home.get-match-sub": {
+      "zh-HK": "按你等級篩的 3-5 位語伴 + 3 門主推課",
+      "zh-CN": "按你等级筛的 3-5 位语伴 + 3 门主推课",
+      "en": "3-5 partners and 3 top-pick courses, filtered by level"
+    },
+    "home.footer": {
+      "zh-HK": "識講粵語 · 由 Vickey 老師主理 · 測試數據僅作學習建議參考",
+      "zh-CN": "识讲粤语 · 由 Vickey 老师主理 · 测试数据仅作学习建议参考",
+      "en": "Cantonese Mastery · by Vickey · Test data is for study guidance only"
+    },
     "home.levels-title": {
-      "zh-HK": "3 个等级，你是哪一个？",
+      "zh-HK": "3 個等級，你是哪一個？",
       "zh-CN": "3 个等级，你是哪一个？",
       "en": "Which level are you?"
     },
     "home.receive": {
-      "zh-HK": "测完你会拿到",
+      "zh-HK": "測完你會拿到",
       "zh-CN": "测完你会拿到",
       "en": "What you get"
     },
     "home.tagline-free": {
-      "zh-HK": "免费 · 不用登录 · 1 分钟出结果",
+      "zh-HK": "免費 · 不用登錄 · 1 分鐘出結果",
       "zh-CN": "免费 · 不用登录 · 1 分钟出结果",
       "en": "Free · no signup · 1-min result"
     },
     "home.cta-2": {
-      "zh-HK": "开始测试 →",
+      "zh-HK": "開始測試 →",
       "zh-CN": "开始测试 →",
       "en": "Start now →"
     },
+    "home.more-title": {
+      "zh-HK": "更多資源",
+      "zh-CN": "更多资源",
+      "en": "More resources"
+    },
+    "home.more-about-h": {
+      "zh-HK": "關於 Vickey",
+      "zh-CN": "关于 Vickey",
+      "en": "About Vickey"
+    },
+    "home.more-about-sub": {
+      "zh-HK": "16+ 年教學 · 全網 25 萬粉絲",
+      "zh-CN": "16+ 年教学 · 全网 25 万粉丝",
+      "en": "16+ yrs teaching · 250K followers"
+    },
+    "home.more-qa-h": {
+      "zh-HK": "常見問題",
+      "zh-CN": "常见问题",
+      "en": "FAQ"
+    },
+    "home.more-qa-sub": {
+      "zh-HK": "學多久 / 9 聲 6 調 / 退款",
+      "zh-CN": "学多久 / 9 声 6 调 / 退款",
+      "en": "Time / Tones / Refund"
+    },
+    "home.more-research-h": {
+      "zh-HK": "學習時長研究",
+      "zh-CN": "学习时长研究",
+      "en": "Study-time research"
+    },
+    "home.more-research-sub": {
+      "zh-HK": "FSI / ACTFL / SLA 深度分析",
+      "zh-CN": "FSI / ACTFL / SLA 深度分析",
+      "en": "FSI / ACTFL / SLA deep-dive"
+    },
     "test.loading": {
-      "zh-HK": "算紧你嘅结果...",
+      "zh-HK": "算緊你嘅結果...",
       "zh-CN": "算紧你嘅结果...",
       "en": "Crunching your result..."
     },
     "test.user-title": {
-      "zh-HK": "📊 最后一步 · 算算你要学多久",
+      "zh-HK": "📊 最後一步 · 算算你要學多久",
       "zh-CN": "📊 最后一步 · 算算你要学多久",
       "en": "📊 Last step · how long to learn"
     },
     "test.user-q": {
-      "zh-HK": "告诉我 4 件事，俾你算个准嘅时长 👇",
-      "zh-CN": "告诉我 4 件事，给你算个准的时长 👇",
-      "en": "Tell me 4 things, I'll calculate your timeline 👇"
+      "zh-HK": "告訴我 4 件事，俾你算個準嘅時長 👇",
+      "zh-CN": "告诉我 4 件事，俾你算个准嘅时长 👇",
+      "en": "Tell me 4 things, I will calculate your timeline 👇"
     },
     "test.age": {
-      "zh-HK": "你的年龄",
+      "zh-HK": "你的年齡",
       "zh-CN": "你的年龄",
       "en": "Your age"
     },
     "test.gender": {
-      "zh-HK": "性别",
+      "zh-HK": "性別",
       "zh-CN": "性别",
       "en": "Gender"
     },
     "test.region": {
-      "zh-HK": "地域（粤语接触度）",
+      "zh-HK": "地域（粵語接觸度）",
       "zh-CN": "地域（粤语接触度）",
       "en": "Region (Cantonese exposure)"
     },
     "test.minutes": {
-      "zh-HK": "每日学习时长（你打算投入多少）",
+      "zh-HK": "每日學習時長（你打算投入多少）",
       "zh-CN": "每日学习时长（你打算投入多少）",
       "en": "Daily study time (you plan to invest)"
     },
     "test.opt.u18": {
-      "zh-HK": "18 岁以下",
+      "zh-HK": "18 歲以下",
       "zh-CN": "18 岁以下",
       "en": "Under 18"
     },
@@ -232,37 +532,37 @@
       "en": "Other / prefer not to say"
     },
     "test.opt.native": {
-      "zh-HK": "粤语区（广东/香港/澳门/广西）",
+      "zh-HK": "粵語區（廣東/香港/澳門/廣西）",
       "zh-CN": "粤语区（广东/香港/澳门/广西）",
       "en": "Native region (GD/HK/MO/GX)"
     },
     "test.opt.exposed": {
-      "zh-HK": "听过粤语 / 看过港剧",
+      "zh-HK": "聽過粵語 / 看過港劇",
       "zh-CN": "听过粤语 / 看过港剧",
       "en": "Heard it / watched HK dramas"
     },
     "test.opt.zero": {
-      "zh-HK": "完全没接触过",
+      "zh-HK": "完全沒接觸過",
       "zh-CN": "完全没接触过",
       "en": "Never exposed"
     },
     "test.opt.15": {
-      "zh-HK": "15 分钟（佛系）",
+      "zh-HK": "15 分鐘（佛系）",
       "zh-CN": "15 分钟（佛系）",
       "en": "15 min (chill)"
     },
     "test.opt.30": {
-      "zh-HK": "30 分钟（标准）",
+      "zh-HK": "30 分鐘（標準）",
       "zh-CN": "30 分钟（标准）",
       "en": "30 min (standard)"
     },
     "test.opt.60": {
-      "zh-HK": "60 分钟（认真）",
+      "zh-HK": "60 分鐘（認真）",
       "zh-CN": "60 分钟（认真）",
       "en": "60 min (serious)"
     },
     "test.opt.90": {
-      "zh-HK": "90 分钟（卷王）",
+      "zh-HK": "90 分鐘（卷王）",
       "zh-CN": "90 分钟（卷王）",
       "en": "90 min (grinder)"
     },
@@ -271,68 +571,1298 @@
       "zh-CN": "看结果 🚀",
       "en": "Show Result 🚀"
     },
+    "test.q-num": {
+      "zh-HK": "第 $1 / $2 題",
+      "zh-CN": "第 $1 / $2 题",
+      "en": "Q $1 / $2"
+    },
+    "test.countdown": {
+      "zh-HK": "倒數 $1 秒",
+      "zh-CN": "倒数 $1 秒",
+      "en": "Countdown $1 sec"
+    },
+    "test.stage-1": {
+      "zh-HK": "分析緊你嘅答案...",
+      "zh-CN": "分析你的答案...",
+      "en": "Crunching your answers..."
+    },
+    "test.stage-2": {
+      "zh-HK": "揾你嘅學習時長...",
+      "zh-CN": "找你的学习时长...",
+      "en": "Estimating your timeline..."
+    },
+    "test.stage-3": {
+      "zh-HK": "生成 MBTI 人格...",
+      "zh-CN": "生成 MBTI 人格...",
+      "en": "Building your MBTI personality..."
+    },
+    "test.stage-4": {
+      "zh-HK": "匹配課程同語伴...",
+      "zh-CN": "匹配课程和语伴...",
+      "en": "Matching courses & partners..."
+    },
+    "test.stage-5": {
+      "zh-HK": "準備好喇！",
+      "zh-CN": "准备好了！",
+      "en": "All set!"
+    },
+    "test.loading-skip": {
+      "zh-HK": "跳過 →",
+      "zh-CN": "跳过 →",
+      "en": "Skip →"
+    },
     "test.age-hint": {
       "zh-HK": "预设今天，可改",
       "zh-CN": "默认今天，可改",
       "en": "Default today, editable"
     },
     "test.email-hint": {
-      "zh-HK": "用于 1/3/6 月推送提醒",
+      "zh-HK": "用於 1/3/6 月推送提醒",
       "zh-CN": "用于 1/3/6 月推送提醒",
       "en": "For 1/3/6-month reminders"
     },
     "test.mb-test": {
-      "zh-HK": "🧬 性格测试",
+      "zh-HK": "🧬 性格測試",
       "zh-CN": "🧬 性格测试",
       "en": "🧬 Personality"
     },
     "test.lv-test": {
-      "zh-HK": "📝 水平测试",
+      "zh-HK": "📝 水平測試",
       "zh-CN": "📝 水平测试",
       "en": "📝 Level Test"
     },
+    "test.h1": {
+      "zh-HK": "開始測試 · 識講粵語",
+      "zh-CN": "开始测试 · 识讲粤语",
+      "en": "Take the Test · Cantonese Mastery"
+    },
+    "test.h1-sub": {
+      "zh-HK": "3 分鐘 14 題 · 測出你的粵語等級 + MBTI 風格人格 + 學習時長",
+      "zh-CN": "3 分钟 14 题 · 测出你的粤语等级 + MBTI 风格人格 + 学习时长",
+      "en": "3 min · 14 questions · find your Cantonese level + MBTI personality + study timeline"
+    },
+    "test.pre-qa": {
+      "zh-HK": "仲有問題？睇",
+      "zh-CN": "还有问题？看",
+      "en": "Got questions? See"
+    },
+    "test.pre-qa-link": {
+      "zh-HK": "常見問題 Q&A",
+      "zh-CN": "常见问题 Q&A",
+      "en": "FAQ"
+    },
     "test.prev": {
-      "zh-HK": "← 上一题",
+      "zh-HK": "← 上一題",
       "zh-CN": "← 上一题",
       "en": "← Prev"
     },
     "result.your-level": {
-      "zh-HK": "你的粤语等级",
+      "zh-HK": "你的粵語等級",
       "zh-CN": "你的粤语等级",
       "en": "Your Cantonese Level"
     },
     "result.score": {
-      "zh-HK": "${total} 题答对 ${score} 题",
-      "zh-CN": "${total} 题答对 ${score} 题",
-      "en": "${score} out of ${total} correct"
+      "zh-HK": "$1 題答對 $2 題",
+      "zh-CN": "$1 题答对 $2 题",
+      "en": "$2 out of $1 correct"
+    },
+    "result.timeline-lv1": {
+      "zh-HK": "入門",
+      "zh-CN": "入门",
+      "en": "Beginner"
+    },
+    "result.timeline-lv2": {
+      "zh-HK": "進階",
+      "zh-CN": "进阶",
+      "en": "Intermediate"
+    },
+    "result.timeline-lv3": {
+      "zh-HK": "高階",
+      "zh-CN": "高阶",
+      "en": "Advanced"
+    },
+    "result.timeline-months": {
+      "zh-HK": "≈ $1 個月 · $2 天",
+      "zh-CN": "≈ $1 个月 · $2 天",
+      "en": "≈ $1 months · $2 days"
+    },
+    "result.error-title": {
+      "zh-HK": "出咗錯",
+      "zh-CN": "出了错",
+      "en": "Something went wrong"
+    },
+    "result.error-cta": {
+      "zh-HK": "返去重測",
+      "zh-CN": "回去重测",
+      "en": "Retake the test"
+    },
+    "result.share-h3": {
+      "zh-HK": "分享俾朋友",
+      "zh-CN": "分享给朋友",
+      "en": "Share with friends"
+    },
+    "result.share-desc": {
+      "zh-HK": "選個風格一鍵複製 + 生成專屬邀請海報",
+      "zh-CN": "选个风格一键复制 + 生成专属邀请海报",
+      "en": "Pick a style to copy, or generate your invite poster"
+    },
+    "result.share-card-cta": {
+      "zh-HK": "掃碼 / 測一測你嘅粵語人格 →",
+      "zh-CN": "扫码 / 测一测你的粤语人格 →",
+      "en": "Scan / take the test →"
+    },
+    "partner.title": {
+      "zh-HK": "揾你嘅粵語語伴",
+      "zh-CN": "找你的粤语语伴",
+      "en": "Find your Cantonese partners"
+    },
+    "partner.subtitle-base": {
+      "zh-HK": "按你嘅等級篩嘅 3-5 位",
+      "zh-CN": "按你等级筛的 3-5 位",
+      "en": "3-5 partners, filtered by your level"
+    },
+    "partner.subtitle-count": {
+      "zh-HK": "按你嘅「$1」篩嘅 $2 位",
+      "zh-CN": "按你「$1」筛的 $2 位",
+      "en": "Found $2 for your「$1」level"
+    },
+    "partner.matched": {
+      "zh-HK": "（已按性格匹配）",
+      "zh-CN": "（已按性格匹配）",
+      "en": "(matched by personality)"
+    },
+    "course.title": {
+      "zh-HK": "揾啱你嘅課",
+      "zh-CN": "找适合你的课",
+      "en": "Find your courses"
+    },
+    "course.subtitle-base": {
+      "zh-HK": "按你嘅等級 + 性格篩嘅",
+      "zh-CN": "按你等级 + 性格筛的",
+      "en": "Filtered by your level + personality"
+    },
+    "course.subtitle-count": {
+      "zh-HK": "按你嘅「$1」+ 「$2」篩嘅 $3 門",
+      "zh-CN": "按你「$1」+ 「$2」筛的 $3 门",
+      "en": "Found $3 courses for 「$1」 + 「$2」"
+    },
+    "course.sec1": {
+      "zh-HK": "主推",
+      "zh-CN": "主推",
+      "en": "Top picks"
+    },
+    "course.sec2": {
+      "zh-HK": "更多選擇",
+      "zh-CN": "更多选择",
+      "en": "More options"
+    },
+    "course.cta-next": {
+      "zh-HK": "下一步：留郵箱 →",
+      "zh-CN": "下一步：留邮箱 →",
+      "en": "Next: Save my email →"
+    },
+    "course.view": {
+      "zh-HK": "查看課程",
+      "zh-CN": "查看课程",
+      "en": "View course"
+    },
+    "signup.title": {
+      "zh-HK": "留個聯繫方式",
+      "zh-CN": "留个联系方式",
+      "en": "Drop your contact"
+    },
+    "signup.subtitle": {
+      "zh-HK": "學咗 1 / 3 / 6 個月，我哋會自動提醒你重新自測<br>順便睇下你升級咗未 🎉",
+      "zh-CN": "学了 1 / 3 / 6 个月，我们会自动提醒你重新自测<br>顺便看下你升级了没 🎉",
+      "en": "At 1 / 3 / 6 months in, we'll auto-remind you to retest<br>and see how much you've leveled up 🎉"
+    },
+    "signup.summary": {
+      "zh-HK": "你嘅測試結果",
+      "zh-CN": "你的测试结果",
+      "en": "Your test result"
+    },
+    "signup.email-label": {
+      "zh-HK": "郵箱 *",
+      "zh-CN": "邮箱 *",
+      "en": "Email *"
+    },
+    "signup.email-placeholder": {
+      "zh-HK": "you@example.com",
+      "zh-CN": "you@example.com",
+      "en": "you@example.com"
+    },
+    "signup.wechat-label": {
+      "zh-HK": "微信號 *",
+      "zh-CN": "微信号 *",
+      "en": "WeChat ID *"
+    },
+    "signup.wechat-placeholder": {
+      "zh-HK": "必填，方便老師加你回訪",
+      "zh-CN": "必填，方便老师加你回访",
+      "en": "Required — so Vickey can reach you"
+    },
+    "signup.date-label": {
+      "zh-HK": "開始學習日期 *",
+      "zh-CN": "开始学习日期 *",
+      "en": "Start learning on *"
+    },
+    "signup.agree": {
+      "zh-HK": "我同意 Vickey 老師用上面嘅聯繫方式發推送（1/3/6 個月 + 重要通知），可以隨時退訂。",
+      "zh-CN": "我同意 Vickey 老师用上面的联系方式发推送（1/3/6 个月 + 重要通知），可以随时退订。",
+      "en": "I agree Vickey can reach me via the contact above for reminders (1/3/6 months + important updates). Unsubscribe anytime."
+    },
+    "signup.success-title": {
+      "zh-HK": "搞掂！",
+      "zh-CN": "搞定！",
+      "en": "You're in!"
+    },
+    "signup.success-msg": {
+      "zh-HK": "已加入提醒名單 <i data-icon=\"check-circle\" style=\"color: var(--green);\"></i> 到期會自動發郵件俾你。",
+      "zh-CN": "已加入提醒名单 <i data-icon=\"check-circle\" style=\"color: var(--green);\"></i> 到期会自动发邮件给你。",
+      "en": "You're on the reminder list <i data-icon=\"check-circle\" style=\"color: var(--green);\"></i> We'll email you when it's time."
+    },
+    "signup.success-msg-local": {
+      "zh-HK": "信息已保存（本地模式） <i data-icon=\"check-circle\" style=\"color: var(--green);\"></i> 上線後會同步到服務器。",
+      "zh-CN": "信息已保存（本地模式） <i data-icon=\"check-circle\" style=\"color: var(--green);\"></i> 上线后会同步到服务器。",
+      "en": "Saved locally <i data-icon=\"check-circle\" style=\"color: var(--green);\"></i> Will sync to server when live."
+    },
+    "signup.timeline-h": {
+      "zh-HK": "你會收到幾時嘅提醒？",
+      "zh-CN": "你会收到什么时候的提醒？",
+      "en": "When will I get reminders?"
+    },
+    "signup.timeline-1": {
+      "zh-HK": "今日：歡迎郵件 + 你的結果 PDF",
+      "zh-CN": "今日：欢迎邮件 + 你的结果 PDF",
+      "en": "Today: Welcome email + your result PDF"
+    },
+    "signup.timeline-2": {
+      "zh-HK": "30 天後：1 個月自測，看看你升級咗未",
+      "zh-CN": "30 天后：1 个月自测，看看你升级了没",
+      "en": "Day 30: 1-month retest, see your growth"
+    },
+    "signup.timeline-3": {
+      "zh-HK": "90 天後：3 個月自測 + 推薦新課程",
+      "zh-CN": "90 天后：3 个月自测 + 推荐新课程",
+      "en": "Day 90: 3-month retest + course recommendations"
+    },
+    "signup.timeline-4": {
+      "zh-HK": "180 天後：6 個月自測 + 學員故事",
+      "zh-CN": "180 天后：6 个月自测 + 学员故事",
+      "en": "Day 180: 6-month retest + student stories"
+    },
+    "about.back-home": {
+      "zh-HK": "← 返回首頁",
+      "zh-CN": "← 返回首页",
+      "en": "← Home"
+    },
+    "about.stats-h": {
+      "zh-HK": "教學成果",
+      "zh-CN": "教学成果",
+      "en": "Track record"
+    },
+    "about.stat-1-num": {
+      "zh-HK": "25w+",
+      "zh-CN": "25w+",
+      "en": "250K+"
+    },
+    "about.stat-1-label": {
+      "zh-HK": "全網粉絲",
+      "zh-CN": "全网粉丝",
+      "en": "Total followers"
+    },
+    "about.stat-2-num": {
+      "zh-HK": "16+ 年",
+      "zh-CN": "16+ 年",
+      "en": "16+ yrs"
+    },
+    "about.stat-2-label": {
+      "zh-HK": "教齡",
+      "zh-CN": "教龄",
+      "en": "Teaching"
+    },
+    "about.stat-3-num": {
+      "zh-HK": "200+",
+      "zh-CN": "200+",
+      "en": "200+"
+    },
+    "about.stat-3-label": {
+      "zh-HK": "系統課時",
+      "zh-CN": "系统课时",
+      "en": "Course hours"
+    },
+    "about.stat-4-num": {
+      "zh-HK": "4.9/5",
+      "zh-CN": "4.9/5",
+      "en": "4.9 / 5"
+    },
+    "about.stat-4-label": {
+      "zh-HK": "學員評分",
+      "zh-CN": "学员评分",
+      "en": "Student rating"
+    },
+    "about.testimonials-h": {
+      "zh-HK": "學員怎麼説",
+      "zh-CN": "学员怎么说",
+      "en": "What students say"
+    },
+    "about.testimonials": [
+      {
+        "text": {
+          "zh-HK": "從「聽唔明」到能跟香港同事開會，9 個月。老師講的 9 聲 6 調視頻我看了不下 10 遍，每次都有新收穫。",
+          "zh-CN": "从「听不懂」到能跟香港同事开会，9 个月。老师讲的 9 声 6 调视频我看了不下 10 遍，每次都有新收获。",
+          "en": "From zero to meeting with HK colleagues in 9 months. I've watched Vickey's 9-tones video 10+ times — every rewatch, I learn something new."
+        },
+        "avatar": "L",
+        "author": "@Lydia",
+        "meta": {
+          "zh-HK": "深圳 · 互聯網產品經理 · 學了 9 個月",
+          "zh-CN": "深圳 · 互联网产品经理 · 学了 9 个月",
+          "en": "Shenzhen · Product manager · 9 months in"
+        }
+      },
+      {
+        "text": {
+          "zh-HK": "舉一反三教學法真的絕！一個句型拆 5 個場景，外出點餐、shopping、問路全覆蓋，再也不怕開口了。",
+          "zh-CN": "举一反三教学法真的绝！一个句型拆 5 个场景，外出点餐、shopping、问路全覆盖，再也不怕开口了。",
+          "en": "The 'one pattern, 5 scenarios' method is brilliant! Covers ordering, shopping, asking directions — I'm no longer afraid to open my mouth."
+        },
+        "avatar": "A",
+        "author": "@阿杰",
+        "meta": {
+          "zh-HK": "上海 · 港資企業市場 · 學了 1 年",
+          "zh-CN": "上海 · 港资企业市场 · 学了 1 年",
+          "en": "Shanghai · HK firm marketing · 1 year in"
+        }
+      },
+      {
+        "text": {
+          "zh-HK": "老師講俚語和俗語特別地道，教材裏學不到的「執生」「食字」全講明白，聽港劇再也不用看字幕了。",
+          "zh-CN": "老师讲俚语和俗语特别地道，教材里学不到的「执生」「食字」全讲明白，听港剧再也不用看字幕了。",
+          "en": "Vickey's slang lessons are super authentic — 「执生」「食字」 finally clicked. I watch HK dramas without subtitles now."
+        },
+        "avatar": "M",
+        "author": "@Maggie",
+        "meta": {
+          "zh-HK": "北京 · 港劇迷 · 學了 6 個月",
+          "zh-CN": "北京 · 港剧迷 · 学了 6 个月",
+          "en": "Beijing · HK drama fan · 6 months in"
+        }
+      },
+      {
+        "text": {
+          "zh-HK": "本來是陪孩子學，結果自己也入坑了。老師的港式發音超正，三語自由切換學起來很過癮。",
+          "zh-CN": "本来是陪孩子学，结果自己也入坑了。老师的港式发音超正，三语自由切换学起来很过瘾。",
+          "en": "Came to help my kid learn, ended up hooked myself. The HK pronunciation is on point, and the trilingual switch is addictive."
+        },
+        "avatar": "T",
+        "author": "@Tom",
+        "meta": {
+          "zh-HK": "廣州 · 全職媽媽 · 學了 4 個月",
+          "zh-CN": "广州 · 全职妈妈 · 学了 4 个月",
+          "en": "Guangzhou · Stay-home mom · 4 months in"
+        }
+      },
+      {
+        "text": {
+          "zh-HK": "舉家搬來香港前學的，老師糾正的入聲幫我省了 3 個月適應期。同事都以為我是本地人。",
+          "zh-CN": "举家搬来香港前学的，老师纠正的入声帮我省了 3 个月适应期。同事都以为我是本地人。",
+          "en": "Took this before our family moved to HK. Vickey's tone correction saved me 3 months of adjustment. Coworkers thought I was a local."
+        },
+        "avatar": "C",
+        "author": "@Coco",
+        "meta": {
+          "zh-HK": "北京移居香港 · 學了 8 個月",
+          "zh-CN": "北京移居香港 · 学了 8 个月",
+          "en": "Beijing → HK · 8 months in"
+        }
+      },
+      {
+        "text": {
+          "zh-HK": "學完商務粵語能跟客户唱 K 都不用普通話了，老師教的俚語和酒桌文化直接能用。",
+          "zh-CN": "学完商务粤语能跟客户唱 K 都不用普通话了，老师教的俚语和酒桌文化直接能用。",
+          "en": "After Business Cantonese I can karaoke with clients in Cantonese. The slang and drinking-culture lessons are immediately usable."
+        },
+        "avatar": "J",
+        "author": "@Jacky",
+        "meta": {
+          "zh-HK": "上海 · 投行 · 學了 1 年半",
+          "zh-CN": "上海 · 投行 · 学了 1 年半",
+          "en": "Shanghai · Investment banking · 1.5 years in"
+        }
+      }
+    ],
+    "about.courses-h": {
+      "zh-HK": "課程總覽",
+      "zh-CN": "课程总览",
+      "en": "Courses at a glance"
+    },
+    "about.courses-sub": {
+      "zh-HK": "入門 / 進階 / 高階，按你嘅等級選 → ",
+      "zh-CN": "入门 / 进阶 / 高阶，按你的等级选 → ",
+      "en": "Beginner / Intermediate / Advanced — pick by your level → "
+    },
+    "about.courses-link": {
+      "zh-HK": "看全部",
+      "zh-CN": "看全部",
+      "en": "See all"
+    },
+    "about.courses-count-3": {
+      "zh-HK": "3 門",
+      "zh-CN": "3 门",
+      "en": "3 courses"
+    },
+    "about.methods-h": {
+      "zh-HK": "學習方法論",
+      "zh-CN": "学习方法论",
+      "en": "Learning method"
+    },
+    "about.methods-sub": {
+      "zh-HK": "基於 FSI/ACTFL/SLA 理論 + 9 年教學經驗",
+      "zh-CN": "基于 FSI/ACTFL/SLA 理论 + 9 年教学经验",
+      "en": "Built on FSI / ACTFL / SLA theory + 9 years of teaching"
+    },
+    "about.methods": [
+      {
+        "title": {
+          "zh-HK": "30/30 原則",
+          "zh-CN": "30/30 原则",
+          "en": "The 30/30 Rule"
+        },
+        "desc": {
+          "zh-HK": "每天至少 30 分鐘，每週 25 天學習。<strong>比突擊式更有效</strong>——研究顯示分佈式練習勝過集中練習。",
+          "zh-CN": "每天至少 30 分钟，每周 25 天学习。<strong>比突击式更有效</strong>——研究显示分布式练习胜过集中练习。",
+          "en": "At least 30 min/day, 25 days/week. <strong>Beats cramming</strong> — research shows distributed practice wins."
+        }
+      },
+      {
+        "title": {
+          "zh-HK": "輸入:輸出:複習 = 4:3:3",
+          "zh-CN": "输入:输出:复习 = 4:3:3",
+          "en": "Input : Output : Review = 4 : 3 : 3"
+        },
+        "desc": {
+          "zh-HK": "聽讀 4 成，説寫 3 成，間隔重複 3 成。<strong>只輸入不開嘴</strong>=學了 2 年還説不出。",
+          "zh-CN": "听读 4 成，说写 3 成，间隔重复 3 成。<strong>只输入不开嘴</strong>=学了 2 年还说不出。",
+          "en": "Listening / reading 40%, speaking / writing 30%, spaced repetition 30%. <strong>Input-only = 2 years and still mute.</strong>"
+        }
+      },
+      {
+        "title": {
+          "zh-HK": "B1 後必有真人對話",
+          "zh-CN": "B1 后必有真人对话",
+          "en": "B1+ requires live conversation"
+        },
+        "desc": {
+          "zh-HK": "能聽懂日常對話後，<strong>必須有語伴或老師</strong>。語言是交際工具，閉環才是真學。",
+          "zh-CN": "能听懂日常对话后，<strong>必须有语伴或老师</strong>。语言是交际工具，闭环才是真学。",
+          "en": "After you can handle daily chat, <strong>get a partner or teacher</strong>. Language is for communication — closed loop is real learning."
+        }
+      },
+      {
+        "title": {
+          "zh-HK": "不追完美口音",
+          "zh-CN": "不追完美口音",
+          "en": "Don't chase native accent"
+        },
+        "desc": {
+          "zh-HK": "成人達到完美母語語音概率 < 5%（關鍵期假説）。<strong>清晰可懂 + 略帶口音</strong>完全夠用，省精力到內容。",
+          "zh-CN": "成人达到完美母语语音概率 < 5%（关键期假说）。<strong>清晰可懂 + 略带口音</strong>完全够用，省精力到内容。",
+          "en": "Adult odds of native pronunciation: <5% (Critical Period Hypothesis). <strong>Clear + slight accent = plenty good</strong>. Save energy for content."
+        }
+      },
+      {
+        "title": {
+          "zh-HK": "每 3 個月自評一次",
+          "zh-CN": "每 3 个月自评一次",
+          "en": "Self-test every 3 months"
+        },
+        "desc": {
+          "zh-HK": "用 <a href=\"test.html\" style=\"color: var(--yellow);\">首頁測試</a> 重測一次，看升級咗未。<strong>持續比強度重要</strong>。",
+          "zh-CN": "用 <a href=\"test.html\" style=\"color: var(--yellow);\">首页测试</a> 重测一次，看升级了没。<strong>持续比强度重要</strong>。",
+          "en": "Retake the <a href=\"test.html\" style=\"color: var(--yellow);\">home test</a>, see if you've leveled up. <strong>Consistency beats intensity.</strong>"
+        }
+      }
+    ],
+    "about.platforms-h": {
+      "zh-HK": "我在這些平台",
+      "zh-CN": "我在这些平台",
+      "en": "Find me on"
+    },
+    "about.platforms-sub-pre": {
+      "zh-HK": "全平台同名：",
+      "zh-CN": "全平台同名：",
+      "en": "Same name everywhere: "
+    },
+    "about.platforms": [
+      {
+        "icon": "小紅",
+        "name": {
+          "zh-HK": "小紅書",
+          "zh-CN": "小红书",
+          "en": "Xiaohongshu"
+        },
+        "cssClass": "p-xhs",
+        "url": "https://xhslink.com/m/7LZfXHoiwAH"
+      },
+      {
+        "icon": "抖音",
+        "name": {
+          "zh-HK": "抖音",
+          "zh-CN": "抖音",
+          "en": "Douyin"
+        },
+        "cssClass": "p-douyin",
+        "url": "https://www.douyin.com/search/%E5%8C%85%E5%A6%88VK%E6%95%99%E7%B2%A4%E8%AF%AD?type=user"
+      },
+      {
+        "icon": "視頻",
+        "name": {
+          "zh-HK": "微信視頻號",
+          "zh-CN": "微信视频号",
+          "en": "WeChat Channels"
+        },
+        "cssClass": "p-shipinhao",
+        "url": "https://channels.weixin.qq.com/search?query=%E5%8C%85%E5%A6%88VK%E6%95%99%E7%B2%A4%E8%AF%AD"
+      },
+      {
+        "icon": "B站",
+        "name": {
+          "zh-HK": "嗶哩嗶哩",
+          "zh-CN": "哔哩哔哩",
+          "en": "Bilibili"
+        },
+        "cssClass": "p-bili",
+        "url": "https://space.bilibili.com/517071625"
+      },
+      {
+        "icon": "快手",
+        "name": {
+          "zh-HK": "快手",
+          "zh-CN": "快手",
+          "en": "Kuaishou"
+        },
+        "cssClass": "p-kuaishou",
+        "url": "https://www.kuaishou.com/profile/vickeyoo"
+      },
+      {
+        "icon": "知乎",
+        "name": {
+          "zh-HK": "知乎",
+          "zh-CN": "知乎",
+          "en": "Zhihu"
+        },
+        "cssClass": "p-zhihu",
+        "url": "https://www.zhihu.com/people/69d85190397288ce33e6bd6fc7cd0cfa"
+      },
+      {
+        "icon": "微博",
+        "name": {
+          "zh-HK": "微博",
+          "zh-CN": "微博",
+          "en": "Weibo"
+        },
+        "cssClass": "p-weibo",
+        "url": "https://weibo.com/u/5241733587"
+      },
+      {
+        "icon": "百家",
+        "name": {
+          "zh-HK": "百家號",
+          "zh-CN": "百家号",
+          "en": "Baijiahao"
+        },
+        "cssClass": "p-bjh",
+        "url": "https://author.baidu.com/home?context=%7B%22app_id%22%3A1684608928022403%7D&wfr=bjh"
+      }
+    ],
+    "about.contact-test-sub": {
+      "zh-HK": "3 分鐘出結果",
+      "zh-CN": "3 分钟出结果",
+      "en": "3-min result"
+    },
+    "about.contact-qa-sub": {
+      "zh-HK": "10 個 Q&A",
+      "zh-CN": "10 个 Q&A",
+      "en": "10 FAQ"
+    },
+    "about.copied": {
+      "zh-HK": "已複製 ✓",
+      "zh-CN": "已复制 ✓",
+      "en": "Copied ✓"
+    },
+    "about.handle": {
+      "zh-HK": "@包媽VK教粵語",
+      "zh-CN": "@包妈VK教粤语",
+      "en": "@BaomaVK"
+    },
+    "about.contact-email": {
+      "zh-HK": "郵箱",
+      "zh-CN": "邮箱",
+      "en": "Email"
+    },
+    "about.contact-test": {
+      "zh-HK": "測一測",
+      "zh-CN": "测一测",
+      "en": "Test"
+    },
+    "about.contact-qa": {
+      "zh-HK": "常見問題",
+      "zh-CN": "常见问题",
+      "en": "Q&A"
+    },
+    "research.h1": {
+      "zh-HK": "粵語零基礎學員學習時長 · 深度研究",
+      "zh-CN": "粤语零基础学员学习时长 · 深度研究",
+      "en": "Cantonese Learning Time · A Deep-Dive Study"
+    },
+    "research.subtitle": {
+      "zh-HK": "基於 FSI / ACTFL / CEFR 標準、SLA 理論與多維實證數據的綜合分析",
+      "zh-CN": "基于 FSI / ACTFL / CEFR 标准、SLA 理论与多维实证数据的综合分析",
+      "en": "A multi-source synthesis of FSI / ACTFL / CEFR standards, SLA theory, and empirical data"
+    },
+    "research.meta-topic": {
+      "zh-HK": "研究主題",
+      "zh-CN": "研究主题",
+      "en": "Topic"
+    },
+    "research.meta-topic-v": {
+      "zh-HK": "粵語學習時長與目標達成",
+      "zh-CN": "粤语学习时长与目标达成",
+      "en": "Cantonese learning time & target attainment"
+    },
+    "research.meta-dim": {
+      "zh-HK": "分析維度",
+      "zh-CN": "分析维度",
+      "en": "Dimensions"
+    },
+    "research.meta-dim-v": {
+      "zh-HK": "年齡 / 地域 / 性別 / 目標水平",
+      "zh-CN": "年龄 / 地域 / 性别 / 目标水平",
+      "en": "Age / Region / Gender / Target level"
+    },
+    "research.meta-method": {
+      "zh-HK": "方法論",
+      "zh-CN": "方法论",
+      "en": "Method"
+    },
+    "research.meta-method-v": {
+      "zh-HK": "FSI + ACTFL + CEFR + SLA 理論",
+      "zh-CN": "FSI + ACTFL + CEFR + SLA 理论",
+      "en": "FSI + ACTFL + CEFR + SLA theory"
+    },
+    "research.meta-data": {
+      "zh-HK": "數據樣本",
+      "zh-CN": "数据样本",
+      "en": "Data"
+    },
+    "research.meta-data-v": {
+      "zh-HK": "跨語言、跨地域綜合估算",
+      "zh-CN": "跨语言、跨地域综合估算",
+      "en": "Cross-language, cross-region estimates"
+    },
+    "research.abstract-h": {
+      "zh-HK": "📌 摘要 (Abstract)",
+      "zh-CN": "📌 摘要 (Abstract)",
+      "en": "📌 Abstract"
+    },
+    "research.abstract-p1": {
+      "zh-HK": "粵語是聯合國教科文組織認定的「瀕危語言」中仍具有較高使用活力的語言之一，全球使用者超過 8000 萬。本研究綜合美國外語培訓標準（FSI）、美國外語教學委員會能力等級（ACTFL）、歐洲共同語言參考框架（CEFR）、第二語言習得（SLA）經典理論及多源實證數據，系統回答「粵語零基礎學員每日應學多久、總共需要多久能達到目標水平」這一核心問題。",
+      "zh-CN": "粤语是联合国教科文组织认定的「濒危语言」中仍具有较高使用活力的语言之一，全球使用者超过 8000 万。本研究综合美国外语培训标准（FSI）、美国外语教学委员会能力等级（ACTFL）、欧洲共同语言参考框架（CEFR）、第二语言習得（SLA）经典理论及多源实证数据，系统回答「粤语零基础学员每日应学多久、总共需要多久能达到目标水平」这一核心问题。",
+      "en": "Cantonese is one of the most actively used languages among those UNESCO classifies as \"vulnerable\" — over 80 million speakers worldwide. This study synthesizes the U.S. Foreign Service Institute (FSI) standards, ACTFL proficiency guidelines, the Common European Framework (CEFR), second-language acquisition (SLA) theory, and multi-source empirical data to answer: how long should a zero-basis Cantonese learner practice daily, and how many total hours to reach a given target level?"
+    },
+    "research.abstract-p2": {
+      "zh-HK": "核心結論：<strong>A2-B1 日常對話級</strong>，零基礎成人在非母語區每天投入 45-60 分鐘，約需 <strong>12-18 個月累計 350-500 小時</strong>；<strong>B2-C1 流利工作級</strong>，每天 60-90 分鐘，約需 <strong>30-45 個月累計 1000-1500 小時</strong>；<strong>C2+ 母語者級</strong>，每天 90-120 分鐘以上，通常需要 <strong>5 年以上累計 2000+ 小時</strong>。年齡是顯著調節變量（兒童在語音和語用上具關鍵期優勢，成人則在語法和詞彙效率上佔優），地域環境對總時長有 0.5x-1.5x 的乘數效應，性別差異主要體現在學習風格而非最終達成度。",
+      "zh-CN": "核心结论：<strong>A2-B1 日常对话级</strong>，零基础成人在非母语区每天投入 45-60 分钟，约需 <strong>12-18 个月累计 350-500 小时</strong>；<strong>B2-C1 流利工作级</strong>，每天 60-90 分钟，约需 <strong>30-45 个月累计 1000-1500 小时</strong>；<strong>C2+ 母语者级</strong>，每天 90-120 分钟以上，通常需要 <strong>5 年以上累计 2000+ 小时</strong>。年龄是显著调节变量（儿童在语音和语用上具关键期优势，成人则在语法和词汇效率上占优），地域环境对总时长有 0.5x-1.5x 的乘数效应，性别差异主要体现在学习风格而非最终达成度。",
+      "en": "Bottom line: <strong>A2–B1 (daily conversation)</strong> — zero-basis adult outside native regions, 45–60 min/day, ~12–18 months / 350–500 hrs total. <strong>B2–C1 (work-fluent)</strong> — 60–90 min/day, ~30–45 months / 1000–1500 hrs. <strong>C2+ (native-like)</strong> — 90–120+ min/day, typically 5+ years / 2000+ hrs. Age is a strong modifier (children win on phonology and pragmatics; adults win on grammar and vocabulary efficiency). Region multiplies total time by 0.5x–1.5x. Gender differences show up mostly in learning style, not in final attainment."
+    },
+    "research.kw": [
+      "粵語學習時長|粤语学习时长|Cantonese learning time",
+      "第二語言習得|第二语言習得|Second-language acquisition",
+      "FSI 難度分級|FSI 难度分级|FSI difficulty rating",
+      "ACTFL|ACTFL|ACTFL",
+      "CEFR|CEFR|CEFR",
+      "關鍵期假説|关键期假说|Critical Period Hypothesis",
+      "注意力維持|注意力维持|Sustained attention",
+      "性別差異|性别差异|Gender differences",
+      "地域沉浸度|地域沉浸度|Regional immersion"
+    ],
+    "research.toc-h": {
+      "zh-HK": "📑 目錄 (Table of Contents)",
+      "zh-CN": "📑 目录 (Table of Contents)",
+      "en": "📑 Table of Contents"
+    },
+    "research.toc": [
+      "研究背景與問題陳述|研究背景与问题陈述|Background & problem statement",
+      "研究方法論|研究方法论|Methodology",
+      "權威標準與基礎數據|权威标准与基础数据|Standards & base data",
+      "每日學習時長分析|每日学习时长分析|Daily time analysis",
+      "年齡維度深度分析|年龄维度深度分析|Age dimension",
+      "地域維度深度分析|地域维度深度分析|Region dimension",
+      "性別維度深度分析|性别维度深度分析|Gender dimension",
+      "綜合建議：分檔學習路徑|综合建议：分档学习路径|Integrated recommendations",
+      "研究侷限與未來方向|研究局限与未来方向|Limitations & future work",
+      "交互式時長估算器|交互式时长估算器|Interactive calculator",
+      "數據可視化|数据可视化|Data visualization",
+      "參考文獻|参考文献|References"
+    ],
+    "research.ch1-h": {
+      "zh-HK": "第一章　研究背景與問題陳述",
+      "zh-CN": "第一章　研究背景与问题陈述",
+      "en": "Ch.1 Background & problem statement"
+    },
+    "research.ch1.1-h": {
+      "zh-HK": "1.1 為什麼「粵語學習時長」是一個值得嚴肅研究的問題",
+      "zh-CN": "1.1 为什么「粤语学习时长」是一个值得严肃研究的问题",
+      "en": "1.1 Why Cantonese learning time deserves serious study"
+    },
+    "research.ch1.2-h": {
+      "zh-HK": "1.2 本研究要回答的核心問題",
+      "zh-CN": "1.2 本研究要回答的核心问题",
+      "en": "1.2 Core questions this study answers"
+    },
+    "research.ch2-h": {
+      "zh-HK": "第二章　研究方法論",
+      "zh-CN": "第二章　研究方法论",
+      "en": "Ch.2 Methodology"
+    },
+    "research.ch2.1-h": {
+      "zh-HK": "2.1 理論框架",
+      "zh-CN": "2.1 理论框架",
+      "en": "2.1 Theoretical framework"
+    },
+    "research.ch2.2-h": {
+      "zh-HK": "2.2 數據來源",
+      "zh-CN": "2.2 数据来源",
+      "en": "2.2 Data sources"
+    },
+    "research.ch2.3-h": {
+      "zh-HK": "2.3 估算方法",
+      "zh-CN": "2.3 估算方法",
+      "en": "2.3 Estimation method"
+    },
+    "research.ch3-h": {
+      "zh-HK": "第三章　權威標準與基礎數據",
+      "zh-CN": "第三章　权威标准与基础数据",
+      "en": "Ch.3 Standards & base data"
+    },
+    "research.ch3.1-h": {
+      "zh-HK": "3.1 FSI 語言難度分級",
+      "zh-CN": "3.1 FSI 语言难度分级",
+      "en": "3.1 FSI language difficulty"
+    },
+    "research.ch3.2-h": {
+      "zh-HK": "3.2 ACTFL 能力等級",
+      "zh-CN": "3.2 ACTFL 能力等级",
+      "en": "3.2 ACTFL proficiency"
+    },
+    "research.ch3.3-h": {
+      "zh-HK": "3.3 CEFR 歐洲共同語言參考框架",
+      "zh-CN": "3.3 CEFR 欧洲共同语言参考框架",
+      "en": "3.3 CEFR framework"
+    },
+    "research.ch3.4-h": {
+      "zh-HK": "3.4 三套標準的對應關係",
+      "zh-CN": "3.4 三套标准的对应关系",
+      "en": "3.4 How the three standards map"
+    },
+    "research.ch4-h": {
+      "zh-HK": "第四章　每日學習時長分析",
+      "zh-CN": "第四章　每日学习时长分析",
+      "en": "Ch.4 Daily time analysis"
+    },
+    "research.ch4.1-h": {
+      "zh-HK": "4.1 注意力維持：每日時長的硬性上限",
+      "zh-CN": "4.1 注意力维持：每日时长的硬性上限",
+      "en": "4.1 Sustained attention: the daily-time ceiling"
+    },
+    "research.ch4.2-h": {
+      "zh-HK": "4.2 有效學習時長 vs 總時長",
+      "zh-CN": "4.2 有效学习时长 vs 总时长",
+      "en": "4.2 Effective time vs total time"
+    },
+    "research.ch4.3-h": {
+      "zh-HK": "4.3 每日學習時長的推薦區間（按年齡）",
+      "zh-CN": "4.3 每日学习时长的推荐区间（按年龄）",
+      "en": "4.3 Recommended daily time (by age)"
+    },
+    "research.ch4.4-h": {
+      "zh-HK": "4.4 每日學習時長的「最優拐點」",
+      "zh-CN": "4.4 每日学习时长的「最优拐点」",
+      "en": "4.4 The 'sweet spot' for daily practice"
+    },
+    "research.ch5-h": {
+      "zh-HK": "第五章　年齡維度深度分析",
+      "zh-CN": "第五章　年龄维度深度分析",
+      "en": "Ch.5 Age dimension"
+    },
+    "research.ch5.1-h": {
+      "zh-HK": "5.1 關鍵期假説對粵語學習的具體含義",
+      "zh-CN": "5.1 关键期假说对粤语学习的具体含义",
+      "en": "5.1 What the Critical Period Hypothesis means for Cantonese"
+    },
+    "research.ch5.2-h": {
+      "zh-HK": "5.2 各年齡檔的具體分析",
+      "zh-CN": "5.2 各年龄档的具体分析",
+      "en": "5.2 Each age band, in detail"
+    },
+    "research.ch5.3-h": {
+      "zh-HK": "5.3 年齡總表",
+      "zh-CN": "5.3 年龄总表",
+      "en": "5.3 Age summary table"
+    },
+    "research.ch6-h": {
+      "zh-HK": "第六章　地域維度深度分析",
+      "zh-CN": "第六章　地域维度深度分析",
+      "en": "Ch.6 Region dimension"
+    },
+    "research.ch6.1-h": {
+      "zh-HK": "6.1 地域環境對學習效率的影響機制",
+      "zh-CN": "6.1 地域环境对学习效率的影响机制",
+      "en": "6.1 How region affects learning efficiency"
+    },
+    "research.ch6.2-h": {
+      "zh-HK": "6.2 四檔地域的具體分析",
+      "zh-CN": "6.2 四档地域的具体分析",
+      "en": "6.2 Each of the four regions"
+    },
+    "research.ch6.3-h": {
+      "zh-HK": "6.3 地域效率總表",
+      "zh-CN": "6.3 地域效率总表",
+      "en": "6.3 Region efficiency table"
+    },
+    "research.ch7-h": {
+      "zh-HK": "第七章　性別維度深度分析",
+      "zh-CN": "第七章　性别维度深度分析",
+      "en": "Ch.7 Gender dimension"
+    },
+    "research.ch7.1-h": {
+      "zh-HK": "7.1 性別差異的科學共識",
+      "zh-CN": "7.1 性别差异的科学共识",
+      "en": "7.1 The scientific consensus on gender differences"
+    },
+    "research.ch7.2-h": {
+      "zh-HK": "7.2 在粵語學習中的具體體現",
+      "zh-CN": "7.2 在粤语学习中的具体体现",
+      "en": "7.2 How it shows up in Cantonese learning"
+    },
+    "research.ch7.3-h": {
+      "zh-HK": "7.3 對其他性別學習者的説明",
+      "zh-CN": "7.3 对其他性别学习者的说明",
+      "en": "7.3 For learners of other genders"
+    },
+    "research.ch7.4-h": {
+      "zh-HK": "7.4 性別維度總結",
+      "zh-CN": "7.4 性别维度总结",
+      "en": "7.4 Gender dimension — summary"
+    },
+    "research.ch8-h": {
+      "zh-HK": "第八章　綜合建議：分檔學習路徑",
+      "zh-CN": "第八章　综合建议：分档学习路径",
+      "en": "Ch.8 Integrated recommendations"
+    },
+    "research.ch8.1-h": {
+      "zh-HK": "8.1 三檔目標的學習路徑",
+      "zh-CN": "8.1 三档目标的学习路径",
+      "en": "8.1 Three-tier learning paths"
+    },
+    "research.ch8.2-h": {
+      "zh-HK": "8.2 7 條核心建議",
+      "zh-CN": "8.2 7 条核心建议",
+      "en": "8.2 Seven core recommendations"
+    },
+    "research.ch8.3-h": {
+      "zh-HK": "8.3 常見誤區",
+      "zh-CN": "8.3 常见误区",
+      "en": "8.3 Common pitfalls"
+    },
+    "research.ch9-h": {
+      "zh-HK": "第九章　研究侷限與未來方向",
+      "zh-CN": "第九章　研究局限与未来方向",
+      "en": "Ch.9 Limitations & future work"
+    },
+    "research.ch9.1-h": {
+      "zh-HK": "9.1 本研究的侷限",
+      "zh-CN": "9.1 本研究的局限",
+      "en": "9.1 Limitations of this study"
+    },
+    "research.ch9.2-h": {
+      "zh-HK": "9.2 未來研究方向",
+      "zh-CN": "9.2 未来研究方向",
+      "en": "9.2 Future research directions"
+    },
+    "research.calc-h": {
+      "zh-HK": "📊 交互式時長估算器",
+      "zh-CN": "📊 交互式时长估算器",
+      "en": "📊 Interactive timeline estimator"
+    },
+    "research.calc-intro": {
+      "zh-HK": "選擇你的目標水平、年齡檔、地域檔、性別，實時估算「每日推薦時長」和「達到目標需要的累計時長」。所有數字基於 FSI 2200 小時標準並經多維繫數調整。",
+      "zh-CN": "选择你的目标水平、年龄档、地域档、性别，实时估算「每日推荐时长」和「达到目标需要的累计时长」。所有数字基于 FSI 2200 小时标准并经多维系数调整。",
+      "en": "Pick your target level, age band, region, and gender — get an instant estimate of recommended daily time and total hours to reach it. All numbers are anchored to the FSI 2,200-hour standard, with multi-factor adjustments."
+    },
+    "research.calc-panel-h": {
+      "zh-HK": "個性化時長估算",
+      "zh-CN": "个性化时长估算",
+      "en": "Personalized estimate"
+    },
+    "research.calc-level": {
+      "zh-HK": "目標水平",
+      "zh-CN": "目标水平",
+      "en": "Target level"
+    },
+    "research.calc-age": {
+      "zh-HK": "年齡段",
+      "zh-CN": "年龄段",
+      "en": "Age band"
+    },
+    "research.calc-region": {
+      "zh-HK": "地域",
+      "zh-CN": "地域",
+      "en": "Region"
+    },
+    "research.calc-gender": {
+      "zh-HK": "性別",
+      "zh-CN": "性别",
+      "en": "Gender"
+    },
+    "research.calc-level-A1": {
+      "zh-HK": "A1 — 入門（基礎問候、自我介紹）",
+      "zh-CN": "A1 — 入门（基础问候、自我介绍）",
+      "en": "A1 — Beginner (greetings, intro)"
+    },
+    "research.calc-level-A2": {
+      "zh-HK": "A2 — 基礎（日常簡單對話）",
+      "zh-CN": "A2 — 基础（日常简单对话）",
+      "en": "A2 — Basic (daily simple chat)"
+    },
+    "research.calc-level-B1": {
+      "zh-HK": "B1 — 中級（獨立交流、工作生活）",
+      "zh-CN": "B1 — 中级（独立交流、工作生活）",
+      "en": "B1 — Intermediate (work & life)"
+    },
+    "research.calc-level-B2": {
+      "zh-HK": "B2 — 中高級（流利討論複雜話題）",
+      "zh-CN": "B2 — 中高级（流利讨论复杂话题）",
+      "en": "B2 — Upper-int (complex topics)"
+    },
+    "research.calc-level-C1": {
+      "zh-HK": "C1 — 高級（專業表達、學術）",
+      "zh-CN": "C1 — 高级（专业表达、学术）",
+      "en": "C1 — Advanced (pro, academic)"
+    },
+    "research.calc-level-C2": {
+      "zh-HK": "C2 — 精通（接近母語者）",
+      "zh-CN": "C2 — 精通（接近母语者）",
+      "en": "C2 — Mastery (near-native)"
+    },
+    "research.calc-age-child": {
+      "zh-HK": "兒童 (6-12 歲)",
+      "zh-CN": "儿童 (6-12 岁)",
+      "en": "Child (6-12)"
+    },
+    "research.calc-age-teen": {
+      "zh-HK": "青少年 (13-17 歲)",
+      "zh-CN": "青少年 (13-17 岁)",
+      "en": "Teen (13-17)"
+    },
+    "research.calc-age-young": {
+      "zh-HK": "大學 / 青年成人 (18-35 歲)",
+      "zh-CN": "大学 / 青年成人 (18-35 岁)",
+      "en": "Young adult (18-35)"
+    },
+    "research.calc-age-mid": {
+      "zh-HK": "中年 (36-50 歲)",
+      "zh-CN": "中年 (36-50 岁)",
+      "en": "Mid (36-50)"
+    },
+    "research.calc-age-senior": {
+      "zh-HK": "銀髮 (50+ 歲)",
+      "zh-CN": "银发 (50+ 岁)",
+      "en": "Senior (50+)"
+    },
+    "research.calc-region-native": {
+      "zh-HK": "粵港澳母語區",
+      "zh-CN": "粤港澳母语区",
+      "en": "Native (GD/HK/MO)"
+    },
+    "research.calc-region-mainland": {
+      "zh-HK": "內地非母語區",
+      "zh-CN": "内地非母语区",
+      "en": "Mainland non-native"
+    },
+    "research.calc-region-overseas": {
+      "zh-HK": "海外華人區",
+      "zh-CN": "海外华人区",
+      "en": "Overseas Chinese"
+    },
+    "research.calc-region-foreign": {
+      "zh-HK": "零基礎外國人區",
+      "zh-CN": "零基础外国人区",
+      "en": "Foreign (zero base)"
+    },
+    "research.calc-gender-female": {
+      "zh-HK": "女性",
+      "zh-CN": "女性",
+      "en": "Female"
+    },
+    "research.calc-gender-male": {
+      "zh-HK": "男性",
+      "zh-CN": "男性",
+      "en": "Male"
+    },
+    "research.calc-gender-other": {
+      "zh-HK": "其他 / 不願透露",
+      "zh-CN": "其他 / 不愿透露",
+      "en": "Other / prefer not to say"
+    },
+    "research.calc-region-native-desc": {
+      "zh-HK": "日常全沉浸",
+      "zh-CN": "日常全沉浸",
+      "en": "Full daily immersion"
+    },
+    "research.calc-region-mainland-desc": {
+      "zh-HK": "標準基準",
+      "zh-CN": "标准基准",
+      "en": "Standard baseline"
+    },
+    "research.calc-region-overseas-desc": {
+      "zh-HK": "家庭+社羣+課程",
+      "zh-CN": "家庭+社群+课程",
+      "en": "Family + community + courses"
+    },
+    "research.calc-region-foreign-desc": {
+      "zh-HK": "密集課+文化沉浸",
+      "zh-CN": "密集课+文化沉浸",
+      "en": "Intensive + cultural immersion"
+    },
+    "research.calc-diff-A1": {
+      "zh-HK": "入門",
+      "zh-CN": "入门",
+      "en": "Entry"
+    },
+    "research.calc-diff-A2": {
+      "zh-HK": "基礎",
+      "zh-CN": "基础",
+      "en": "Basic"
+    },
+    "research.calc-diff-B1": {
+      "zh-HK": "中等",
+      "zh-CN": "中等",
+      "en": "Intermediate"
+    },
+    "research.calc-diff-B2": {
+      "zh-HK": "中高級",
+      "zh-CN": "中高级",
+      "en": "Upper-int"
+    },
+    "research.calc-diff-C1": {
+      "zh-HK": "高級",
+      "zh-CN": "高级",
+      "en": "Advanced"
+    },
+    "research.calc-diff-C2": {
+      "zh-HK": "精通",
+      "zh-CN": "精通",
+      "en": "Mastery"
+    },
+    "research.chart-daily-tooltip-title": {
+      "zh-HK": "每日 $1 分鐘",
+      "zh-CN": "每日 $1 分钟",
+      "en": "Daily $1 min"
+    },
+    "research.chart-daily-tooltip-label": {
+      "zh-HK": "效果指數: $1 (基準 100 = 30 分鐘/天)",
+      "zh-CN": "效果指数: $1 (基准 100 = 30 分钟/天)",
+      "en": "Effect: $1 (baseline 100 = 30 min/day)"
+    },
+    "research.chart-daily-axis-x": {
+      "zh-HK": "每日學習時長（分鐘）",
+      "zh-CN": "每日学习时长（分钟）",
+      "en": "Daily study time (min)"
+    },
+    "research.chart-daily-axis-y": {
+      "zh-HK": "相對學習效果",
+      "zh-CN": "相对学习效果",
+      "en": "Relative learning effect"
+    },
+    "research.chart-daily-label": {
+      "zh-HK": "相對學習效果",
+      "zh-CN": "相对学习效果",
+      "en": "Relative effect"
+    },
+    "research.calc-r-daily": {
+      "zh-HK": "推薦每日學習時長",
+      "zh-CN": "推荐每日学习时长",
+      "en": "Recommended daily time"
+    },
+    "research.calc-r-total": {
+      "zh-HK": "累計學習小時數",
+      "zh-CN": "累计学习小时数",
+      "en": "Total study hours"
+    },
+    "research.calc-r-months": {
+      "zh-HK": "預計達成月數",
+      "zh-CN": "预计达成月数",
+      "en": "Months to target"
+    },
+    "research.calc-r-diff": {
+      "zh-HK": "整體難度評級",
+      "zh-CN": "整体难度评级",
+      "en": "Overall difficulty"
+    },
+    "research.calc-daily": {
+      "zh-HK": "$1 分鐘",
+      "zh-CN": "$1 分钟",
+      "en": "$1 min"
+    },
+    "research.calc-range": {
+      "zh-HK": "區間: $1-$2 分鐘/天",
+      "zh-CN": "区间: $1-$2 分钟/天",
+      "en": "Range: $1–$2 min/day"
+    },
+    "research.calc-total": {
+      "zh-HK": "$1 小時",
+      "zh-CN": "$1 小时",
+      "en": "$1 hours"
+    },
+    "research.calc-factors": {
+      "zh-HK": "基準 $1h × 齡 $2x × 域 $3x × 性 $4x",
+      "zh-CN": "基准 $1h × 龄 $2x × 域 $3x × 性 $4x",
+      "en": "Base $1h × Age $2x × Region $3x × Gender $4x"
+    },
+    "research.calc-months": {
+      "zh-HK": "$1 個月",
+      "zh-CN": "$1 个月",
+      "en": "$1 months"
+    },
+    "research.calc-months-sub": {
+      "zh-HK": "每日 $1 分 × 5 天/周；低強度需 $2 個月",
+      "zh-CN": "每日 $1 分 × 5 天/周；低强度需 $2 个月",
+      "en": "$1 min/day × 5 days/wk · Casual: $2 months"
+    },
+    "research.viz-h": {
+      "zh-HK": "📈 數據可視化",
+      "zh-CN": "📈 数据可视化",
+      "en": "📈 Data visualization"
+    },
+    "research.viz-1-h": {
+      "zh-HK": "每日學習時長 vs 學習效果曲線",
+      "zh-CN": "每日学习时长 vs 学习效果曲线",
+      "en": "Daily time vs learning curve"
+    },
+    "research.viz-1-sub": {
+      "zh-HK": "縱軸：相對學習效果（基線 100% = 30 分鐘/天的產出）；橫軸：每日學習分鐘數",
+      "zh-CN": "纵轴：相对学习效果（基线 100% = 30 分钟/天的产出）；横轴：每日学习分钟数",
+      "en": "Y: relative learning effect (baseline 100 = 30 min/day). X: daily minutes"
+    },
+    "research.viz-2-h": {
+      "zh-HK": "年齡 × 目標水平",
+      "zh-CN": "年龄 × 目标水平",
+      "en": "Age × target level"
+    },
+    "research.viz-2-sub": {
+      "zh-HK": "單位：小時；基準地域 = 內地非母語區",
+      "zh-CN": "单位：小时；基准地域 = 内地非母语区",
+      "en": "Unit: hours · baseline region = mainland non-native"
+    },
+    "research.viz-3a-h": {
+      "zh-HK": "各年齡檔 — 母語者級語音達成概率",
+      "zh-CN": "各年龄档 — 母语者级语音达成概率",
+      "en": "Native-like phonology odds, by age"
+    },
+    "research.viz-3a-sub": {
+      "zh-HK": "基於關鍵期假説與 Birdsong 元分析",
+      "zh-CN": "基于关键期假说与 Birdsong 元分析",
+      "en": "Based on Critical Period Hypothesis + Birdsong meta-analysis"
+    },
+    "research.viz-3b-h": {
+      "zh-HK": "各年齡檔 — 推薦每日學習時長",
+      "zh-CN": "各年龄档 — 推荐每日学习时长",
+      "en": "Recommended daily time, by age"
+    },
+    "research.viz-3b-sub": {
+      "zh-HK": "綜合 Ruff & Lawson 注意力研究",
+      "zh-CN": "综合 Ruff & Lawson 注意力研究",
+      "en": "Synthesized from Ruff & Lawson attention research"
+    },
+    "research.viz-4-h": {
+      "zh-HK": "地域影響",
+      "zh-CN": "地域影响",
+      "en": "Region impact"
+    },
+    "research.viz-4-sub": {
+      "zh-HK": "四檔地域的累計學習時長對比（達到 B1 中級）",
+      "zh-CN": "四档地域的累计学习时长对比（达到 B1 中级）",
+      "en": "Cumulative study time by region (to reach B1)"
+    },
+    "research.viz-5-h": {
+      "zh-HK": "地域效率乘數總覽",
+      "zh-CN": "地域效率乘数总览",
+      "en": "Region efficiency multipliers"
+    },
+    "research.viz-5-sub": {
+      "zh-HK": "乘數越小，環境越有利",
+      "zh-CN": "乘数越小，环境越有利",
+      "en": "Lower = more favorable environment"
+    },
+    "research.viz-6-h": {
+      "zh-HK": "總學習時長區間",
+      "zh-CN": "总学习时长区间",
+      "en": "Total hours by level"
+    },
+    "research.viz-6-sub": {
+      "zh-HK": "單位：小時；包含 P25-P75 區間和合理外延",
+      "zh-CN": "单位：小时；包含 P25-P75 区间和合理外延",
+      "en": "Unit: hours · includes P25–P75 IQR and reasonable whiskers"
+    },
+    "research.viz-7-h": {
+      "zh-HK": "性別維度對比",
+      "zh-CN": "性别维度对比",
+      "en": "Gender comparison"
+    },
+    "research.viz-7-sub": {
+      "zh-HK": "男性 vs 女性 — 6 維度學習特徵對比",
+      "zh-CN": "男性 vs 女性 — 6 维度学习特征对比",
+      "en": "Male vs female — 6 learning dimensions"
+    },
+    "research.ref-h": {
+      "zh-HK": "參考文獻 (References)",
+      "zh-CN": "参考文献 (References)",
+      "en": "📚 References"
+    },
+    "research.footer": {
+      "zh-HK": "識講粵語 · 調研報告 · 基於公開學術標準與 SLA 理論綜合整理 · 數據為合理估算區間",
+      "zh-CN": "识讲粤语 · 调研报告 · 基于公开学术标准与 SLA 理论综合整理 · 数据为合理估算区间",
+      "en": "Cantonese Mastery · research report · synthesized from public academic standards & SLA theory · data shown as reasonable estimates"
     },
     "result.persona": {
-      "zh-HK": "你的粤语人格 · 4 维 16 型",
+      "zh-HK": "你的粵語人格 · 4 維 16 型",
       "zh-CN": "你的粤语人格 · 4 维 16 型",
       "en": "Your Cantonese Personality · 4D 16-type"
     },
     "result.dims": {
-      "zh-HK": "4 维拆解",
+      "zh-HK": "4 維拆解",
       "zh-CN": "4 维拆解",
       "en": "4 Dimensions"
     },
     "result.advice": {
-      "zh-HK": "💡 学习建议",
+      "zh-HK": "💡 學習建議",
       "zh-CN": "💡 学习建议",
       "en": "💡 Study Tips"
     },
     "result.timeline": {
-      "zh-HK": "⏱️ 你的学习时长预测",
+      "zh-HK": "⏱️ 你的學習時長預測",
       "zh-CN": "⏱️ 你的学习时长预测",
       "en": "⏱️ Your Study Timeline"
     },
     "result.timeline-sub": {
-      "zh-HK": "按你每天学 ${min} 分钟算",
+      "zh-HK": "按你每天學 ${min} 分鐘算",
       "zh-CN": "按你每天学 ${min} 分钟算",
       "en": "Based on ${min} min/day"
     },
     "result.entry-pos": {
-      "zh-HK": "入门 · 你嘅位置",
+      "zh-HK": "入門 · 你嘅位置",
       "zh-CN": "入门 · 你嘅位置",
       "en": "Beginner · You are here"
     },
@@ -342,42 +1872,42 @@
       "en": "DONE"
     },
     "result.goal": {
-      "zh-HK": "目标",
+      "zh-HK": "目標",
       "zh-CN": "目标",
       "en": "Goal"
     },
     "result.future": {
-      "zh-HK": "远期",
+      "zh-HK": "遠期",
       "zh-CN": "远期",
       "en": "Future"
     },
     "result.achieved": {
-      "zh-HK": "已达成",
+      "zh-HK": "已達成",
       "zh-CN": "已达成",
       "en": "Achieved"
     },
     "result.share": {
-      "zh-HK": "📤 分享你的结果",
+      "zh-HK": "📤 分享你的結果",
       "zh-CN": "📤 分享你的结果",
       "en": "📤 Share Your Result"
     },
     "result.share-sub": {
-      "zh-HK": "发到小红书/朋友圈，让朋友也测一测",
+      "zh-HK": "發到小紅書/朋友圈，讓朋友也測一測",
       "zh-CN": "发到小红书/朋友圈，让朋友也测一测",
       "en": "Post to WeChat Moments / Xiaohongshu"
     },
     "result.share-style": {
-      "zh-HK": "选个文案风格：",
+      "zh-HK": "選個文案風格：",
       "zh-CN": "选个文案风格：",
       "en": "Pick a style:"
     },
     "result.share-xhs": {
-      "zh-HK": "📕 小红书",
+      "zh-HK": "📕 小紅書",
       "zh-CN": "📕 小红书",
       "en": "📕 Xiaohongshu"
     },
     "result.share-wx": {
-      "zh-HK": "💬 微信对话",
+      "zh-HK": "💬 微信對話",
       "zh-CN": "💬 微信对话",
       "en": "💬 WeChat DM"
     },
@@ -387,62 +1917,82 @@
       "en": "🌟 Moments"
     },
     "result.share-sm": {
-      "zh-HK": "🔗 简洁",
+      "zh-HK": "🔗 簡潔",
       "zh-CN": "🔗 简洁",
       "en": "🔗 Plain"
     },
     "result.copied": {
-      "zh-HK": "已复制 ✓",
+      "zh-HK": "已複製 ✓",
       "zh-CN": "已复制 ✓",
       "en": "Copied ✓"
     },
     "result.no-result": {
-      "zh-HK": "你未测试过",
+      "zh-HK": "你未測試過",
       "zh-CN": "你未测试过",
       "en": "You haven't tested yet"
     },
     "result.to-test": {
-      "zh-HK": "→ 去测一测",
+      "zh-HK": "→ 去測一測",
       "zh-CN": "→ 去测一测",
       "en": "→ Take the test"
     },
     "result.fallback": {
-      "zh-HK": "粤语学习者",
+      "zh-HK": "粵語學習者",
       "zh-CN": "粤语学习者",
       "en": "Cantonese learner"
     },
     "qa.title": {
-      "zh-HK": "学习 Q&A + 客服",
+      "zh-HK": "學習 Q&A + 客服",
       "zh-CN": "学习 Q&A + 客服",
       "en": "Q&A + Support"
     },
     "qa.subtitle": {
-      "zh-HK": "唔怕问题多，怕你唔问",
+      "zh-HK": "唔怕問題多，怕你唔問",
       "zh-CN": "不怕问题多，怕你不问",
       "en": "Better to ask than wonder"
     },
     "qa.placeholder": {
-      "zh-HK": "搜问题：例如「发音」「多久」「退款」…",
+      "zh-HK": "搜問題：例如「發音」「多久」「退款」…",
       "zh-CN": "搜问题：例如「发音」「多久」「退款」…",
       "en": "Search: e.g. 'pronunciation', 'how long', 'refund'..."
     },
-    "qa.contact-title": {
-      "zh-HK": "📞 联系客服",
+    "qa.contact-h2": {
+      "zh-HK": "📞 聯繫客服",
       "zh-CN": "📞 联系客服",
       "en": "📞 Contact Support"
     },
     "qa.contact-sub": {
-      "zh-HK": "3 种方式揾到 Vickey 老师",
+      "zh-HK": "3 種方式揾到 Vickey 老師",
+      "zh-CN": "3 种方式找到 Vickey 老师",
+      "en": "3 ways to reach Vickey"
+    },
+    "qa.contact-hours": {
+      "zh-HK": "客服時間",
+      "zh-CN": "客服时间",
+      "en": "Support hours"
+    },
+    "qa.placeholder": {
+      "zh-HK": "搜問題：例如「發音」「多久」「退款」…",
+      "zh-CN": "搜问题：例如「发音」「多久」「退款」…",
+      "en": "Search: e.g. 'pronunciation', 'how long', 'refund'..."
+    },
+    "qa.contact-title": {
+      "zh-HK": "📞 聯繫客服",
+      "zh-CN": "📞 联系客服",
+      "en": "📞 Contact Support"
+    },
+    "qa.contact-sub": {
+      "zh-HK": "3 種方式揾到 Vickey 老師",
       "zh-CN": "3 种方式揾到 Vickey 老师",
       "en": "3 ways to reach Vickey"
     },
     "qa.hours-title": {
-      "zh-HK": "客服时间",
+      "zh-HK": "客服時間",
       "zh-CN": "客服时间",
       "en": "Support Hours"
     },
     "about.title": {
-      "zh-HK": "关于我",
+      "zh-HK": "關於我",
       "zh-CN": "关于我",
       "en": "About Me"
     },
@@ -461,152 +2011,217 @@
       "zh-CN": "👩‍🏫 <strong>在线教育平台签约粤语老师</strong>，<strong style=\"color: var(--yellow);\">16 年+</strong>粤语教学经验，举一反三教学风格<br>🎙️ <strong>粤语文化传播者</strong>，自媒体平台粉丝 <strong style=\"color: var(--yellow);\">25 万+</strong><br>✨ 教学生动、接地气，让零基础也能听懂粤语<br>🌏 <strong>普通话、英语、粤语</strong>自由切换",
       "en": "👩‍🏫 <strong>Online Cantonese teacher</strong> with <strong style=\"color: var(--yellow);\">16+ years</strong> experience<br>🎙️ <strong>Cantonese culture creator</strong>, <strong style=\"color: var(--yellow);\">250K+</strong> followers<br>✨ Engaging, down-to-earth teaching<br>🌏 <strong>Trilingual</strong>: Mandarin, English, Cantonese"
     },
-    "about.platforms": {
-      "zh-HK": "我在這些平台",
-      "zh-CN": "我在这些平台",
-      "en": "Find Me On"
-    },
     "about.platforms-sub": {
       "zh-HK": "全平台同名：<strong>@包媽VK教粵語</strong>",
       "zh-CN": "全平台同名：<strong>@包妈VK教粤语</strong>",
       "en": "Everywhere: <strong>@BaomaVK</strong>"
-    },
-    "about.contact-email": {
-      "zh-HK": "郵箱",
-      "zh-CN": "邮箱",
-      "en": "Email"
     },
     "about.contact-wechat": {
       "zh-HK": "加微信",
       "zh-CN": "加微信",
       "en": "WeChat"
     },
-    "about.contact-test": {
-      "zh-HK": "測一測",
-      "zh-CN": "测一测",
-      "en": "Test"
+    "review.title": {
+      "zh-HK": "你答錯嘅題",
+      "zh-CN": "你答错的题",
+      "en": "Questions you got wrong"
     },
-    "about.contact-test-sub": {
-      "zh-HK": "3 分鐘出結果",
-      "zh-CN": "3 分钟出结果",
-      "en": "3-min result"
+    "review.subtitle": {
+      "zh-HK": "覆盤下，下次就唔會錯",
+      "zh-CN": "复盘下，下次就不会错",
+      "en": "Review them — you won't miss them next time"
     },
-    "about.contact-qa": {
-      "zh-HK": "常見問題",
-      "zh-CN": "常见问题",
-      "en": "Q&A"
+    "review.perfect": {
+      "zh-HK": "全部答啱！100% 完美！",
+      "zh-CN": "全部答对！100% 完美！",
+      "en": "All correct! 100% perfect run!"
     },
-    "about.contact-qa-sub": {
-      "zh-HK": "10 個 Q&A",
-      "zh-CN": "10 个 Q&A",
-      "en": "10 FAQ"
+    "review.user-picked": {
+      "zh-HK": "你揀咗",
+      "zh-CN": "你选了",
+      "en": "You picked"
+    },
+    "review.correct": {
+      "zh-HK": "標準答案",
+      "zh-CN": "标准答案",
+      "en": "Correct answer"
+    },
+    "review.wrong-tag": {
+      "zh-HK": "答錯",
+      "zh-CN": "答错",
+      "en": "Wrong"
+    },
+    "review.unanswered-tag": {
+      "zh-HK": "未作答",
+      "zh-CN": "未作答",
+      "en": "Skipped"
+    },
+    "contact.wechat-desc": {
+      "zh-HK": "掃碼加 Vickey 老師微信，進學員群",
+      "zh-CN": "扫码加 Vickey 老师微信，进学员群",
+      "en": "Scan to add Vickey on WeChat, join the student group"
+    },
+    "contact.wechat-cta": {
+      "zh-HK": "微信諮詢",
+      "zh-CN": "微信咨询",
+      "en": "WeChat"
+    },
+    "contact.wechat-copy": {
+      "zh-HK": "複製微信號",
+      "zh-CN": "复制微信号",
+      "en": "Copy WeChat ID"
+    },
+    "contact.wechat-id": {
+      "zh-HK": "vickey_cantonese",
+      "zh-CN": "vickey_cantonese",
+      "en": "vickey_cantonese"
+    },
+    "contact.email": {
+      "zh-HK": "hi@vickey-cantonese.com",
+      "zh-CN": "hi@vickey-cantonese.com",
+      "en": "hi@vickey-cantonese.com"
+    },
+    "contact.email-cta": {
+      "zh-HK": "郵件諮詢",
+      "zh-CN": "邮件咨询",
+      "en": "Email"
+    },
+    "contact.email-copy": {
+      "zh-HK": "複製郵箱",
+      "zh-CN": "复制邮箱",
+      "en": "Copy email"
+    },
+    "contact.email-send": {
+      "zh-HK": "發郵件",
+      "zh-CN": "发邮件",
+      "en": "Email me"
+    },
+    "contact.teacher-name": {
+      "zh-HK": "Vickey 老師",
+      "zh-CN": "Vickey 老师",
+      "en": "Vickey"
+    },
+    "contact.hours": {
+      "zh-HK": "週一至週日 9:00 - 22:00",
+      "zh-CN": "周一至周日 9:00 - 22:00",
+      "en": "Mon - Sun 9:00 - 22:00"
+    },
+    "contact.reply-msg": {
+      "zh-HK": "微信最及時；郵件 24 小時內回覆",
+      "zh-CN": "微信最及时；邮件 24 小时内回复",
+      "en": "WeChat fastest · email within 24h"
+    },
+    "contact.copied": {
+      "zh-HK": "已複製 ✓",
+      "zh-CN": "已复制 ✓",
+      "en": "Copied ✓"
     }
   },
   "qa": [
     {
       "q": {
-        "zh-HK": "我是零基础，要学多久才能流利？",
+        "zh-HK": "我是零基礎，要學多久才能流利？",
         "zh-CN": "我是零基础，要学多久才能流利？",
         "en": "I'm a total beginner, how long to fluency?"
       },
       "a": {
-        "zh-HK": "看目标。一般日常对话（A2-B1）需要 350-500 小时，约 12-18 个月每天学 30-60 分钟。流利工作级（B2-C1）需要 1000-1500 小时，约 3-4 年。母语者级（C2+）通常 5 年以上。我们首页的测试能根据你的年龄、地域、每日学习时长算出精确预测。",
+        "zh-HK": "看目標。一般日常對話（A2-B1）需要 350-500 小時，約 12-18 個月每天學 30-60 分鐘。流利工作級（B2-C1）需要 1000-1500 小時，約 3-4 年。母語者級（C2+）通常 5 年以上。我們首頁的測試能根據你的年齡、地域、每日學習時長算出精確預測。",
         "zh-CN": "看目标。一般日常对话（A2-B1）需要 350-500 小时，约 12-18 个月每天学 30-60 分钟。流利工作级（B2-C1）需要 1000-1500 小时，约 3-4 年。母语者级（C2+）通常 5 年以上。我们首页的测试能根据你的年龄、地域、每日学习时长算出精确预测。",
         "en": "Depends on goal. Daily conversation (A2-B1) needs 350-500 hours, ~12-18 months at 30-60 min/day. Work-fluent (B2-C1) needs 1000-1500 hours, ~3-4 years. Native-level (C2+) usually 5+ years. Our home-page test calculates this for you based on your age, region, and daily time."
       }
     },
     {
       "q": {
-        "zh-HK": "每天学多久合适？",
+        "zh-HK": "每天學多久合適？",
         "zh-CN": "每天学多久合适？",
         "en": "How long should I study each day?"
       },
       "a": {
-        "zh-HK": "45-60 分钟是甜区。低于 30 分钟进步太慢，高于 90 分钟认知疲劳累积容易放弃。**30/30 原则**（每天 30 分钟 × 每周 25 天）比周末突击有效得多。",
+        "zh-HK": "45-60 分鐘是甜區。低於 30 分鐘進步太慢，高於 90 分鐘認知疲勞累積容易放棄。**30/30 原則**（每天 30 分鐘 × 每週 25 天）比周末突擊有效得多。",
         "zh-CN": "45-60 分钟是甜区。低于 30 分钟进步太慢，高于 90 分钟认知疲劳累积容易放弃。**30/30 原则**（每天 30 分钟 × 每周 25 天）比周末突击有效得多。",
         "en": "45-60 min is the sweet spot. Less than 30 min and progress is too slow; more than 90 min and cognitive fatigue builds up. The **30/30 rule** (30 min/day × 25 days/week) beats weekend cramming."
       }
     },
     {
       "q": {
-        "zh-HK": "应该先学拼音还是先学词汇？",
+        "zh-HK": "應該先學拼音還是先學詞彙？",
         "zh-CN": "应该先学拼音还是先学词汇？",
         "en": "Should I learn pronunciation or vocabulary first?"
       },
       "a": {
-        "zh-HK": "9 声 6 调是粤语的命根，建议先用 1-2 周死磕拼音，特别是入声（-p/-t/-k）和 6 个变调。学完拼音后立刻开口练对话，词汇在场景里记最快。不要单纯背单词表。",
+        "zh-HK": "9 聲 6 調是粵語的命根，建議先用 1-2 周死磕拼音，特別是入聲（-p/-t/-k）和 6 個變調。學完拼音後立刻開口練對話，詞彙在場景裏記最快。不要單純背單詞表。",
         "zh-CN": "9 声 6 调是粤语的命根，建议先用 1-2 周死磕拼音，特别是入声（-p/-t/-k）和 6 个变调。学完拼音后立刻开口练对话，词汇在场景里记最快。不要单纯背单词表。",
         "en": "9 tones 6 final consonants are the backbone of Cantonese. Spend the first 1-2 weeks drilling the tones (especially the 3 checked tones -p/-t/-k) and the 6 tone changes. Right after, start speaking — vocabulary sticks best in context, not from word lists."
       }
     },
     {
       "q": {
-        "zh-HK": "9 声 6 调怎么学？",
+        "zh-HK": "9 聲 6 調怎麼學？",
         "zh-CN": "9 声 6 调怎么学？",
         "en": "How do I learn 9 tones 6 finals?"
       },
       "a": {
-        "zh-HK": "关键是 3 组对比：阴平（高）vs 阳平（升）、阴上（低升）vs 阳上（低平）、阴去（低）vs 阳去（高平）。加上入声 3 个（-p/-t/-k）。建议看我们《粤语拼音速成》课程，配拼音对照表跟读，每天 15 分钟，2 周能掌握。",
+        "zh-HK": "關鍵是 3 組對比：陰平（高）vs 陽平（升）、陰上（低升）vs 陽上（低平）、陰去（低）vs 陽去（高平）。加上入聲 3 個（-p/-t/-k）。建議看我們《粵語拼音速成》課程，配拼音對照表跟讀，每天 15 分鐘，2 周能掌握。",
         "zh-CN": "关键是 3 组对比：阴平（高）vs 阳平（升）、阴上（低升）vs 阳上（低平）、阴去（低）vs 阳去（高平）。加上入声 3 个（-p/-t/-k）。建议看我们《粤语拼音速成》课程，配拼音对照表跟读，每天 15 分钟，2 周能掌握。",
         "en": "Focus on 3 pairs: Yinping (high) vs Yangping (rising), Yinshang (low-rising) vs Yangshang (low-flat), Yinqu (low) vs Yangqu (high-flat). Plus 3 checked tones (-p/-t/-k). Try our Pinyin Crash Course + pinyin chart, 15 min/day for 2 weeks."
       }
     },
     {
       "q": {
-        "zh-HK": "成人学粤语发音能达到本地人水平吗？",
+        "zh-HK": "成人學粵語發音能達到本地人水平嗎？",
         "zh-CN": "成人学粤语发音能达到本地人水平吗？",
         "en": "Can adults sound native in Cantonese?"
       },
       "a": {
-        "zh-HK": "12 岁后开始学的成人达到完美母语语音的概率约 0-5%（Lenneberg 关键期假说）。但这不重要——你能被听懂、能流利表达就完全够用。成人优势是语法和词汇学得比小孩快，整体 ACTFL 达成度无差异。",
+        "zh-HK": "12 歲後開始學的成人達到完美母語語音的概率約 0-5%（Lenneberg 關鍵期假説）。但這不重要——你能被聽懂、能流利表達就完全夠用。成人優勢是語法和詞彙學得比小孩快，整體 ACTFL 達成度無差異。",
         "zh-CN": "12 岁后开始学的成人达到完美母语语音的概率约 0-5%（Lenneberg 关键期假说）。但这不重要——你能被听懂、能流利表达就完全够用。成人优势是语法和词汇学得比小孩快，整体 ACTFL 达成度无差异。",
         "en": "Adults who start after 12 have only ~0-5% chance of perfect native pronunciation (Lenneberg Critical Period Hypothesis). But that doesn't matter — being understood and fluent is enough. Adults actually learn grammar and vocabulary faster than kids, with no difference in final ACTFL level."
       }
     },
     {
       "q": {
-        "zh-HK": "看港剧能学会粤语吗？",
+        "zh-HK": "看港劇能學會粵語嗎？",
         "zh-CN": "看港剧能学会粤语吗？",
         "en": "Can I learn Cantonese from HK dramas?"
       },
       "a": {
-        "zh-HK": "只能学会「听懂」，学不会「说」。被动输入不够，必须主动输出。推荐：先看带字幕版，再关字幕听一遍，再模仿台词跟读 1 遍，最后找语伴对话应用。完整闭环才是真的学。",
+        "zh-HK": "只能學會「聽懂」，學不會「説」。被動輸入不夠，必須主動輸出。推薦：先看帶字幕版，再關字幕聽一遍，再模仿台詞跟讀 1 遍，最後找語伴對話應用。完整閉環才是真的學。",
         "zh-CN": "只能学会「听懂」，学不会「说」。被动输入不够，必须主动输出。推荐：先看带字幕版，再关字幕听一遍，再模仿台词跟读 1 遍，最后找语伴对话应用。完整闭环才是真的学。",
         "en": "Dramas teach you to *understand* but not to *speak*. Passive input isn't enough. Recipe: watch with subtitles, then without, then read lines aloud, then practice with a partner. Closed loop is the only way to actually learn."
       }
     },
     {
       "q": {
-        "zh-HK": "没有粤语环境能学会吗？",
+        "zh-HK": "沒有粵語環境能學會嗎？",
         "zh-CN": "没有粤语环境能学会吗？",
         "en": "Can I learn without a Cantonese-speaking environment?"
       },
       "a": {
-        "zh-HK": "能，但需要主动创造环境。推荐组合：系统课（输入）+ 语伴（输出）+ 港剧/粤语歌（沉浸）+ 1v1 老师（纠错）。即使你身边没人讲粤语，每天 1 小时持续 6 个月就能听懂日常对话。",
+        "zh-HK": "能，但需要主動創造環境。推薦組合：系統課（輸入）+ 語伴（輸出）+ 港劇/粵語歌（沉浸）+ 1v1 老師（糾錯）。即使你身邊沒人講粵語，每天 1 小時持續 6 個月就能聽懂日常對話。",
         "zh-CN": "能，但需要主动创造环境。推荐组合：系统课（输入）+ 语伴（输出）+ 港剧/粤语歌（沉浸）+ 1v1 老师（纠错）。即使你身边没人讲粤语，每天 1 小时持续 6 个月就能听懂日常对话。",
         "en": "Yes, but you need to create the environment. Combine: systematic course (input) + language partner (output) + HK dramas / Cantopop (immersion) + 1-on-1 teacher (correction). Even with zero exposure, 1 hour/day for 6 months gets you to understanding daily conversation."
       }
     },
     {
       "q": {
-        "zh-HK": "输入、输出、复习怎么分配？",
+        "zh-HK": "輸入、輸出、複習怎麼分配？",
         "zh-CN": "输入、输出、复习怎么分配？",
         "en": "How should I split input / output / review?"
       },
       "a": {
-        "zh-HK": "推荐 4:3:3。输入（听读、看剧）占 40%，输出（说写、语伴）占 30%，复习（间隔重复）占 30%。很多人只做输入，导致「学了 2 年还开不了口」。",
+        "zh-HK": "推薦 4:3:3。輸入（聽讀、看劇）佔 40%，輸出（説寫、語伴）佔 30%，複習（間隔重複）佔 30%。很多人只做輸入，導致「學了 2 年還開不了口」。",
         "zh-CN": "推荐 4:3:3。输入（听读、看剧）占 40%，输出（说写、语伴）占 30%，复习（间隔重复）占 30%。很多人只做输入，导致「学了 2 年还开不了口」。",
         "en": "4:3:3. Input (listening/reading/dramas) 40%, output (speaking/writing/partners) 30%, review (spaced repetition) 30%. Most people only do input and end up studying 2 years without being able to open their mouth."
       }
     },
     {
       "q": {
-        "zh-HK": "课程是直播还是录播？能试看吗？",
+        "zh-HK": "課程是直播還是錄播？能試看嗎？",
         "zh-CN": "课程是直播还是录播？能试看吗？",
         "en": "Live or recorded? Can I preview?"
       },
       "a": {
-        "zh-HK": "两者都有。系统课是录播（可以随时学），纠错课和商务粤语是 1v1 直播。录播课可以试看前 2 节，不满意 7 天内全额退款。",
+        "zh-HK": "兩者都有。系統課是錄播（可以隨時學），糾錯課和商務粵語是 1v1 直播。錄播課可以試看前 2 節，不滿意 7 天內全額退款。",
         "zh-CN": "两者都有。系统课是录播（可以随时学），纠错课和商务粤语是 1v1 直播。录播课可以试看前 2 节，不满意 7 天内全额退款。",
         "en": "Both. Systematic courses are recorded (study anytime), correction classes and Business Cantonese are 1-on-1 live. Recorded courses have first 2 lessons free to preview. Not happy? Full refund within 7 days."
       }

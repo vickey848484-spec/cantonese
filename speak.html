@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<!-- SEO -->
+    <meta name="description" content="AI 粵語跟讀評分 · 揀一句跟住讀，AI 即刻幫你打分數。識講粵語 YUE Speak.">
+    <meta name="keywords" content="cantonese speaking practice,粵語口語,粵語跟讀,粵語發音,AI 粵語,cantonese pronunciation,識講粵語">
+    <meta name="author" content="Vickey · 識講粵語">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.canton-ai.com/speak.html">
+    <link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/speak.html?lang=zh-HK">
+    <link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/speak.html?lang=zh-CN">
+    <link rel="alternate" hreflang="en" href="https://www.canton-ai.com/speak.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/speak.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="識講粵語 · YUE Speak">
+    <meta property="og:title" content="AI 跟讀評分 · 識講粵語">
+    <meta property="og:description" content="揀一句 · 跟住讀 · AI 即刻幫你打分數 + 改善建議">
+    <meta property="og:url" content="https://www.canton-ai.com/speak.html">
+    <meta property="og:image" content="https://www.canton-ai.com/images/og-image.svg">
+    <meta property="og:locale" content="zh_HK">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:locale:alternate" content="en_US">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 跟讀 · 識講粵語</title>
+  <link rel="stylesheet" href="css/style.css?v=20260607b">
+  <link rel="preconnect" href="https://fonts.loli.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap">
+  <script src="js/analytics.js?v=20260607c" defer></script>
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?820718cf27f4e74a047426ade1008a62";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  <style>
+    /* Speak 頁專用樣式 */
+    .speak-card {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.15s;
+      position: relative;
+    }
+    .speak-card:hover { transform: translateY(-2px); border-color: var(--border-strong); }
+    .speak-card.is-active {
+      border-color: var(--yellow);
+      box-shadow: 0 0 0 4px rgba(255, 214, 10, 0.15);
+    }
+    .speak-card .level-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .level-tag.level-entry { background: var(--green); color: #0a0a0a; }
+    .level-tag.level-mid   { background: var(--blue); color: #fff; }
+    .level-tag.level-high  { background: var(--pink); color: #fff; }
+    .speak-card .yue-text {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 6px;
+      font-family: var(--font-display);
+    }
+    .speak-card .zh-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 14px;
+    }
+    .speak-card .play-btn {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .speak-card .play-btn:hover { border-color: var(--yellow); }
+
+    /* 大录音按钮 */
+    .record-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 32px 16px;
+    }
+    .mic-btn {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: var(--yellow);
+      color: #0a0a0a;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 16px;
+      font-weight: 900;
+      box-shadow: 0 8px 32px rgba(255, 214, 10, 0.25);
+      transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+    }
+    .mic-btn:hover { transform: scale(1.04); }
+    .mic-btn:disabled { cursor: not-allowed; opacity: 0.6; transform: none; }
+    .mic-btn.is-recording {
+      background: var(--pink);
+      color: #fff;
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+    .mic-btn.is-scoring {
+      background: var(--blue);
+      color: #fff;
+    }
+    .mic-btn svg { width: 36px; height: 36px; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.5); }
+      50%      { box-shadow: 0 0 0 18px rgba(255, 51, 102, 0); }
+    }
+    .stage-status {
+      font-size: 14px;
+      color: var(--text-soft);
+      min-height: 20px;
+      text-align: center;
+    }
+
+    /* 評分結果卡 */
+    .result-card {
+      background: var(--card);
+      border: 2px solid var(--yellow);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: none;
+    }
+    .result-card.is-shown { display: block; }
+    .result-overall {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .result-overall .score {
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--yellow);
+      font-family: var(--font-display);
+      line-height: 1;
+    }
+    .result-overall .label {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+    .result-transcript {
+      font-size: 14px;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      padding: 12px 14px;
+      background: var(--bg-soft);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--yellow);
+    }
+    .result-transcript .heard {
+      color: var(--text);
+      font-weight: 700;
+      font-size: 15px;
+      display: block;
+      margin-top: 4px;
+    }
+    .score-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 480px) {
+      .score-grid { grid-template-columns: 1fr; }
+    }
+    .score-cell {
+      padding: 12px 14px;
+      background: var(--bg-soft);
+      border-radius: var(--radius);
+    }
+    .score-cell .name {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+    .score-cell .bar {
+      height: 6px;
+      background: var(--bg-elev);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 4px;
+    }
+    .score-cell .bar-fill {
+      height: 100%;
+      background: var(--yellow);
+      transition: width 0.6s ease-out;
+    }
+    .score-cell .num {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--text);
+    }
+    .result-tip {
+      padding: 14px 16px;
+      background: rgba(0, 102, 255, 0.12);
+      border-left: 3px solid var(--blue);
+      border-radius: var(--radius);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .result-tip .label {
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: var(--blue);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .speak-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 720px) {
+      .speak-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="section">
+      <a href="index.html" class="back-home" style="
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        background: var(--yellow);
+        color: #0a0a0a;
+        border-radius: 999px;
+        font-weight: 900;
+        font-size: 14px;
+        text-decoration: none;
+        margin-bottom: 16px;
+      ">← 返回首頁</a>
+      <h1 class="display center" style="font-size: 32px; margin-bottom: 8px;" data-i18n="speak.h1">AI 跟讀 · 即評即改</h1>
+      <p class="muted center text-sm" style="margin-bottom: 28px;" data-i18n="speak.sub">揀一句 · 跟住讀 · AI 即刻幫你打分數</p>
+
+      <div class="row" style="gap: 16px; justify-content: center; margin-bottom: 24px; flex-wrap: wrap;">
+        <span class="text-sm muted"><span data-i18n="speak.step1">1. 揀一句</span></span>
+        <span class="muted">→</span>
+        <span class="text-sm muted"><span data-i18n="speak.step2">2. 跟住讀</span></span>
+        <span class="muted">→</span>
+        <span class="text-sm muted"><span data-i18n="speak.step3">3. 睇評分</span></span>
+      </div>
+
+      <div class="speak-grid" id="speak-grid"></div>
+
+      <div class="record-stage">
+        <button class="mic-btn" id="mic-btn" type="button" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11 A7 7 0 0 0 19 11 M12 18 L12 21"/></svg>
+          <span id="mic-btn-label" data-i18n="speak.btn.record">🔴 撳一下開始錄音</span>
+        </button>
+        <div class="stage-status" id="stage-status"></div>
+      </div>
+
+      <div class="result-card" id="result-card">
+        <div class="result-overall">
+          <span class="score" id="r-overall">--</span>
+          <span class="label" data-i18n="speak.result.overall">總分</span>
+        </div>
+        <div class="result-transcript">
+          <span data-i18n="speak.result.transcript">AI 聽到你講：</span>
+          <span class="heard" id="r-transcript">--</span>
+        </div>
+        <div class="score-grid">
+          <div class="score-cell">
+            <div class="name" data-i18n="speak.result.scores.pronunciation">發音準確</div>
+            <div class="bar"><div class="bar-fill" id="r-pronunciation-bar" style="width:0%"></div></div>
+            <div class="num"><span id="r-pronunciation">--</span> / 100</div>
+          </div>
+          <div class="score-cell">
+            <div class="name" data-i18n="speak.result.scores.tone">聲調自然</div>
+            <div class="bar"><div class="bar-fill" id="r-tone-bar" style="width:0%"></div></div>
+            <div class="num"><span id="r-tone">--</span> / 100</div>
+          </div>
+          <div class="score-cell">
+            <div class="name" data-i18n="speak.result.scores.fluency">流利度</div>
+            <div class="bar"><div class="bar-fill" id="r-fluency-bar" style="width:0%"></div></div>
+            <div class="num"><span id="r-fluency">--</span> / 100</div>
+          </div>
+          <div class="score-cell">
+            <div class="name" data-i18n="speak.result.scores.vocabulary">用詞啱唔啱</div>
+            <div class="bar"><div class="bar-fill" id="r-vocabulary-bar" style="width:0%"></div></div>
+            <div class="num"><span id="r-vocabulary">--</span> / 100</div>
+          </div>
+        </div>
+        <div class="result-tip">
+          <span class="label" data-i18n="speak.result.tip">改善建議</span>
+          <span id="r-tip">--</span>
+        </div>
+        <div class="row" style="justify-content: center; gap: 12px;">
+          <button class="btn btn-ghost" id="retry-btn" type="button" data-i18n="speak.btn.retry">↻ 再讀一次</button>
+          <button class="btn btn-primary" id="next-btn" type="button" data-i18n="speak.result.again">再挑一句挑戰</button>
+        </div>
+      </div>
+
+      <p class="muted center text-sm" style="margin-top: 28px;" data-i18n="speak.privacy">🔒 錄音只傳去 AI 評分，不會儲存、唔會公開</p>
+    </section>
+  </main>
+
+  <script src="js/common.js?v=20260608c"></script>
+  <script src="js/speak.js?v=20260629a"></script>
+</body>
+</html>

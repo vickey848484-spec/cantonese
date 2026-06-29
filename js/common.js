@@ -4,6 +4,7 @@
 (function (global) {
   'use strict';
 
+ /* common.js v20260608a */
   const KEYS = {
     quiz: 'cantonese_quiz_state',
     result: 'cantonese_result',
@@ -64,6 +65,26 @@
     return new URLSearchParams(location.search).get(name);
   }
 
+  /* ---------- 复制到剪贴板（兼容旧浏览器/非安全上下文）---------- */
+  async function copyToClipboard(text) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+    } catch (_) { /* fall through */ }
+    // Fallback: textarea + execCommand
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;left:-9999px;top:0;opacity:0;';
+    document.body.appendChild(ta);
+    ta.focus(); ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (_) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
   function confetti(target, count = 30) {
     const host = typeof target === 'string' ? document.querySelector(target) : target;
     if (!host) return;
@@ -102,6 +123,7 @@
     const items = [
       { key: 'home',    i18n: 'topbar.home',     href: 'index.html' },
       { key: 'test',    i18n: 'topbar.test',     href: 'test.html' },
+      { key: 'speak',   i18n: 'topbar.speak',    href: 'speak.html' },
       { key: 'partner', i18n: 'topbar.partner',  href: 'partner.html' },
       { key: 'course',  i18n: 'topbar.course',   href: 'course.html' },
       { key: 'qa',      i18n: 'topbar.qa',       href: 'qa.html' },
@@ -337,6 +359,12 @@
       const s = t(k, lang);
       if (s && s !== k) el.innerHTML = s;
     });
+    // 替换 [data-i18n-placeholder]（input 占位符）
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const k = el.getAttribute('data-i18n-placeholder');
+      const s = t(k, lang);
+      if (s && s !== k) el.placeholder = s;
+    });
   }
 
   /* ---------- 傳播三件套：邀請碼 + 分享文案 ---------- */
@@ -385,6 +413,26 @@
     btn.textContent = msg;
     btn.disabled = true;
     setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1500);
+  }
+
+  /* ---------- 多語數據字段取值 ----------
+   * 数据文件（questions/partners/courses/labels）已统一为
+   *   { "zh-HK": ..., "zh-CN": ..., "en": ... }
+   * 结构。pick() 按当前 lang 取值，缺失时回退。
+   * 兼容：旧数据（纯字符串/数字）原样返回。
+   * 数组：逐项递归。
+   */
+  function pick(field, lang) {
+    lang = lang || getLang();
+    if (field == null) return '';
+    if (typeof field === 'string' || typeof field === 'number') return field;
+    if (Array.isArray(field)) {
+      return field.map(it => pick(it, lang));
+    }
+    if (typeof field === 'object') {
+      return field[lang] || field['zh-HK'] || field['zh-CN'] || field['en'] || '';
+    }
+    return '';
   }
 
   /* ---------- Q&A 渲染（10 個常見問題，三語 i18n）---------- */
@@ -455,6 +503,11 @@
     });
   }
 
+  // 暴露原始 I18N 数据访问（用于 t() 不适用的结构化数据：数组、对象）
+  function getI18nRaw(key) {
+    return (I18N && I18N.ui && I18N.ui[key]) || null;
+  }
+
   global.Cantonese = {
     Store, LEVELS, loadJSON, getLevelByScore, getQuery,
     confetti, injectThemeToggle, injectTopbar, initTheme,
@@ -463,5 +516,8 @@
     getReferralCode, genReferralCode, SHARE_TEMPLATES, flashShare,
     renderQA,
     t, applyI18n, getLang, setLang, LANGS,
+    pick,
+    getI18nRaw,
+    copyToClipboard,
   };
 })(window);

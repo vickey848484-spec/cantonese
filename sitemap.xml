@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://www.canton-ai.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/?lang=zh-HK"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/?lang=zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.canton-ai.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/"/>
+  </url>
+
+  <url>
+    <loc>https://www.canton-ai.com/test.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/test.html?lang=zh-HK"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/test.html?lang=zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.canton-ai.com/test.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/test.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.canton-ai.com/speak.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/speak.html?lang=zh-HK"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/speak.html?lang=zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.canton-ai.com/speak.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/speak.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.canton-ai.com/result.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/result.html?lang=zh-HK"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/result.html?lang=zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.canton-ai.com/result.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/result.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.canton-ai.com/partner.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/partner.html?lang=zh-HK"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/partner.html?lang=zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.canton-ai.com/partner.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/partner.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.canton-ai.com/course.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/course.html?lang=zh-HK"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/course.html?lang=zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.canton-ai.com/course.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/course.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.canton-ai.com/signup.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/signup.html?lang=zh-HK"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/signup.html?lang=zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.canton-ai.com/signup.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/signup.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.canton-ai.com/qa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/qa.html?lang=zh-HK"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/qa.html?lang=zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.canton-ai.com/qa.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/qa.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.canton-ai.com/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/about.html?lang=zh-HK"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/about.html?lang=zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.canton-ai.com/about.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/about.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.canton-ai.com/research.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/research.html?lang=zh-HK"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/research.html?lang=zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.canton-ai.com/research.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/research.html"/>
+  </url>
+
+</urlset>

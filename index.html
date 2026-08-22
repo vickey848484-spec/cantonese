@@ -1,98 +1,178 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<!-- SEO -->
+    <meta name="description" content="Free online Cantonese level test. Find your level (A2-B1 to C2+), MBTI-style personality, and study timeline. By Vickey, 16+ years teaching.">
+    <meta name="keywords" content="cantonese level test,learn cantonese,cantonese mbti,cantonese study time,9 tones 6 finals,識講粵語">
+    <meta name="author" content="Vickey · 識講粵語">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.canton-ai.com/">
+    <link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/?lang=zh-HK">
+    <link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/?lang=zh-CN">
+    <link rel="alternate" hreflang="en" href="https://www.canton-ai.com/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="識講粵語 · YUE Test">
+    <meta property="og:title" content="Cantonese Level Test · 14 questions in 3 min · 識講粵語">
+    <meta property="og:description" content="Free online Cantonese level test. Find your level (A2-B1 to C2+), MBTI-style personality, and study timeline. By Vickey, 16+ years teaching.">
+    <meta property="og:url" content="https://www.canton-ai.com/">
+    <meta property="og:image" content="https://www.canton-ai.com/images/og-image.svg">
+    <meta property="og:locale" content="zh_HK">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:locale:alternate" content="en_US">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cantonese Level Test · 14 questions in 3 min · 識講粵語">
+    <meta name="twitter:description" content="Free online Cantonese level test. Find your level (A2-B1 to C2+), MBTI-style personality, and study timeline. By Vickey, 16+ years teaching.">
+    <meta name="twitter:image" content="https://www.canton-ai.com/images/og-image.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>識講粵語 · 測一測你幾勁</title>
   <meta name="description" content="3 分鐘測出你的粵語等級 + MBTI 風格人格 + 學習時長 + 匹配課程和語伴">
   <link rel="stylesheet" href="css/style.css?v=20260607b">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="js/analytics.js?v=20260607c" defer></script>
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?820718cf27f4e74a047426ade1008a62";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
 </head>
 <body>
   <main class="container">
     <section class="hero">
-      <div class="display" style="font-size: 18px; color: var(--lime); margin-bottom: 8px;">識講粵語 · YUE 測</div>
-      <h1 class="display">
-        你嘅<span style="color: var(--yellow);">粵語</span>，<br>
-        究竟去到邊度？
-      </h1>
-      <p class="hero-sub">
-        3 分鐘 14 道題，測出你的<br>
-        <strong>水平等級</strong> + <strong>MBTI 風格人格</strong> + <strong>學習時長</strong>
-      </p>
-      <a class="btn btn-primary btn-lg glow" href="test.html">測一測我幾勁 🚀</a>
-      <p class="text-sm muted mt-2">已有 12,000+ 學員測過 · 真實數據驅動</p>
+      <div class="display" style="font-size: 18px; color: var(--lime); margin-bottom: 8px;" data-i18n="home.brand">識講粵語 · YUE 測</div>
+      <h1 class="display" data-i18n-html="home.hero-title">你嘅<span style="color: var(--yellow);">粵語</span>，<br>究竟去到邊度？</h1>
+      <p class="hero-sub" data-i18n-html="home.hero-sub">3 分鐘 14 道題，測出你的<br><strong>水平等級</strong> + <strong>MBTI 風格人格</strong> + <strong>學習時長</strong></p>
+      <a class="btn btn-primary btn-lg glow" href="test.html" data-i18n="home.hero-cta">測一測我幾勁 🚀</a>
+      <p class="text-sm muted mt-2" data-i18n="home.tested-by">已有 12,000+ 學員測過 · 真實數據驅動</p>
     </section>
 
     <section class="section">
-      <h2 class="display center">3 個等級，你是哪一個？</h2>
+      <h2 class="display center" data-i18n="home.levels-title">3 個等級，你是哪一個？</h2>
       <div class="grid grid-3 mt-3">
         <div class="card">
-          <div class="level-badge level-entry">入門</div>
-          <h3 class="display inline-icon">聽唔明仔 <i data-icon="egg"></i></h3>
-          <p class="text-sm muted mt-1">「你講咩啊？」</p>
-          <p class="mt-2 text-sm">看到「你食咗飯未啊」要反應 3 秒。</p>
+          <div class="level-badge level-entry" data-i18n="home.lv-badge-1">入門</div>
+          <h3 class="display inline-icon" data-i18n="home.lv1-name">聽唔明仔 <i data-icon="egg"></i></h3>
+          <p class="text-sm muted mt-1" data-i18n="home.lv1-quote">「你講咩啊？」</p>
+          <p class="mt-2 text-sm" data-i18n="home.lv1-desc">看到「你食咗飯未啊」要反應 3 秒。</p>
         </div>
         <div class="card">
-          <div class="level-badge level-mid">進階</div>
-          <h3 class="display inline-icon">識少少扮代表 <i data-icon="fox"></i></h3>
-          <p class="text-sm muted mt-1">「咩嚟㗎？」</p>
-          <p class="mt-2 text-sm">能聽懂日常對話，但開口卡殼。</p>
+          <div class="level-badge level-mid" data-i18n="home.lv-badge-2">進階</div>
+          <h3 class="display inline-icon" data-i18n="home.lv2-name">識少少扮代表 <i data-icon="fox"></i></h3>
+          <p class="text-sm muted mt-1" data-i18n="home.lv2-quote">「咩嚟㗎？」</p>
+          <p class="mt-2 text-sm" data-i18n="home.lv2-desc">能聽懂日常對話，但開口卡殼。</p>
         </div>
         <div class="card">
-          <div class="level-badge level-high">高階</div>
-          <h3 class="display inline-icon">嘴替本替 <i data-icon="crown"></i></h3>
-          <p class="text-sm muted mt-1">「我嚟講嘢啦！」</p>
-          <p class="mt-2 text-sm">俚語/俗語/職場粵語滿級。</p>
+          <div class="level-badge level-high" data-i18n="home.lv-badge-3">高階</div>
+          <h3 class="display inline-icon" data-i18n="home.lv3-name">嘴替本替 <i data-icon="crown"></i></h3>
+          <p class="text-sm muted mt-1" data-i18n="home.lv3-quote">「我嚟講嘢啦！」</p>
+          <p class="mt-2 text-sm" data-i18n="home.lv3-desc">俚語/俗語/職場粵語滿級。</p>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2 class="display center">測完你會拿到</h2>
+      <h2 class="display center" data-i18n="home.receive">測完你會拿到</h2>
       <div class="stack mt-3">
         <div class="card-flat row" style="gap:16px;">
           <i data-icon="target" style="font-size:36px; color: var(--blue);"></i>
           <div>
-            <div class="bold">你的粵語等級</div>
-            <div class="text-sm muted">聽唔明仔 / 識少少 / 嘴替本替</div>
+            <div class="bold" data-i18n="home.get-lv">你的粵語等級</div>
+            <div class="text-sm muted" data-i18n="home.get-lv-sub">聽唔明仔 / 識少少 / 嘴替本替</div>
           </div>
         </div>
         <div class="card-flat row" style="gap:16px;">
           <i data-icon="dna" style="font-size:36px; color: var(--blue);"></i>
           <div>
-            <div class="bold">你的 MBTI 風格人格</div>
-            <div class="text-sm muted">16 型之一 · 比如「SPWI 速成·聽講·獨狼·學院派」</div>
+            <div class="bold" data-i18n="home.get-mbti">你的 MBTI 風格人格</div>
+            <div class="text-sm muted" data-i18n="home.get-mbti-sub">16 型之一 · 比如「SPWI 速成·聽講·獨狼·學院派」</div>
           </div>
         </div>
         <div class="card-flat row" style="gap:16px;">
           <i data-icon="clock" style="font-size:36px; color: var(--blue);"></i>
           <div>
-            <div class="bold">你的學習時長</div>
-            <div class="text-sm muted">按年齡/地域/每日時長算的精確預測</div>
+            <div class="bold" data-i18n="home.get-time">你的學習時長</div>
+            <div class="text-sm muted" data-i18n="home.get-time-sub">按年齡/地域/每日時長算的精確預測</div>
           </div>
         </div>
         <div class="card-flat row" style="gap:16px;">
           <i data-icon="handshake" style="font-size:36px; color: var(--blue);"></i>
           <div>
-            <div class="bold">匹配語伴 + 課程</div>
-            <div class="text-sm muted">按你等級篩的 3-5 位語伴 + 3 門主推課</div>
+            <div class="bold" data-i18n="home.get-match">匹配語伴 + 課程</div>
+            <div class="text-sm muted" data-i18n="home.get-match-sub">按你等級篩的 3-5 位語伴 + 3 門主推課</div>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section center">
-      <h2 class="display">免費 · 不用登錄 · 1 分鐘出結果</h2>
-      <a class="btn btn-primary btn-lg mt-3" href="test.html">開始測試 <i data-icon="arrow-right"></i></a>
+      <h2 class="display" data-i18n="home.tagline-free">免費 · 不用登錄 · 1 分鐘出結果</h2>
+      <a class="btn btn-primary btn-lg mt-3" href="test.html" data-i18n="home.cta-2">開始測試 <i data-icon="arrow-right"></i></a>
+    </section>
+
+    <!-- 更多資源：內鏈 + 用戶分流 -->
+    <section class="section">
+      <h2 class="display center" data-i18n="home.more-title">更多資源</h2>
+      <div class="grid grid-3 mt-3">
+        <a class="card" href="about.html" style="text-decoration: none; color: inherit;">
+          <i data-icon="user" style="font-size: 32px; color: var(--blue);"></i>
+          <h3 class="display" style="font-size: 18px; margin: 8px 0 4px;" data-i18n="home.more-about-h">關於 Vickey</h3>
+          <p class="text-sm muted" data-i18n="home.more-about-sub">16+ 年教學 · 全網 25 萬粉絲</p>
+        </a>
+        <a class="card" href="qa.html" style="text-decoration: none; color: inherit;">
+          <i data-icon="question" style="font-size: 32px; color: var(--blue);"></i>
+          <h3 class="display" style="font-size: 18px; margin: 8px 0 4px;" data-i18n="home.more-qa-h">常見問題</h3>
+          <p class="text-sm muted" data-i18n="home.more-qa-sub">學多久 / 9 聲 6 調 / 退款</p>
+        </a>
+        <a class="card" href="research.html" style="text-decoration: none; color: inherit;">
+          <i data-icon="magnifying-glass" style="font-size: 32px; color: var(--blue);"></i>
+          <h3 class="display" style="font-size: 18px; margin: 8px 0 4px;" data-i18n="home.more-research-h">學習時長研究</h3>
+          <p class="text-sm muted" data-i18n="home.more-research-sub">FSI / ACTFL / SLA 深度分析</p>
+        </a>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" data-i18n="home.footer">
     識講粵語 · 由 Vickey 老師主理 · 測試數據僅作學習建議參考
   </footer>
+
+  <!-- WebSite + Organization 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "識講粵語 · YUE Test",
+    "alternateName": "Cantonese Mastery",
+    "url": "https://www.canton-ai.com/",
+    "inLanguage": ["zh-HK", "zh-CN", "en"],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.canton-ai.com/qa.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Vickey · 梁偉琦",
+      "jobTitle": "Cantonese Teacher",
+      "url": "https://www.canton-ai.com/about.html",
+      "sameAs": [
+        "https://xhslink.com/m/7LZfXHoiwAH",
+        "https://www.douyin.com/search/%E5%8C%85%E5%A6%88VK%E6%95%99%E7%B2%A4%E8%AF%AD?type=user",
+        "https://space.bilibili.com/517071625",
+        "https://www.kuaishou.com/profile/vickeyoo",
+        "https://www.zhihu.com/people/69d85190397288ce33e6bd6fc7cd0cfa",
+        "https://weibo.com/u/5241733587"
+      ]
+    }
+  }
+  </script>
 
   <script src="js/common.js?v=20260607b"></script>
   <script>

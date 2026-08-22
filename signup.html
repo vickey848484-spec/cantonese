@@ -1,29 +1,62 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<!-- SEO -->
+    <meta name="description" content="Get retest reminders at 1, 3, and 6 months. Track your Cantonese progress.">
+    <meta name="keywords" content="cantonese reminder,cantonese progress tracking,識講粵語">
+    <meta name="author" content="Vickey · 識講粵語">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.canton-ai.com/signup.html">
+    <link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/signup.html?lang=zh-HK">
+    <link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/signup.html?lang=zh-CN">
+    <link rel="alternate" hreflang="en" href="https://www.canton-ai.com/signup.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/signup.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="識講粵語 · YUE Test">
+    <meta property="og:title" content="Save Email · Cantonese Reminders · 識講粵語">
+    <meta property="og:description" content="Get retest reminders at 1, 3, and 6 months. Track your Cantonese progress.">
+    <meta property="og:url" content="https://www.canton-ai.com/signup.html">
+    <meta property="og:image" content="https://www.canton-ai.com/images/og-image.svg">
+    <meta property="og:locale" content="zh_HK">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:locale:alternate" content="en_US">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Save Email · Cantonese Reminders · 識講粵語">
+    <meta name="twitter:description" content="Get retest reminders at 1, 3, and 6 months. Track your Cantonese progress.">
+    <meta name="twitter:image" content="https://www.canton-ai.com/images/og-image.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>留郵箱 · 1/3/6 月提醒 · 識講粵語</title>
   <link rel="stylesheet" href="css/style.css?v=20260607b">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="js/analytics.js?v=20260607c" defer></script>
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?820718cf27f4e74a047426ade1008a62";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
 </head>
 <body>
   <main class="container">
     <section class="section">
       <div class="center mb-3">
-        <h1 class="display"><i data-icon="envelope"></i> 留個聯繫方式</h1>
-        <p class="muted mt-1">學咗 1 / 3 / 6 個月，我哋會自動提醒你重新自測<br>順便睇下你升級咗未 🎉</p>
+        <h1 class="display"><i data-icon="envelope"></i> <span data-i18n="signup.title">留個聯繫方式</span></h1>
+        <p class="muted mt-1" data-i18n-html="signup.subtitle">學咗 1 / 3 / 6 個月，我哋會自動提醒你重新自測<br>順便睇下你升級咗未 🎉</p>
       </div>
 
       <div class="card-flat mb-3 hide" id="no-result">
-        <p>你未測試過 <a href="test.html" style="color: var(--blue);">→ 去測一測</a></p>
+        <p data-i18n="result.no-result">你未測試過 <a href="test.html" style="color: var(--blue);" data-i18n="result.to-test">→ 去測一測</a></p>
       </div>
 
       <div class="card" id="form-wrap">
         <div class="center mb-3">
-          <div class="muted text-sm">你嘅測試結果</div>
+          <div class="muted text-sm" data-i18n="signup.summary">你嘅測試結果</div>
           <div class="level-badge" id="level-badge">入門</div>
           <div class="bold mt-1" id="level-name">聽唔明仔</div>
           <div class="text-sm muted" id="mbti-summary">SPWI · 速成·聽講·獨狼·學院派</div>
@@ -31,56 +64,78 @@
 
         <form id="signup-form" class="stack">
           <div class="field">
-            <label>郵箱 *</label>
-            <input class="input" type="email" name="email" required placeholder="you@example.com">
-            <div class="text-sm muted">用於 1/3/6 月推送提醒</div>
+            <label data-i18n="signup.email-label">郵箱 *</label>
+            <input class="input" type="email" name="email" required data-i18n-placeholder="signup.email-placeholder" placeholder="you@example.com">
+            <div class="text-sm muted" data-i18n="test.email-hint">用於 1/3/6 月推送提醒</div>
           </div>
 
           <div class="field">
-            <label>微信號 *</label>
-            <input class="input" type="text" name="wechat" required placeholder="必填，方便老師加你回訪">
+            <label data-i18n="signup.wechat-label">微信號 *</label>
+            <input class="input" type="text" name="wechat" required data-i18n-placeholder="signup.wechat-placeholder" placeholder="必填，方便老師加你回訪">
           </div>
 
           <div class="field">
-            <label>開始學習日期 *</label>
+            <label data-i18n="signup.date-label">開始學習日期 *</label>
             <input class="input" type="date" name="startDate" id="startDate" required>
-            <div class="text-sm muted">默認今天，可改</div>
+            <div class="text-sm muted" data-i18n="test.age-hint">默認今天，可改</div>
           </div>
 
           <label class="checkbox">
             <input type="checkbox" name="agree" required>
-            <span>我同意 Vickey 老師用上面嘅聯繫方式發推送（1/3/6 個月 + 重要通知），可以隨時退訂。</span>
+            <span data-i18n="signup.agree">我同意 Vickey 老師用上面嘅聯繫方式發推送（1/3/6 個月 + 重要通知），可以隨時退訂。</span>
           </label>
 
-          <button class="btn btn-primary btn-lg btn-block" type="submit"><i data-icon="rocket"></i> 鎖定提醒</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit" data-i18n="btn.send"><i data-icon="rocket"></i> 鎖定提醒</button>
         </form>
       </div>
 
       <div class="card hide center" id="success">
         <i data-icon="confetti" style="font-size: 64px; color: var(--yellow);"></i>
-        <h2 class="display mt-2">搞掂！</h2>
-        <p class="mt-2 muted" id="success-msg">已加入提醒名單，到期會自動發郵件俾你。</p>
+        <h2 class="display mt-2" data-i18n="signup.success-title">搞掂！</h2>
+        <p class="mt-2 muted" id="success-msg" data-i18n="signup.success-msg">已加入提醒名單，到期會自動發郵件俾你。</p>
         <div class="row mt-3 center" style="justify-content: center;">
-          <a class="btn btn-ghost" href="result.html">睇返結果</a>
-          <a class="btn btn-primary" href="course.html">揾課 →</a>
+          <a class="btn btn-ghost" href="result.html" data-i18n="btn.view-result">睇返結果</a>
+          <a class="btn btn-primary" href="course.html" data-i18n="btn.find-course-arrow">揾課 →</a>
         </div>
       </div>
 
       <div class="card-flat mt-3">
-        <div class="text-sm bold"><i data-icon="lightbulb"></i> 你會收到幾時嘅提醒？</div>
+        <div class="text-sm bold"><i data-icon="lightbulb"></i> <span data-i18n="signup.timeline-h">你會收到幾時嘅提醒？</span></div>
         <ul class="text-sm muted mt-1" style="list-style: disc; padding-left: 20px;">
-          <li>今日：歡迎郵件 + 你的結果 PDF</li>
-          <li>30 天后：1 個月自測，看看你升級咗未</li>
-          <li>90 天后：3 個月自測 + 推薦新課程</li>
-          <li>180 天后：6 個月自測 + 學員故事</li>
+          <li data-i18n="signup.timeline-1">今日：歡迎郵件 + 你的結果 PDF</li>
+          <li data-i18n="signup.timeline-2">30 天后：1 個月自測，看看你升級咗未</li>
+          <li data-i18n="signup.timeline-3">90 天后：3 個月自測 + 推薦新課程</li>
+          <li data-i18n="signup.timeline-4">180 天后：6 個月自測 + 學員故事</li>
         </ul>
       </div>
     </section>
   </main>
 
-  <footer class="footer">識講粵語 · 由 Vickey 老師主理</footer>
+  <footer class="footer" data-i18n="footer.main">識講粵語 · 由 Vickey 老師主理</footer>
 
-  <script src="js/common.js?v=20260607b"></script>
+  <script src="js/common.js?v=20260608c"></script>
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "識講粵語 · 學習提醒訂閱",
+    "alternateName": "Cantonese Mastery Reminder",
+    "description": "訂閱郵箱，1/3/6 個月自動提醒重測粵語等級，追蹤學習進度。",
+    "url": "https://www.canton-ai.com/signup.html",
+    "applicationCategory": "EducationalApplication",
+    "applicationSubCategory": "Language Learning Reminder",
+    "operatingSystem": "Any (Web Browser)",
+    "inLanguage": ["zh-HK", "zh-CN", "en"],
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
+    "provider": {
+      "@type": "Person",
+      "name": "梁偉琦 Vickey",
+      "url": "https://www.canton-ai.com/about.html"
+    }
+  }
+  </script>
   <script src="js/labeler.js?v=20260607b"></script>
   <script>
     Cantonese.initTheme();
@@ -107,7 +162,7 @@
       badge.classList.add(level.cls);
       document.getElementById('level-name').textContent = level.name;
       document.getElementById('mbti-summary').textContent =
-        `${mbtiCode} · ${mbtiType ? mbtiType.title : ''}`;
+        `${mbtiCode} · ${mbtiType ? Cantonese.pick(mbtiType.title) : ''}`;
 
       const today = new Date().toISOString().split('T')[0];
       document.getElementById('startDate').value = today;
@@ -147,8 +202,8 @@
         document.getElementById('form-wrap').classList.add('hide');
         document.getElementById('success').classList.remove('hide');
         document.getElementById('success-msg').innerHTML = apiOk
-          ? '已加入提醒名單 <i data-icon="check-circle" style="color: var(--green);"></i> 到期會自動發郵件俾你。'
-          : '信息已保存（本地模式） <i data-icon="check-circle" style="color: var(--green);"></i> 上線後會同步到服務器。';
+          ? Cantonese.t('signup.success-msg')
+          : Cantonese.t('signup.success-msg-local');
         Cantonese.confetti(document.body, 30);
       });
     })();

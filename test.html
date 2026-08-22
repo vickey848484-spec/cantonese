@@ -1,46 +1,170 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<!-- SEO -->
+    <meta name="description" content="17 Cantonese level questions + 4 personality questions. Get your level + MBTI type in 3 minutes. 識講粵語 YUE Test.">
+    <meta name="keywords" content="cantonese test,cantonese level,cantonese mbti,cantonese quiz,識講粵語">
+    <meta name="author" content="Vickey · 識講粵語">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.canton-ai.com/test.html">
+    <link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/test.html?lang=zh-HK">
+    <link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/test.html?lang=zh-CN">
+    <link rel="alternate" hreflang="en" href="https://www.canton-ai.com/test.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/test.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="識講粵語 · YUE Test">
+    <meta property="og:title" content="Take the Test · Cantonese Level · 識講粵語">
+    <meta property="og:description" content="17 Cantonese level questions + 4 personality questions. Get your level + MBTI type in 3 minutes. 識講粵語 YUE Test.">
+    <meta property="og:url" content="https://www.canton-ai.com/test.html">
+    <meta property="og:image" content="https://www.canton-ai.com/images/og-image.svg">
+    <meta property="og:locale" content="zh_HK">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:locale:alternate" content="en_US">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Take the Test · Cantonese Level · 識講粵語">
+    <meta name="twitter:description" content="17 Cantonese level questions + 4 personality questions. Get your level + MBTI type in 3 minutes. 識講粵語 YUE Test.">
+    <meta name="twitter:image" content="https://www.canton-ai.com/images/og-image.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>開始測試 · 識講粵語</title>
   <link rel="stylesheet" href="css/style.css?v=20260607b">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="js/analytics.js?v=20260607c" defer></script>
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?820718cf27f4e74a047426ade1008a62";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
 </head>
 <body>
   <main class="container">
     <section class="section">
+      <a href="index.html" class="back-home" style="
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        background: var(--yellow);
+        color: #0a0a0a;
+        border-radius: 999px;
+        font-weight: 900;
+        font-size: 14px;
+        text-decoration: none;
+        margin-bottom: 16px;
+      ">← 返回首頁</a>
+      <h1 class="display center" style="font-size: 28px; margin-bottom: 24px;" data-i18n="test.h1">開始測試 · 識講粵語</h1>
+      <p class="muted center text-sm" style="margin-bottom: 24px;" data-i18n="test.h1-sub">3 分鐘 14 題 · 測出你的粵語等級 + MBTI 風格人格 + 學習時長</p>
       <div id="quiz-container"></div>
+      <p class="muted center text-sm" style="margin-top: 32px;">
+        <span data-i18n="test.pre-qa">仲有問題？睇</span>
+        <a href="qa.html" style="color: var(--yellow); font-weight: 700;" data-i18n="test.pre-qa-link">常見問題 Q&A</a>
+      </p>
     </section>
   </main>
 
-  <script src="js/common.js?v=20260607b"></script>
+  <script src="js/common.js?v=20260608c"></script>
   <script src="js/quiz.js?v=20260607b"></script>
+
+  <!-- Quiz schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    "name": "識講粵語水平測試 + MBTI 風格人格",
+    "description": "3 分鐘 14 道題，測出你的粵語水平等級（入門/進階/高階）+ 16 型 MBTI 風格人格 + 精確學習時長預測。",
+    "inLanguage": ["zh-HK", "zh-CN", "en"],
+    "numberOfQuestions": 14,
+    "about": [
+      { "@type": "Thing", "name": "Cantonese language proficiency" },
+      { "@type": "Thing", "name": "粵語水平" },
+      { "@type": "Thing", "name": "Language learning personality" }
+    ],
+    "educationalLevel": "All levels (A1 to C2)",
+    "timeRequired": "PT3M",
+    "isAccessibleForFree": true,
+    "provider": {
+      "@type": "Person",
+      "name": "梁偉琦 Vickey",
+      "url": "https://www.canton-ai.com/about.html"
+    }
+  }
+  </script>
   <script>
-    Cantonese.initTheme();
-    Cantonese.injectThemeToggle();
-    Cantonese.injectTopbar('test');
-    Cantonese.initIcons();
-    Cantonese.initScrollReveal();
-    Cantonese.applyI18n();
+    (async function () {
+      // 1. 立即显示 loading 状态，避免空白页
+      const container = document.getElementById('quiz-container');
+      const T0 = Cantonese.t || (k => k);
+      container.innerHTML = '<div class="center mt-3"><p class="muted">' + T0('test.loading') + '</p></div>';
 
-    // 捕獲邀請碼（?ref=XXXX），存 localStorage 讓 quiz 寫入 result
-    const refParam = Cantonese.getQuery('ref');
-    if (refParam && refParam !== 'reminder' && /^[A-Z0-9]{4,12}$/.test(refParam)) {
-      Cantonese.Store.set('cantonese_referred_by', refParam);
-    }
+      // 2. 加载 i18n（重试 2 次，应对网络抖动；检测实际是否加载成功）
+      let i18nOk = false;
+      for (let attempt = 0; attempt < 3 && !i18nOk; attempt++) {
+        try {
+          await Cantonese.applyI18n();
+          // applyI18n 内部 try/catch 吞错，调用后必须检测 I18N 是否真加载
+          if (Cantonese.t('test.lv-test') !== 'test.lv-test') {
+            i18nOk = true;
+          } else {
+            console.warn('[test] i18n load returned but I18N missing, attempt ' + (attempt + 1));
+          }
+        } catch (e) {
+          console.warn('[test] i18n load fail, attempt ' + (attempt + 1), e);
+        }
+        if (!i18nOk) await new Promise(r => setTimeout(r, 300 * (attempt + 1)));
+      }
+      if (!i18nOk) {
+        container.innerHTML = '<div class="center mt-3"><p style="color: var(--pink);">' +
+          Cantonese.t('result.error-title') + '</p><p class="text-sm muted">' +
+          Cantonese.t('result.error-cta') + ' · <button class="btn btn-ghost" onclick="location.reload()">↻</button></p></div>';
+        return;
+      }
 
-    // 已測過 → 直接跳到結果頁（除非是「重新測」或「郵件迴流」）
-    const existing = Cantonese.Store.get(Cantonese.Store.KEYS.result);
-    const isRestart = Cantonese.getQuery('restart') === '1';
-    const isReminder = Cantonese.getQuery('ref') === 'reminder';
-    if (existing && existing.level && !isRestart && !isReminder) {
-      location.href = 'result.html';
-    } else {
-      Quiz.init(document.getElementById('quiz-container'));
-    }
+      Cantonese.initTheme();
+      Cantonese.injectThemeToggle();
+      Cantonese.injectTopbar('test');
+      Cantonese.initIcons();
+      Cantonese.initScrollReveal();
+
+      // 捕獲邀請碼
+      const refParam = Cantonese.getQuery('ref');
+      if (refParam && refParam !== 'reminder' && /^[A-Z0-9]{4,12}$/.test(refParam)) {
+        Cantonese.Store.set('cantonese_referred_by', refParam);
+      }
+
+      // 已測過 → 直接跳到結果頁
+      const existing = Cantonese.Store.get(Cantonese.Store.KEYS.result);
+      const isRestart = Cantonese.getQuery('restart') === '1';
+      const isReminder = Cantonese.getQuery('ref') === 'reminder';
+      if (existing && existing.level && !isRestart && !isReminder) {
+        location.href = 'result.html';
+      } else {
+        try {
+          await Quiz.init(container);
+        } catch (e) {
+          console.error('[test] Quiz.init fail', e);
+          // 关键：catch 不能崩。用硬编码 fallback，且 t() 失败时也兜底
+          let errorTitle = 'Something went wrong';
+          let errorCta = '↻ Reset & Retry';
+          let errMsg = (e && e.message) || String(e);
+          try { errorTitle = Cantonese.t('result.error-title') || errorTitle; } catch (_) {}
+          try { errorCta = Cantonese.t('result.error-cta') || errorCta; } catch (_) {}
+          try {
+            container.innerHTML = '<div class="center mt-3"><p style="color: var(--pink);">' +
+              errorTitle + '</p><p class="text-sm muted" style="margin: 8px 0; font-family: monospace; font-size: 12px;">' + errMsg + '</p>' +
+              '<button class="btn btn-primary" onclick="localStorage.removeItem(\'cantonese_quiz\'); location.reload();">' + errorCta + '</button></p></div>';
+          } catch (e2) {
+            console.error('[test] catch failed', e2);
+            container.textContent = errorTitle + ' — ' + errMsg;
+          }
+        }
+      }
+    })();
   </script>
 </body>
 </html>

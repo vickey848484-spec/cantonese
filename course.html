@@ -1,42 +1,98 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<!-- SEO -->
+    <meta name="description" content="9 Cantonese courses, from pinyin basics to business Cantonese. Matched to your level + personality. 識講粵語 YUE Test.">
+    <meta name="keywords" content="cantonese course,learn cantonese,pinyin cantonese,business cantonese">
+    <meta name="author" content="Vickey · 識講粵語">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.canton-ai.com/course.html">
+    <link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/course.html?lang=zh-HK">
+    <link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/course.html?lang=zh-CN">
+    <link rel="alternate" hreflang="en" href="https://www.canton-ai.com/course.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/course.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="識講粵語 · YUE Test">
+    <meta property="og:title" content="Find your Cantonese Course · 識講粵語">
+    <meta property="og:description" content="9 Cantonese courses, from pinyin basics to business Cantonese. Matched to your level + personality. 識講粵語 YUE Test.">
+    <meta property="og:url" content="https://www.canton-ai.com/course.html">
+    <meta property="og:image" content="https://www.canton-ai.com/images/og-image.svg">
+    <meta property="og:locale" content="zh_HK">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:locale:alternate" content="en_US">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Find your Cantonese Course · 識講粵語">
+    <meta name="twitter:description" content="9 Cantonese courses, from pinyin basics to business Cantonese. Matched to your level + personality. 識講粵語 YUE Test.">
+    <meta name="twitter:image" content="https://www.canton-ai.com/images/og-image.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>揾啱你嘅課 · 識講粵語</title>
   <link rel="stylesheet" href="css/style.css?v=20260607b">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="js/analytics.js?v=20260607c" defer></script>
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?820718cf27f4e74a047426ade1008a62";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
 </head>
 <body>
   <main class="container container-wide">
     <section class="section">
       <div class="center mb-3">
-        <h1 class="display"><i data-icon="book-open"></i> 揾啱你嘅課</h1>
-        <p class="muted mt-1" id="subtitle">按你嘅等級 + 性格篩嘅</p>
+        <h1 class="display"><i data-icon="book-open"></i> <span data-i18n="course.title">揾啱你嘅課</span></h1>
+        <p class="muted mt-1" id="subtitle" data-i18n="course.subtitle-base">按你嘅等級 + 性格篩嘅</p>
       </div>
 
       <div class="card-flat mb-3 hide" id="no-result">
-        <p>你未測試過 <a href="test.html" style="color: var(--blue);">→ 去測一測</a></p>
+        <p data-i18n="result.no-result">你未測試過 <a href="test.html" style="color: var(--blue);" data-i18n="result.to-test">→ 去測一測</a></p>
       </div>
 
-      <h2 class="display" style="font-size: 22px;" id="sec1-title"><i data-icon="star"></i> 主推</h2>
+      <h2 class="display" style="font-size: 22px;" id="sec1-title"><i data-icon="star"></i> <span data-i18n="course.sec1">主推</span></h2>
       <div id="course-list" class="grid grid-3 mt-2 mb-3"></div>
 
-      <h2 class="display mt-3" style="font-size: 22px;" id="sec2-title">更多選擇</h2>
+      <h2 class="display mt-3" style="font-size: 22px;" id="sec2-title"><span data-i18n="course.sec2">更多選擇</span></h2>
       <div id="course-list-more" class="grid grid-3 mt-2"></div>
 
       <div class="center mt-3">
-        <a class="btn btn-ghost" href="result.html">← 睇返結果</a>
-        <a class="btn btn-primary" href="signup.html">下一步：留郵箱 →</a>
+        <a class="btn btn-ghost" href="result.html" data-i18n="btn.view-result">← 睇返結果</a>
+        <a class="btn btn-primary" href="signup.html" data-i18n="course.cta-next">下一步：留郵箱 →</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">識講粵語 · 由 Vickey 老師主理</footer>
+  <footer class="footer" data-i18n="footer.main">識講粵語 · 由 Vickey 老師主理</footer>
 
-  <script src="js/common.js?v=20260607b"></script>
+  <script src="js/common.js?v=20260608c"></script>
+
+  <!-- 9 門課程 ItemList schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "識講粵語 · 9 門粵語課程總覽",
+    "description": "從入門拼音到商務粵語，按等級和學習風格匹配。",
+    "numberOfItems": 9,
+    "itemListOrder": "https://schema.org/ItemListUnordered",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "Course", "name": "廣東話拼音速成 · 9 聲 6 調一次搞掂", "description": "發音準唔準睇呢課。9 聲 6 調 + 拼音對照表一次過講清。", "provider": { "@type": "Person", "name": "梁偉琦 Vickey", "url": "https://www.canton-ai.com/about.html" }, "offers": { "@type": "Offer", "price": "99", "priceCurrency": "CNY" }, "timeRequired": "P2W", "inLanguage": "zh-HK" } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "Course", "name": "新手 100 詞 · 出門落單搭訕全 cover", "description": "100 個最常用詞彙 + 場景句型，4 星期開口講。", "provider": { "@type": "Person", "name": "梁偉琦 Vickey", "url": "https://www.canton-ai.com/about.html" }, "offers": { "@type": "Offer", "price": "199", "priceCurrency": "CNY" }, "timeRequired": "P4W", "inLanguage": "zh-HK" } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "Course", "name": "自我介紹 + 閒聊破冰 · 30 個句型模板", "description": "30 個自我介紹和破冰句型，新手第一次見面唔再尷尬。", "provider": { "@type": "Person", "name": "梁偉琦 Vickey", "url": "https://www.canton-ai.com/about.html" }, "offers": { "@type": "Offer", "price": "149", "priceCurrency": "CNY" }, "timeRequired": "P3W", "inLanguage": "zh-HK" } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "Course", "name": "場景口語 50 課 · 搭地鐵睇醫生 Shopping", "description": "50 個真實場景：地鐵、餐廳、醫院、購物——一個不漏。", "provider": { "@type": "Person", "name": "梁偉琦 Vickey", "url": "https://www.canton-ai.com/about.html" }, "offers": { "@type": "Offer", "price": "399", "priceCurrency": "CNY" }, "timeRequired": "P8W", "inLanguage": "zh-HK" } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "Course", "name": "廣東話俚語大全 · 聽唔明 = 文盲", "description": "教材學不到的俚語、俗語、食字一次學齊，聽港劇唔使睇字幕。", "provider": { "@type": "Person", "name": "梁偉琦 Vickey", "url": "https://www.canton-ai.com/about.html" }, "offers": { "@type": "Offer", "price": "299", "priceCurrency": "CNY" }, "timeRequired": "P6W", "inLanguage": "zh-HK" } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "Course", "name": "睇港劇學廣東話 · 經典對白逐句拆解", "description": "12 套經典港劇逐句拆解，邊追劇邊學最地道粵語。", "provider": { "@type": "Person", "name": "梁偉琦 Vickey", "url": "https://www.canton-ai.com/about.html" }, "offers": { "@type": "Offer", "price": "499", "priceCurrency": "CNY" }, "timeRequired": "P12W", "inLanguage": "zh-HK" } },
+      { "@type": "ListItem", "position": 7, "item": { "@type": "Course", "name": "商務廣東話 · Email／會議／談判", "description": "1v1 直播 8 星期，商務 Email + 會議 + 談判全場景。", "provider": { "@type": "Person", "name": "梁偉琦 Vickey", "url": "https://www.canton-ai.com/about.html" }, "offers": { "@type": "Offer", "price": "2999", "priceCurrency": "CNY" }, "timeRequired": "P8W", "inLanguage": "zh-HK" } },
+      { "@type": "ListItem", "position": 8, "item": { "@type": "Course", "name": "廣東話詩詞 · 從《西廂記》到黃偉文", "description": "粵語詩詞歌賦 10 星期，從古典到現代廣東歌歌詞。", "provider": { "@type": "Person", "name": "梁偉琦 Vickey", "url": "https://www.canton-ai.com/about.html" }, "offers": { "@type": "Offer", "price": "699", "priceCurrency": "CNY" }, "timeRequired": "P10W", "inLanguage": "zh-HK" } },
+      { "@type": "ListItem", "position": 9, "item": { "@type": "Course", "name": "深度文化課 · 飲茶拜神婚喪全解", "description": "粵語文化深度課，飲茶 / 拜神 / 婚喪習俗 6 星期社群共學。", "provider": { "@type": "Person", "name": "梁偉琦 Vickey", "url": "https://www.canton-ai.com/about.html" }, "offers": { "@type": "Offer", "price": "899", "priceCurrency": "CNY" }, "timeRequired": "P6W", "inLanguage": "zh-HK" } }
+    ]
+  }
+  </script>
   <script src="js/labeler.js?v=20260607b"></script>
   <script>
     Cantonese.initTheme();
@@ -61,10 +117,15 @@
 
       const { courses } = await Cantonese.loadJSON('data/courses.json');
 
+      const matchTagsL = Cantonese.pick(matchTags) || [];
+      const lang = Cantonese.getLang();
+      const T = Cantonese.t;
+
       const scored = courses.map(c => {
         let score = 0;
-        if (c.level === level.short) score += 10;
-        c.tags.forEach(t => { if (matchTags.includes(t)) score += 3; });
+        if (Cantonese.pick(c.level, lang) === level.short) score += 10;
+        const cTags = Cantonese.pick(c.tags, lang) || [];
+        cTags.forEach(t => { if (matchTagsL.includes(t)) score += 3; });
         return { ...c, _score: score };
       }).sort((a, b) => b._score - a._score);
 
@@ -72,7 +133,7 @@
       const more = scored.slice(3);
 
       document.getElementById('subtitle').textContent =
-        `按你嘅「${level.name}」+ 「${mbtiCode}」篩嘅 ${scored.length} 門`;
+        T('course.subtitle-count', undefined, level.name, mbtiCode, scored.length);
 
       const badgeClass = level.key === 'entry' ? 'badge-blue'
                        : level.key === 'mid'   ? 'badge-pink'
@@ -83,16 +144,16 @@
           <div class="course-card">
             <i class="course-emoji">${Cantonese.icon(c.icon || 'book-open')}</i>
             <div class="row" style="gap:6px;">
-              <span class="${badgeClass}" style="padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 700;">${c.level}</span>
-              ${c.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+              <span class="${badgeClass}" style="padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 700;">${Cantonese.pick(c.level, lang)}</span>
+              ${Cantonese.pick(c.tags, lang).map(t => `<span class="tag">${t}</span>`).join('')}
             </div>
-            <div class="bold">${c.title}</div>
-            <p class="course-highlight">${c.highlight}</p>
+            <div class="bold">${Cantonese.pick(c.title, lang)}</div>
+            <p class="course-highlight">${Cantonese.pick(c.highlight, lang)}</p>
             <div class="row" style="justify-content: space-between; align-items: center;">
-              <div class="text-sm muted">${c.type} · ${c.duration}</div>
+              <div class="text-sm muted">${Cantonese.pick(c.type, lang)} · ${Cantonese.pick(c.duration, lang)}</div>
               <div class="bold" style="color: var(--pink); font-size: 18px;">${c.price}</div>
             </div>
-            <a class="btn btn-primary btn-block" href="${c.link}" target="_blank">查看課程 ${Cantonese.icon('arrow-right')}</a>
+            <a class="btn btn-primary btn-block" href="${c.link}" target="_blank">${T('course.view')} ${Cantonese.icon('arrow-right')}</a>
           </div>
         `;
       }

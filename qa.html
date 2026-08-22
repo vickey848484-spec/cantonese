@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<!-- SEO -->
+    <meta name="description" content="10 FAQ on learning Cantonese — time, method, tones, courses, refund. 識講粵語 YUE Test.">
+    <meta name="keywords" content="cantonese faq,cantonese questions,learn cantonese time,cantonese tones,cantonese course">
+    <meta name="author" content="Vickey · 識講粵語">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.canton-ai.com/qa.html">
+    <link rel="alternate" hreflang="zh-HK" href="https://www.canton-ai.com/qa.html?lang=zh-HK">
+    <link rel="alternate" hreflang="zh-CN" href="https://www.canton-ai.com/qa.html?lang=zh-CN">
+    <link rel="alternate" hreflang="en" href="https://www.canton-ai.com/qa.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://www.canton-ai.com/qa.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="識講粵語 · YUE Test">
+    <meta property="og:title" content="Cantonese Learning Q&A · 識講粵語">
+    <meta property="og:description" content="10 FAQ on learning Cantonese — time, method, tones, courses, refund. 識講粵語 YUE Test.">
+    <meta property="og:url" content="https://www.canton-ai.com/qa.html">
+    <meta property="og:image" content="https://www.canton-ai.com/images/og-image.svg">
+    <meta property="og:locale" content="zh_HK">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:locale:alternate" content="en_US">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cantonese Learning Q&A · 識講粵語">
+    <meta name="twitter:description" content="10 FAQ on learning Cantonese — time, method, tones, courses, refund. 識講粵語 YUE Test.">
+    <meta name="twitter:image" content="https://www.canton-ai.com/images/og-image.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>粵語學習 Q&A · 識講粵語</title>
+  <title data-i18n="qa.title">粵語學習 Q&A · 識講粵語</title>
   <link rel="stylesheet" href="css/style.css?v=20260607b">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="js/analytics.js?v=20260607c" defer></script>
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?820718cf27f4e74a047426ade1008a62";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
   <style>
     .qa-search {
       width: 100%;
@@ -150,24 +183,24 @@
   <main class="container">
     <section class="section">
       <div class="center mb-3">
-        <h1 class="display">學習 Q&A + 客服</h1>
-        <p class="muted mt-1">唔怕問題多，怕你唔問</p>
+        <h1 class="display" data-i18n="qa.title">學習 Q&A + 客服</h1>
+        <p class="muted mt-1" data-i18n="qa.subtitle">唔怕問題多，怕你唔問</p>
       </div>
 
-      <input class="qa-search" type="search" id="qa-filter" placeholder="搜問題：例如「發音」「多久」「退款」…">
+      <input class="qa-search" type="search" id="qa-filter" data-i18n-placeholder="qa.placeholder" placeholder="搜問題：例如「發音」「多久」「退款」…">
 
       <div id="qa-list"></div>
 
       <div class="contact-card">
-        <h2 class="display" style="font-size: 22px;">📞 聯繫客服</h2>
-        <p class="muted text-sm mt-1">3 種方式揾到 Vickey 老師</p>
+        <h2 class="display" style="font-size: 22px;" data-i18n="qa.contact-h2">📞 聯繫客服</h2>
+        <p class="muted text-sm mt-1" data-i18n="qa.contact-sub">3 種方式揾到 Vickey 老師</p>
 
         <div class="contact-row" id="contact-rows">
           <!-- JS 渲染 -->
         </div>
 
         <div class="mt-3" style="background: var(--bg-soft); padding: 16px; border-radius: 12px; border: 1px solid var(--border);">
-          <div class="text-sm bold"><i class="ph ph-clock"></i> 客服時間</div>
+          <div class="text-sm bold"><i class="ph ph-clock"></i> <span data-i18n="qa.contact-hours">客服時間</span></div>
           <p class="muted text-sm mt-1" id="contact-hours">—</p>
         </div>
       </div>
@@ -176,7 +209,50 @@
 
   <footer class="footer">識講粵語 · 由 Vickey 老師主理</footer>
 
-  <script src="js/common.js?v=20260607b"></script>
+  <!-- FAQPage 结构化数据（Google 搜索 rich result） -->
+  <script>
+  (function() {
+    var lang = (new URLSearchParams(location.search).get('lang')) || localStorage.getItem('cantonese_lang') || 'zh-CN';
+    if (!['zh-HK','zh-CN','en'].indexOf(lang) === false) lang = 'zh-CN';
+    fetch('data/i18n.json').then(function(r){return r.json();}).then(function(d){
+      var list = (d.qa||[]).map(function(item){
+        return {
+          '@type': 'Question',
+          'name': item.q[lang] || item.q['zh-CN'] || '',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': (item.a[lang] || item.a['zh-CN'] || '').replace(/<[^>]+>/g,'')
+          }
+        };
+      });
+      var ld = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': list
+      };
+      var s = document.createElement('script');
+      s.type = 'application/ld+json';
+      s.textContent = JSON.stringify(ld);
+      document.head.appendChild(s);
+    }).catch(function(e){console.warn('[FAQ JSON-LD] fail', e);});
+  })();
+  </script>
+  <script src="js/common.js?v=20260608c"></script>
+
+  <!-- FAQPage 静态 fallback（动态 i18n 加载失败时仍可被搜索引擎读取）-->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "學粵語要學幾耐？", "acceptedAnswer": { "@type": "Answer", "text": "按 FSI 標準，中文被列為「超難」語言，母語英語者達到 B1 需約 2200 小時。本網站用年齡/地域/每日學習時長算精確值。" } },
+      { "@type": "Question", "name": "粵語 9 聲 6 調是什麼？", "acceptedAnswer": { "@type": "Answer", "text": "粵語有 9 個聲調（普通話只有 4 個），6 個主要韻尾。入聲（-p/-t/-k）也是粵語特色。初學者先掌握 6 調基本框架。" } },
+      { "@type": "Question", "name": "零基礎可以學嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以。入門課程從拼音開始，3 個月內能進行日常自我介紹和簡單對話。建議每天 30 分鐘、每週 25 天。" } },
+      { "@type": "Question", "name": "課程有退款嗎？", "acceptedAnswer": { "@type": "Answer", "text": "7 天內不滿意全額退款，無需理由，私訊微信即可。" } },
+      { "@type": "Question", "name": "1v1 和視頻課有什麼區別？", "acceptedAnswer": { "@type": "Answer", "text": "視頻課是預錄，隨時學。1v1 直播客製化，適合商務 / 發音矯正 / 短期衝刺需求。" } }
+    ]
+  }
+  </script>
   <script>
     Cantonese.initTheme();
     Cantonese.injectThemeToggle();
@@ -187,30 +263,43 @@
 
     (async function () {
       try {
-        const data = await Cantonese.loadJSON('data/qa.json');
+        const data = await Cantonese.loadJSON('data/i18n.json');
         await Cantonese.renderQA(document, data);
 
         // 客服區
-        const c = data.contact;
+        const T = Cantonese.t;
+        const wechatDesc = T('contact.wechat-desc');
+        const wechatCta  = T('contact.wechat-cta');
+        const wechatCopy = T('contact.wechat-copy');
+        const wechatId   = T('contact.wechat-id');
+        const email      = T('contact.email');
+        const emailCta   = T('contact.email-cta');
+        const emailCopy  = T('contact.email-copy');
+        const emailSend  = T('contact.email-send');
+        const teacherNm  = T('contact.teacher-name');
+        const hours      = T('contact.hours');
+        const replyMsg   = T('contact.reply-msg');
+        const copied     = T('contact.copied');
         const rows = document.getElementById('contact-rows');
         rows.innerHTML = `
           <div class="contact-item">
             <div class="icon-wrap">${Cantonese.icon('chat-circle-dots')}</div>
-            <div class="label">${c.wechat.label || '微信諮詢'}</div>
-            <div class="value">${c.wechat.id}</div>
-            <button class="copy-btn" data-copy="${c.wechat.id}">複製微信號</button>
+            <div class="label">${wechatCta}</div>
+            <div class="value">${wechatId}</div>
+            <div class="text-sm muted" style="margin-top: 4px;">${wechatDesc}</div>
+            <button class="copy-btn" data-copy="${wechatId}">${wechatCopy}</button>
           </div>
           <div class="contact-item">
             <div class="icon-wrap">${Cantonese.icon('envelope')}</div>
-            <div class="label">郵件諮詢</div>
-            <div class="value" style="font-size: 14px; word-break: break-all;">${c.email}</div>
-            <button class="copy-btn" data-copy="${c.email}">複製郵箱</button>
+            <div class="label">${emailCta}</div>
+            <div class="value" style="font-size: 14px; word-break: break-all;">${email}</div>
+            <button class="copy-btn" data-copy="${email}">${emailCopy}</button>
           </div>
           <div class="contact-item">
             <div class="icon-wrap">${Cantonese.icon('chat-circle-dots')}</div>
-            <div class="label">${c.wechat.name || '老師'}</div>
-            <div class="value" style="font-size: 13px; line-height: 1.5;">${c.phone || '微信最及時'}</div>
-            <a class="copy-btn" style="text-decoration: none; display: inline-block;" href="mailto:${c.email}">發郵件</a>
+            <div class="label">${teacherNm}</div>
+            <div class="value" style="font-size: 13px; line-height: 1.5;">${replyMsg}</div>
+            <a class="copy-btn" style="text-decoration: none; display: inline-block;" href="mailto:${email}">${emailSend}</a>
           </div>
         `;
 
@@ -220,14 +309,14 @@
             const txt = btn.getAttribute('data-copy');
             Cantonese.copyToClipboard(txt).then(() => {
               const orig = btn.textContent;
-              btn.textContent = '已複製 ✓';
+              btn.textContent = copied;
               setTimeout(() => { btn.textContent = orig; }, 1500);
             });
           });
         });
 
         document.getElementById('contact-hours').textContent =
-          `${c.hours} · ${c.phone || ''}`;
+          `${hours} · ${replyMsg}`;
       } catch (e) {
         console.error('[qa] error:', e);
         document.getElementById('qa-list').innerHTML =
